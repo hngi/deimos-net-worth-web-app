@@ -1,0 +1,125 @@
+/* Please comment your code properly */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+i{
+    font-size: 1rem;
+    margin-right: .5rem;
+}
+
+li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-landing-section{
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, #6D1AD8, #6D1AD8);
+    position: relative;
+}
+
+.landing-logo-section {
+    display: inline-block;
+    margin: 2rem 10rem 2rem 2rem;
+    position: relative;
+}
+
+.landing-logo-section > li:last-of-type {
+   position: absolute;
+   top: .8rem;
+   left: 4rem;
+}
+
+.landing-log-section{
+    display: inline-block;
+    margin: 2rem -4rem 2rem 50rem;
+}
+
+.btn{
+    margin-left: .3rem;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    border-radius: .7rem 0 .7rem .7rem;
+}
+
+.btn-empty {
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+}
+
+.btn-empty:hover,
+.btn-empty:active {
+    color: blueviolet;
+    background-color:#fff;
+    transition: background-color 1s;
+}
+
+.btn-start{
+    border: none;
+    margin-top: 2.5rem;
+    margin-left: -0.01rem;
+}
+
+.btn-full{
+    background-color: #fff;
+    color: blueviolet;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    color: #fff;
+    background-color: rgba(137, 43, 226, 0);
+    transition: background-color 1s;
+}
+
+.landing-text-area{
+    position: absolute;
+    width: 60%;
+    padding-top: 2.7rem;
+    padding-left: 5rem;
+}
+
+.landing-header {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+.landing-para{
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: start;
+}
+
+.landing-image-area{
+    position: absolute;
+    height: 40%;
+    width: 35%;
+    left: 59%;
+    top: 10%;
+}
+
+.coin-img{
+    margin: 4rem 2rem 0 10rem;
+    height: 28rem;
+    width: 18rem;
+}
