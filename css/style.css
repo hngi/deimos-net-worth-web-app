@@ -1,1 +1,272 @@
-/* Please comment your code properly */
+/* Properly comment your code */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+
+/* BEGINNING OF NAVBAR STYLYING */
+
+.nav {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+    font-size: 18px;
+    display: inline-block;
+    padding: 13px 10px 13px 75px;
+    position: relative;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    display: inline;
+    font-size: 18px;
+    float: right;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 30px 10px 13px 00px;
+    text-decoration: none;
+    color: #efefef;
+    margin-right: 30px;
+}
+
+.nav>.nav-links>a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+.hr-style {
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+
+/* END OF NAVBAR STYLYING */
+
+i {
+    font-size: 1rem;
+    margin-right: .5rem;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main-landing-section {
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, #6D1AD8, #6D1AD8);
+    position: relative;
+}
+
+.landing-logo-section {
+    display: inline-block;
+    margin: 2rem 10rem 2rem 4.7rem;
+    position: relative;
+}
+
+.landing-logo-section>li:last-of-type {
+    position: absolute;
+    top: .8rem;
+    left: 4rem;
+}
+
+.landing-log-section {
+    display: inline-block;
+    margin: 2rem -4rem 2rem 50rem;
+}
+
+.btn {
+    margin-left: .3rem;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    border-radius: .7rem 0 .7rem .7rem;
+    font-size: large;
+    cursor: pointer;
+}
+
+.btn-empty {
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+}
+
+.btn-empty:hover,
+.btn-empty:active {
+    color: blueviolet;
+    background-color: #fff;
+    transition: background-color 1s;
+}
+
+.btn-start {
+    border: none;
+    margin-top: 2.5rem;
+    margin-left: -0.01rem;
+}
+
+.btn-full {
+    background-color: #fff;
+    color: blueviolet;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    color: #fff;
+    background-color: rgba(137, 43, 226, 0);
+    transition: background-color 1s;
+}
+
+.landing-text-area {
+    position: absolute;
+    width: 60%;
+    padding-top: 2.7rem;
+    padding-left: 5rem;
+}
+
+.landing-header {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+.landing-para {
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: start;
+}
+
+.landing-image-area {
+    position: absolute;
+    height: 40%;
+    width: 35%;
+    left: 59%;
+    top: 10%;
+}
+
+.coin-img {
+    margin: 0rem 2rem 0 10rem;
+    height: 28rem;
+    width: 18rem;
+}
+
+
+/* RESPONSIVENESS OF NAVBAR STYLYING */
+
+@media (max-width:600px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+        text-align: center;
+        z-index: 1;
+    }
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+    }
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+
+/* END OF NAVBAR STYLYING */
+
+
+/* RESPONSIVENESS */
+
+@media only screen and (max-width: 600px) {
+    .main-landing-section {
+        height: 100vh;
+        background-size: contain;
+    }
+    .landing-header {
+        font-size: 2.1rem;
+    }
+    .landing-para {
+        font-size: 1rem;
+    }
+    .coin-img {
+        margin: 0rem auto 0 auto;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.hr-style {
+    width: 125px;
+}
+
+
+}
+@media all and (max-device-width: 480px) {
+    .main-landing-section {
+        height: 100vh;
+        background-size: contain;
+    }
+}
