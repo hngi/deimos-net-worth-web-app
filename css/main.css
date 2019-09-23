@@ -1,0 +1,22 @@
+.welcome-image {
+  background: url(https://res.cloudinary.com/ayeesha17/image/upload/v1569237818/demois-images/accounting-black-budget-53621_a3ytkp.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 250px;
+  text-align: center;
+}
+.welcome-image p {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+button {
+  text-align: center;
+}
+.page-footer {
+  text-align: center;
+  background: #343a40;
+  color: #ffffff;
+  padding: 15px;
+}
