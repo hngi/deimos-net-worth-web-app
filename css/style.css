@@ -256,14 +256,11 @@ a {
         height: auto;
         max-width: 100%;
     }
+    .hr-style {
+        width: 125px;
+    }
 }
 
-.hr-style {
-    width: 125px;
-}
-
-
-}
 @media all and (max-device-width: 480px) {
     .main-landing-section {
         height: 100vh;
