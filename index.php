@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="og:title" property="og:title" content="">
-    <link href="index.html" rel="canonical">
+    <link href="index.php" rel="canonical">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
@@ -25,12 +32,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto navbar__menu">
-                    <form action="login.html">
+                    <form action="login.php">
                         <li class="nav-item active">
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
                         </li>
                     </form>
-                    <form action="login.html">
+                    <form action="login.php">
                         <li class="nav-item">
                             <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
                         </li>
@@ -53,7 +60,7 @@
                         <p><i class="fas fa-check pr-3"></i>Begin plotting your future projections</p>
                         <p><i class="fas fa-check pr-3"></i>or just use it for fun</p>
                     </div>
-                    <form action="login.html">
+                    <form action="login.php">
                     <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Get Started</button>
                   </form>
                 </div>
