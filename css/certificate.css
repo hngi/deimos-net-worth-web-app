@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
-.body{
-    width:800px; 
-    height:600px; 
+.body {
+    width: 800px;
+    height: 600px;
     padding: 20px;
-    text-align:center; 
+    text-align: center;
     background: #6D1AD8;
     font-family: 'ChomskyRegular';
     font-weight: normal;
@@ -13,51 +12,50 @@
     z-index: 3;
 }
 
-.border{
+.border {
     width: 780px;
-    height:590px;
+    height: 590px;
     margin: 0 auto;
-    text-align:center;
+    text-align: center;
     background: white;
     border-bottom-right-radius: 20%;
     border-top-left-radius: 20%;
 }
 
-.logo{
+.logo {
     width: 10em;
     margin-bottom: -40px;
     margin-top: -10px;
 }
 
-
-h2{
-    font-size: 50px; 
-    font-weight:bold;
+h2 {
+    font-size: 50px;
+    font-weight: bold;
 }
 
-.worthLevel{
+.worthLevel {
     margin: 0 auto;
 }
 
-.worthLevel>tr > span{
+.worthLevel>tr>span {
     font-size: 1.5em;
-    line-height:1.5em;
+    line-height: 1.5em;
 }
 
-span > i{
+span>i {
     font-size: 25px;
 }
 
-span > b{
+span>b {
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
-.signature{
+.signature {
     margin-top: 10px;
 }
 
-span{
+span {
     font-size: 20px;
 }
