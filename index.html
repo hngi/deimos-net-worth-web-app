@@ -5,70 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,800i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta name="description" content="">
+    <meta name="og:title" property="og:title" content="">
+    <link href="index.html" rel="canonical">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="./img/networth logo.svg">
-
-    <link rel="icon" type="image/x-icon" href="./img/networth logo.svg">
-    <title>Networth calculator || calculate your networth</title>
+    <title>Deimos' Networth Calculator | Calculate your networth</title>
 </head>
 
 <body>
-    <main class="main-landing-section">
-        <!--<nav class="landing-section-nav">
-            <ul class="landing-logo-section">
-                <li><img src="./img/networth logo.svg" alt="Networth Logo"></li>
-                <li><a href="#">Networth</a></li>
-            </ul>
-            <ul class="landing-log-section">
-                <li><a href="#" class="btn btn-empty">Login</a></li>
-                <li><a href="#" class="btn btn-full">Sign up</a></li>
-            </ul>
-        </nav>-->
-        <div class="nav">
-            <input type="checkbox" id="nav-check">
-            <div class="nav-header">
-                <div class="nav-title">
-                    <li><img src="./img/networth logo.svg" alt="Networth Logo"></li>
-                    <li><a href="index.html">&nbsp;&nbsp; Networth</a></li>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
+            <a class="navbar-brand" href="#"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto navbar__menu">
+                    <form action="login.html">
+                        <li class="nav-item active">
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
+                        </li>
+                    </form>
+                    <form action="login.html">
+                        <li class="nav-item">
+                            <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
+                        </li>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <main class="container">
+            <div class="row">
+                <div class="main_pad col-xs-12 col-sm-12 col-md-6 col-lg-7">
+                    <h1 class="main__caption mt-1 mb-3">Your 'Net Worth' is your financial strength. </h1>
+                    <p class="main__description">Use Networth to calculate the true financial worth for you and your friends. Get a FREE certificate</p>
+                    <div class="line-through"></div>
+                    <div class="description__advantages">
+                        <p>What does this mean?</p>
+                        <p><i class="fas fa-check pr-3"></i>Begin planning for financial freedom</p>
+                        <p><i class="fas fa-check pr-3"></i>Begin plotting your future projections</p>
+                        <p><i class="fas fa-check pr-3"></i>or just use it for fun</p>
+                    </div>
+                    <form action="login.html">
+                    <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Get Started</button>
+                  </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 text-center">
+                    <img class="land-logo" src='./img/deimo-networth.png' width="500px">
                 </div>
             </div>
-            <div class="nav-btn">
-                <label for="nav-check">
-                <span></span>
-                <span></span>
-                <span></span>
-              </label>
-            </div>
+        </main>
+    </section>
 
-            <div class="nav-links">
-                <a href="login.html">Sign In</a>
-                <a href="login.html">Sign Up</a>
-            </div>
-        </div>
-        <div class="landing-text-area">
-            <h2 class="landing-header">
-                Your 'Net Worth' is your financial strength.
-            </h2>
-            <p class="landing-para">
-                Use Networth&#0153; to calculate the true financial worth <br> for you and your friends. Get a FREE certificate.
-                <br>
-                <hr class="hr-style"> What does this mean? <br>
-                <i class="fas fa-plus-circle"></i>Begin planning for financial freedom. <br>
-                <i class="fas fa-plus-circle"></i>Begin plotting your future projections. <br>
-                <i class="fas fa-plus-circle"></i>Use it just for fun.
-            </p>
-            <button class="btn btn-full btn-start">Get Started</button>
-        </div>
-        <div class="landing-image-area">
-            <img src="./img/Pig with coins.svg" alt="Pig with coins" class="coin-img">
-        </div>
-    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
-
 </html>

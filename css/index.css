@@ -1,0 +1,69 @@
+body {
+     background: #6D1AD8;
+     font-family:  'Poppins', sans-serif;
+}
+
+#header__nav .header__nav__brand {
+    font-size: 15px;
+}
+
+#header__nav .navbar__menu button {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header__nav .navbar__menu button:hover {
+    background: #fff;
+    color: #6d1ad8;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+main {
+    color: #fff;
+    width: 90%;
+    margin: 60px auto 0 auto;
+}
+main .main__caption {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+main .main__description {
+    width: 65%;
+}
+
+main .line-through {
+    width: 40%;
+    height: 10px;
+    border-top: 2px solid #fff;
+    margin: 4px 0;
+}
+
+main .description__advantages {
+    font-size: 1em;
+}
+main .get-started {
+    background: #fff;
+    color: #6d1ad8;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+main .get-started:hover {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: 1px solid #fff;
+    font-size: 1em;
+    font-weight: bold;
+}
