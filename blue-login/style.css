@@ -18,14 +18,7 @@ input.form-control:focus{
     border: 0;
     box-shadow: none;
 }
-/* input.form-control:active,
-input.form-control:focus{
-    outline: 0;
-    border: 0;
-    box-shadow: none;
-} */
 .col-sm{
-    /* background-color: grey; */
     padding: 0;
 }
 .container-fluid{
@@ -65,8 +58,6 @@ nav.navbar{
     top: 100%;
     transition: top 0s 1s;
     color: #fff;
-
-    /* color: red; */
     background: linear-gradient(180deg, #3498DB 0%, rgba(255, 255, 255, 0) 100%), #00375e;
 }
 
@@ -108,9 +99,7 @@ a.sign-in-common{
     padding-right: 10px;
     border-radius: 0;
 }
-.signup-wrapper a.sign-in-common{
-    /* color: #fff; */
-}
+
 .sign-in-common span{
     font-size: 14px;
     vertical-align: middle;
@@ -122,11 +111,7 @@ a.sign-in-common{
     object-fit: cover;
     display: inline-block;
 }
-/* .sign-in-with-social {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-} */
+
 .sign-in-fb span{
     padding-left: 8px;
 }
@@ -266,7 +251,6 @@ form div a.btn-default, input.btn-default{
 }
 @media only screen and (min-width: 700px){
     body .container-fluid{
-        /* max-width: 100% ; */
         background: linear-gradient(90deg, #11465E 4.59%, #2981BB 88.87%);
     }
     .row{
@@ -358,9 +342,8 @@ form div a.btn-default, input.btn-default{
         margin-top: 45px;
         margin-bottom: 15px;
     }
-    .signup-wrapper section form > div a.btn-default, input.btn-default{
-        /* margin-top: 45px;
-        margin-bottom: 15px; */
+    .col-sm.signup-wrapper .general-input input{
+        margin-bottom: 0;
     }
     .row .form-control::placeholder,
     .signup-wrapper .form-control::placeholder{
