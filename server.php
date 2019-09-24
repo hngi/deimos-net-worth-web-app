@@ -49,20 +49,18 @@ if (isset($_POST['reg_user'])) {
       header('location: login.php');
     }
   }
+  
 
   // Register user if correctly filled and not on database
   if (count($errors) == 0) {
     $password = md5($password);//Password encryption
-
+    
     $query = "INSERT INTO users (username, email, password) 
           VALUES('$username', '$email', '$password')";
     mysqli_query($db, $query);
   
     // $_SESSION['username'] = $username;
     // $_SESSION['success'] = "You are now logged in";
-    
-    
-    
     
     header('location: index.php');
   }
