@@ -2,7 +2,7 @@
 A Calculator that takes in assets, cash and liabilities and calculates how much a user is worth
 
 ## Functionality
-User Registeration
+User Registration
 
 User Login
 
