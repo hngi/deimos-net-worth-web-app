@@ -1,10 +1,8 @@
 <?php 
 
-namespace php_server;
+namespace app;
 
 interface AuthInterface {
     public function signup($email, $password);
     public function login($email, $password);
-   /*  public function reg($username);
-    public function getUsers(); */
 }

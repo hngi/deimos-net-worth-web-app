@@ -1,10 +1,9 @@
 <?php 
-namespace php_server;
+namespace app;
 session_start();
 use PDO;
-// use php_server\Auth;
-use php_server\Auth;
-use php_server\AuthInterface;
+use app\Auth;
+use app\AuthInterface;
     
 
 
@@ -38,7 +37,7 @@ class User extends Auth implements AuthInterface {
                 }
                 if($logged && password_verify($newPassword, $p['password'])){
                     $_SESSION['data'] = $data;
-                    header('Location: ../login.php',200);
+                    $this->redirect('../login.php',200);
                     // echo json_encode($data);
                 }else{
                     header('HTTP/1.1 401 Unauthorized');
@@ -73,7 +72,7 @@ class User extends Auth implements AuthInterface {
                 $stmt->bindParam(':newPassword', $newPassword, PDO::PARAM_STR);
                 $results = $stmt->execute();
                 $_SESSION['success'] = "Registration successful";
-                header('Location: ../index.php',200);
+                $this->redirect('../index.php',200);
                 // echo json_encode($results);
             }
             else{
@@ -93,7 +92,8 @@ class User extends Auth implements AuthInterface {
             session_destroy();
             unset($_SESSION['data']);
             unset($_SESSION['success']);
-            header('Location: ../index.php',200);
+            $this->redirect('../index.php',200);
+            // header('Location: ../index.php',200);
     }
 
     
