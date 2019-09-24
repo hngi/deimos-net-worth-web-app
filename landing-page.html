@@ -17,65 +17,72 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9428dce252.js" crossorigin="anonymous"></script>
     <!-- main-css -->
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-     
-      
     <!-- THE NAVIGATION BAR -->
-    <header id="navbar-nav">
-      <nav class="navbar navbar-default bg-dark">
-          
-         <a class="navbar-brand" href="#">Demois</a> 
-        
-
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacts</a>
-          </li>
-          <li class="nav-item">
-              <button
-              type="button"
-              class="btn btn-primary"
+    <header>
+      <nav class="navbar navbar-default  ">
+        <div>
+          <a href=""><img src="/img/networth logo.svg" alt=""/></a>
+          <a class="navbar-brand" href="#">Net Worth</a>
+        </div>
+        <div>
+          <ul class="nav">
+            <li
+              class="nav-item login-nav"
               data-toggle="modal"
               data-target="#exampleMode"
-              data-whatever="@getbootstrap"
-            >
-              LOGIN
-            </button>
-            <!-- <a class="nav-link" href="#">Login</a> -->
-          </li>
-        </ul>
-      </div>
+            >Log In</li>
+            <li
+              class="nav-item signup-nav"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            > Sign Up</li>
+          </ul>
+        </div>
       </nav>
     </header>
     <section>
-      <!-- WELCOME PAGE -->
-      <div class="welcome-image">
-        <p class="animated infinite bounce delay-2s">
-          Welcome to, Demois-Net-Worth
-          
-        </p>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          data-whatever="@getbootstrap"
-        >
-          Get Started
-        </button>
-        
+    
+      <div class="container">
+      <div class="row">
+          <div class="col-sm-8 networth">
+             <span>Your 'Net Worth is your<br> financial stength</span>
+             <p>use net Worth to calculate the true financial worth<br> of you and your friend. Get a FREE certificate
+              
+            </p>
+            <div  class="networth-hr"></div>
+             
+             <p>What does this mean?</p>
+             <ul class="ul-caption">
+               <li><i class="fas fa-check icon-space"></i></i>Begin planning for financial freedom</li>
+               <li> <i class="fas fa-check icon-space"></i>Begin plotting your future projection</li>
+               <li><i class="fas fa-check icon-space"></i>or just use it for fun</li>
+             </ul>
+             <button
+             type="button"
+             class="btn btn-primary get-started-btn"
+             data-toggle="modal"
+             data-target="#exampleModl"
+             data-whatever="@getbootstrap"
+           >
+             Get Started
+           </button>
+
+          </div>
+          <div class="col-sm-4 piggy-worth">
+            <img src="/img/Pig with coins.svg" alt="piggy with coins">
+          </div>
+        </div>
       </div>
+        
+
       <!-- modal class FOR SIGNUP -->
-      <div>
+       <div>
         <div
           class="modal fade"
           id="exampleModal"
@@ -117,8 +124,7 @@
                             <label class="form-check-label" for="exampleCheck1">remember me</label>
                           </div>
                           <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                        </div>
+                        </form> </div>
                         </div>
                        </div>
                       </div>
@@ -171,11 +177,10 @@
                       </div>
                     </div>
                    </div>
-                   
-                  </section>
-                  <footer>
+                    </section>
+    <!-- <footer>
                       <p class="page-footer">All right reserved Demois team &copy;2019</p>
-                      </footer>
+                      </footer> -->
 
     <!-- BOOTSTRAP JS CDN -->
     <script

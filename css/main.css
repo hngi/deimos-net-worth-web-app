@@ -1,7 +1,11 @@
-.welcome-image {
-  background: url(https://res.cloudinary.com/ayeesha17/image/upload/v1569237818/demois-images/accounting-black-budget-53621_a3ytkp.jpg);
+body {
+  background: #6d1ad8;
   background-size: cover;
   background-repeat: no-repeat;
+  /* color: #ffffff; */
+}
+
+.welcome-image {
   padding: 250px;
   text-align: center;
 }
@@ -11,12 +15,53 @@
   text-align: center;
   padding: 20px;
 }
-button {
-  text-align: center;
+.signup-nav {
+  color: #fff;
+  cursor: pointer;
 }
-.page-footer {
-  text-align: center;
-  background: #343a40;
+
+.login-nav {
+  cursor: pointer;
   color: #ffffff;
-  padding: 15px;
+  padding-right: 20px;
+}
+.navbar-brand,
+.navbar-brand:hover {
+  color: #ffffff;
+}
+.networth {
+  color: #fff;
+}
+.container {
+  padding-top: 60px;
+}
+.container span {
+  font-size: 45px;
+  font-weight: 500px;
+}
+
+.container ul {
+  list-style-type: none;
+}
+.icon-space {
+  padding-right: 10px;
+}
+.networth-hr {
+  border: 1px solid #fff;
+  width: 30%;
+  margin-bottom: 10px;
+}
+.get-started-btn {
+  background: #fff;
+  color: #6d1ad8;
+  border-radius: 8px 0px 8px 8px;
+  border: 2px solid #fff;
+  font-weight: 600;
+  padding: 2px 25px;
+}
+.ul-caption {
+  padding: 0px;
+}
+.ul-caption li {
+  margin-bottom: 10px;
 }
