@@ -4,7 +4,7 @@ body {
 }
 
 #header__nav .header__nav__brand {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 #header__nav .navbar__menu button {
@@ -26,8 +26,9 @@ body {
 }
 
 main {
-    margin-top: 100px;
     color: #fff;
+    width: 90%;
+    margin: 60px auto 0 auto;
 }
 main .main__caption {
     font-size: 3em;
@@ -54,6 +55,15 @@ main .get-started {
     color: #6d1ad8;
     border-radius: 10px 0 10px 10px;
     border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+main .get-started:hover {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: 1px solid #fff;
     font-size: 1em;
     font-weight: bold;
 }
