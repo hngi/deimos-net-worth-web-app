@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f9c2ad84-b2da-4231-9ace-19b0565c8308/deploy-status)](https://app.netlify.com/sites/deimos-networth/deploys)
+
+
 # deimos-networth-web-app
 A Calculator that takes in assets, cash and liabilities and calculates how much a user is worth
 
