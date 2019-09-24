@@ -30,7 +30,7 @@ if (isset($_POST['reg_user'])) {
 
   // check database for user, username and email check
 
-  $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM users WHERE username='".$username."' OR email='".$email."' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
@@ -56,7 +56,7 @@ if (isset($_POST['reg_user'])) {
     $password = md5($password);//Password encryption
     
     $query = "INSERT INTO users (username, email, password) 
-          VALUES('$username', '$email', '$password')";
+          VALUES('".$username."', '".$email."', '".$password."')";
     mysqli_query($db, $query);
   
     // $_SESSION['username'] = $username;
