@@ -1,5 +1,5 @@
 <?php
-
+// include
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +20,7 @@
 <body>
     <div class="container-fluid">
         <input type="checkbox" name="" id="toggle_signup_1">
+        <!-- <?php include('errors.php'); ?> -->
         <div class="row my-auto">
             <input class="d-none" type="checkbox" name="" id="toggle_signin">
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
@@ -45,17 +46,17 @@
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
-                        <div class="form-group general-input">
+                        <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
                         </div>
-                        <div class="form-group general-input">
+                        <div class="form-group ">
                             <input class="form-control" type="text" name="username" placeholder="USERNAME">
                         </div>
-                        <div class="form-group general-input">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
+                        <div class="form-group ">
+                            <input class="form-control" type="password" name="password_1" id="" placeholder="PASSWORD">
                         </div>
-                        <div class="form-group general-input">
-                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD">
+                        <div class="form-group ">
+                            <input class="form-control" type="password" name="password_2" id="" placeholder="CONFIRM PASSWORD">
                         </div>
                         <div class="text-center">
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
