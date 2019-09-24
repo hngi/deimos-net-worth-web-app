@@ -88,55 +88,13 @@ class User extends Auth implements AuthInterface {
         }
     }
 
-    /* public function reg($username){
-        try
-        {
-            $db = static::getDB();
-            $sql= "SELECT * FROM Users WHERE username = :username LIMIT 1";
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-            $check = $stmt->execute();
-            $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-            
-            if ( !$stmt->rowCount() > 0 ) {
-                $stmt = $db->prepare('INSERT INTO users (username) VALUES (:username)');
-                $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-                $results = $stmt->execute();
-                return json_encode($results);
-            }
-            else{
-                throw new Exception(json_encode('User already exist, try a different username'),500);
-            }
-        }
-        catch(PDOException $e)
-        {
-            echo json_encode($e->getMessage());
-        }
+    public function logout()
+    {
+            session_destroy();
+            unset($_SESSION['data']);
+            unset($_SESSION['success']);
+            header('Location: ../index.php',200);
     }
-    public function getUsers(){
-        try
-        {
-            $db = static::getDB();
-            $sql= "SELECT * FROM Users";
-            $stmt = $db->prepare($sql);
-            $results = $stmt->execute();
-            $data = $stmt->fetchAll(PDO::FETCH_OBJ);
-            
-            
-            if ( $stmt->rowCount() > 0 ) {
-                
-                echo json_encode($data);
-            }
-            else{
-                throw new Exception(json_encode('User already exist, try a different username'),500);
-            }
-        }
-        catch(PDOException $e)
-        {
-            echo json_encode($e->getMessage());
-        }
-    } */
 
     
     
