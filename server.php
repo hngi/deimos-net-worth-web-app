@@ -24,8 +24,7 @@ if (isset($_POST['reg_user'])) {
   if (empty($password)) { array_push($errors, "Password is required"); }
   if ($password != $confirm_password) {
   array_push($errors, "The two passwords do not match");
-      $_SESSION['reg_error'] = $errors;
-      unset($_SESSION['error']);
+      
       header('location: login.php');
   }
 
@@ -39,16 +38,14 @@ if (isset($_POST['reg_user'])) {
   if ($user) {
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
-      $_SESSION['reg_error'] = $errors;
-      unset($_SESSION['error']);
+      
       header('location: login.php');
     }
 
     if ($user['email'] === $email) {
        
       array_push($errors, "email already exists");
-      $_SESSION['reg_error'] = $errors;
-      unset($_SESSION['error']);
+      
       header('location: login.php');
     }
   }
@@ -79,19 +76,17 @@ if (isset($_POST['login_user'])) {
   if (empty($username)) {
     
     array_push($errors, "Username is required");
-    $_SESSION['error'] = $errors;
-    unset($_SESSION['reg_error']);
+    
+   
     header('location: login.php');
   }
   if (empty($password)) {
     
     array_push($errors, "Password is required");
-    $_SESSION['error'] = $errors;
-    unset($_SESSION['reg_error']);
     header('location: login.php');
   }
 
-  // if (count($errors) == 0) {
+  if (count($errors) == 0) {
     $password = md5($password); // password encrytion
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
@@ -107,7 +102,7 @@ if (isset($_POST['login_user'])) {
       header('location: login.php');
     }
   }
-// }
+}
 
 
 
