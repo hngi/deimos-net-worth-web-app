@@ -6,7 +6,7 @@ use PDO;
 
 class Auth {
     const DB_HOST = 'localhost';
-    const DB_NAME = 'deimos';
+    const DB_NAME = 'registration';
     const DB_USER = 'root';
     const DB_PASSWORD = '';
     const SHOW_ERRORS = false;

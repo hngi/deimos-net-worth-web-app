@@ -44,7 +44,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="server.php" method="POST">
+                    <form action="app/register.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
@@ -88,10 +88,10 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="server.php" method="POST">
+                    <form action="app/login.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
-                            <input class="form-control" type="text" name="username" placeholder="Username">
+                            <input class="form-control" type="text" name="email" placeholder="Username">
                         </div>
                         <div class="form-group general-input">
                             <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
@@ -115,8 +115,8 @@
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Hello Friend</h2>
-                    <p class="text-center main-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2 class="greetings text-center">Hey There</h2>
+                    <p class="text-center main-message">Let’s hop on the path to discovering the true worth of your wealth. Please, enter your personal details </p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN UP</label>
@@ -127,8 +127,9 @@
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Welcome</h2>
-                    <p class="text-center main-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2 class="greetings text-center">Welcome back</h2>
+                    <p class="text-center main-message">" Do you Know ? '____________' "  Finance and money quote database can be picked at random
+Proceed to know your financial Strengths NOW</p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN IN</label>
