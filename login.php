@@ -43,7 +43,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="register.php" method="POST">
+                    <form action="server.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
@@ -52,10 +52,10 @@
                             <input class="form-control" type="text" name="username" placeholder="USERNAME">
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="password" name="password_1" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="password" name="password_2" id="" placeholder="CONFIRM PASSWORD">
+                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD">
                         </div>
                         <div class="text-center">
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
@@ -87,10 +87,10 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="checkin.php" method="POST">
+                    <form action="server.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
-                            <input class="form-control" type="text" name="email" placeholder="Username">
+                            <input class="form-control" type="text" name="username" placeholder="Username">
                         </div>
                         <div class="form-group general-input">
                             <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
