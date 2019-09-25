@@ -19,14 +19,14 @@ const addElement = (type) => {
     newInput.type = 'text';
     newInput.placeholder = '0 NGN';
     newBlock.classList.add('form-group');
-    if(type == 'Asset'){
+    if(type === 'Asset'){
         newLabel.textContent = newAsset.value;
         newBlock.appendChild(newLabel);
         newBlock.appendChild(newInput);
         asset.appendChild(newBlock);
         console.log(newBlock);
     }
-    else if (type == 'Liability'){
+    else if (type === 'Liability'){
         newLabel.textContent = newLiability.value;
         newBlock.appendChild(newLabel);
         newBlock.appendChild(newInput);
