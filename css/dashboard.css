@@ -80,3 +80,11 @@ main .get-started:hover {
    color: #fff;
 }
 
+#btn-css {
+   background-color: #6D1AD8 !important;
+   color: #fff !important;
+   border:2px solid #fff !important;
+   border-radius: 25px !important;
+   margin-left: 10px !important;
+}
+

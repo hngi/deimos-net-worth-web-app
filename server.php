@@ -110,4 +110,12 @@ if (isset($_POST['get_networth'])) {
   
 }
 
+if (isset($_GET['logout'])){
+      session_destroy();
+      unset($_SESSION['username']);
+      unset($_SESSION['success']);
+      unset($_SESSION['net_worth']);
+      header('location: index.php',200);
+}
+
 ?>

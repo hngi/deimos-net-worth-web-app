@@ -37,10 +37,14 @@ $success    = $_SESSION['success'];
                 </li>
                 <?php else: ?>
                 <li class="nav-item">
-                   <span class="dashboard-header-span">hello <?php echo $username;?></span>  
+                   <span class="dashboard-header-span">Hello, <?php echo $username;?></span>  
                 </li>
                 <?php endif; ?>
             </ul>
+
+                <form action="server.php" method="GET">
+                    <button type="submit" id="btn-css" name="logout">Logout</button>
+                </form>
             </div>
         </nav>
     </header>
