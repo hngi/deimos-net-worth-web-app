@@ -1,3 +1,69 @@
+<?php
+
+require('db_connect.php');
+
+session_start();
+
+$login_error = '';
+if (isset($_POST['login'])) {
+    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password = md5($password);
+
+    $user_check = "SELECT * from users where email = '$email'";
+    $result = mysqli_query($conn, $user_check);
+    $user = mysqli_fetch_assoc($result);
+    if ($user) {
+        if ($user['email'] === $email) {
+            $_SESSION['email'] = $email;
+            header('location: dashboard.php');
+        }
+        
+    }else{
+        $login_error = "Invalid email or password";
+    
+    }
+}
+
+$signup_error = '';
+
+if (isset($_POST['register'])) {
+    
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    if (empty($password || strlen($password) < 8)) {
+        $signup_error = "Minimum password length is 8 characters";
+    }elseif ($password != $confirm_password) {
+        $signup_error = "Passwords do not match";
+        
+    }else{
+        $password = md5($password);
+        
+        $user_check = "SELECT * from users where email = '$email'";
+        $result = mysqli_query($conn, $user_check);
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user) {
+            if ($user['email'] === $email) {
+                $signup_error= "Email already exists";
+            }
+        }else{
+            $query = "INSERT into users (`username`, `email`, `password`) VALUES ('$username', '$email', '$password')";
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+                header('location: login.php');
+            }
+        
+        }
+    }
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +73,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="og:title" property="og:title" content="">
-    <link href="index.html" rel="canonical">
+    <link href="index.php" rel="canonical">
     <title>Deimos Login | Calculate Your Net Worth</title>
     <link rel="stylesheet" href="css/login.css">
     <!-- <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
@@ -22,8 +88,8 @@
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
             <div class="col-sm signup-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand hide-for-large" href="index.html"><img src="./img/networth logo.svg"></a>
-                    <a class="navbar-brand hide-for-small" href="index.html"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-large" href="index.php"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/networth logo.svg"></a>
                 </nav>
                 <section>
                     <p class="text-center guide">SIGN UP WITH...</p>
@@ -40,22 +106,23 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="">
-                        <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
+                    <form action="login.php" method="post" id="format">
+                        <h4>SIGN UP</h4>
+                        <p class="error_message"><?php echo $signup_error ?></p>
                         <div class="form-group general-input">
-                            <input class="form-control" type="email" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="text" placeholder="USERNAME">
+                            <input class="form-control" type="text" name="username" placeholder="USERNAME">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD" required minlength="8">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="CONFIRM PASSWORD">
+                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD" required minlength="8">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN UP" class="btn btn-default">
+                            <input type="submit" value="SIGN UP" name="register" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center hide-for-large">
@@ -67,7 +134,7 @@
             </div>
             <div class="col-sm signin-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg" alt="Team Logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="./img/networth logo.svg" alt="Team Logo"></a>
                 </nav>
                 <section>
                     <p class="text-center guide">SIGN IN WITH...</p>
@@ -84,16 +151,17 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="">
-                        <h4>SIGN IN WITH EMAIL</h4>
+                    <form action="login.php" method="post">
+                        <h4>SIGN IN</h4>
+                        <p class="error_message"><?php echo $login_error ?></p>
                         <div class="form-group general-input">
-                            <input class="form-control" type="email" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" placeholder="EMAIL ADDRESS" name="email">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD" required minlength="8">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN IN" class="btn btn-default">
+                            <input type="submit" value="SIGN IN" name="login" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center forgotten-pass">

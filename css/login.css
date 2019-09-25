@@ -481,3 +481,8 @@ form div a.btn-default, input.btn-default{
         position: relative;
     }
 }
+
+.error_message {
+    color: #ff0000;
+    text-align: center;
+}
