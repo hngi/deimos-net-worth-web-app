@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,6 @@ session_start();
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
-                        <?php include('reg_error.php'); ?>
                         <div class="form-group general-input">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
                         </div>
@@ -90,7 +89,6 @@ session_start();
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
-                        <?php include('error.php'); ?>
                         <div class="form-group general-input">
                             <input class="form-control" type="text" name="username" placeholder="Username">
                         </div>
