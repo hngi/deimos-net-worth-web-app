@@ -102,7 +102,8 @@ a.sign-in-common{
     border: 1px solid #d2d3d3;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 0;
+    /* border-radius: 0; */
+    border-radius: 10px 0px 10px 10px;
 }
 
 .sign-in-common span{
@@ -192,11 +193,17 @@ form div a.btn-default, input.btn-default{
 }
 form div a.btn-default, input.btn-default{
     color: #fff;
-    width: 242.89px;
+    /* width: 242.89px; */
+    background: rgb(109, 26, 216);
+    width: 141px;
     padding: 12px 0; /* Sums up the height to 48px*/
-    background: linear-gradient(90deg, #3498DB 0%, rgba(255, 255, 255, 0) 100.05%), #005073;
-    border-radius: 4px;
+    /* background: linear-gradient(90deg, #3498DB 0%, rgba(255, 255, 255, 0) 100.05%), #005073; */
+    /* border-radius: 4px; */
     box-sizing: content-box;
+    border-radius: 10px 0px 10px 10px;
+}
+.signin-wrapper input.btn-default{
+    background: rgb(109, 26, 216);
 }
 .signup-wrapper form > div a.btn-default, input.btn-default{
     background: #fff;
@@ -369,7 +376,8 @@ form div a.btn-default, input.btn-default{
         height: 35.58px;
         line-height: 35.58px;
         border: 1px solid #D2D3D3;
-        border-radius: 0;
+        /* border-radius: 0; */
+        border-radius: 10px 0px 10px 10px;
     }
     /* Grid */
     .col-sm section{
@@ -433,7 +441,8 @@ form div a.btn-default, input.btn-default{
         padding-top: 10px;
         padding-bottom: 10px;
         border: 2px solid #fff;
-        border-radius: 6px;
+        /* border-radius: 6px; */
+        border-radius: 10px 0px 10px 10px;
         color: #fff;
     }
 
