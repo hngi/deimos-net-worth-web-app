@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-
 	// variable declaration
 	$username = "";
 	$email    = "";
@@ -8,7 +7,13 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'registration');
+  $db = mysqli_connect('localhost', 'root', '', 'registration');
+  
+  // Check connection
+  if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
@@ -109,7 +114,7 @@ if (isset($_POST['get_networth'])) {
     header('location: dashboard.php'); //redirect to dasboard.php
 
   } 
-  else //if the fields are empty  this block executes
+  else //if the fields are empty this block executes
   {
     array_push($errors, "All fields are required");
     $_SESSION['error'] = $errors;
