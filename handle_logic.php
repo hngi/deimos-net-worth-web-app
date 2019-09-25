@@ -9,6 +9,7 @@
 	// connect to database
   $db = mysqli_connect('localhost', 'root', '', 'registration');
   
+ 
   // Check connection
   if (mysqli_connect_errno())
   {
@@ -43,6 +44,11 @@
 			$_SESSION['success'] = "You are now logged in";
 			header('location: index.php');
 		}
+		else {
+			echo "error count greater than o";
+			print_r($errors);
+			die;
+		}
 
 	}
 
@@ -50,6 +56,7 @@
 
 	// LOGIN USER
 	if (isset($_POST['login_user'])) {
+		
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -72,6 +79,10 @@
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}
+		}else {
+			echo "error count greater than o";
+			print_r($errors);
+			die;
 		}
   }
   
