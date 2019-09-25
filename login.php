@@ -1,5 +1,4 @@
 <?php
-// include
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="app/register.php" method="POST">
+                    <form action="register.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
@@ -88,7 +87,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="app/login.php" method="POST">
+                    <form action="checkin.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
                             <input class="form-control" type="text" name="email" placeholder="Username">
