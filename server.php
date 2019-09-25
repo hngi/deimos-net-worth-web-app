@@ -6,7 +6,7 @@ $email    = "";
 $errors = array(); 
 
 // this connect to the database
-$db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+$db = mysqli_connect('localhost', 'root', '', 'registration');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -60,11 +60,11 @@ if (isset($_POST['reg_user'])) {
     $query = "INSERT INTO users (username, email, password) 
           VALUES('$username', '$email', '$password')";
     mysqli_query($db, $query);
-    $_SESSION['username'] = $username;
-    $_SESSION['success'] = "You are now logged in";
+  
+    // $_SESSION['username'] = $username;
+    // $_SESSION['success'] = "You are now logged in";
     
-    unset($_SESSION['reg_error']);
-    unset($_SESSION['error']);
+    
     
     
     header('location: index.php');
@@ -91,7 +91,7 @@ if (isset($_POST['login_user'])) {
     header('location: login.php');
   }
 
-  if (count($errors) == 0) {
+  // if (count($errors) == 0) {
     $password = md5($password); // password encrytion
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
@@ -107,7 +107,7 @@ if (isset($_POST['login_user'])) {
       header('location: login.php');
     }
   }
-}
+// }
 
 
 
@@ -166,6 +166,8 @@ if (isset($_GET['logout'])){
       session_destroy();
       unset($_SESSION['username']);
       unset($_SESSION['success']);
+      unset($_SESSION['error']);
+      unset($_SESSION['reg_error']);
       unset($_SESSION['net_worth']);
       header('location: index.php'); //redirects to index.php
 }
