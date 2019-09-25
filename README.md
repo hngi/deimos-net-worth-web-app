@@ -12,4 +12,4 @@ Input Cash
 
 Input Liability
 
-Application Calculates the total net worth of the user at that point in time.
+application Calculates the total net worth of the user at that point in time.

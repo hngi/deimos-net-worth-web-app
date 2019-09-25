@@ -1,5 +1,5 @@
 <?php 
-namespace php_server;
+namespace app;
 use PDO;
 
 
@@ -75,15 +75,6 @@ class Auth {
     {
         $this->con = null;
     }
-
-
-    public function is_loggedin()
-    {
-        if(isset($_SESSION['user_session']))
-        {
-            return true;
-        }
-    }
     
     public function redirect($url)
     {
@@ -93,7 +84,7 @@ class Auth {
     public function logout()
     {
             session_destroy();
-            unset($_SESSION['user_session']);
+            unset($_SESSION['data']);
             return true;
     }
 

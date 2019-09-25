@@ -13,7 +13,7 @@ $data = $_SESSION['data'];
     
 
     <h1>Logout</h1>
-    <form action="php_server/Logout.php" method="POST">
+    <form action="app/logout.php" method="POST">
         
         <button type="submit">Logout</button>
     </form>
