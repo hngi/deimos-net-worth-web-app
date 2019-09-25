@@ -377,7 +377,6 @@ label.box>span {
         margin-bottom: 0;
     }
     .row input.form-control {
-        text-transform: uppercase;
         color: rgba(0, 0, 0, 0.38);
     }
     section .form-group {
