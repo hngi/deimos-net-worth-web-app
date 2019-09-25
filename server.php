@@ -24,6 +24,9 @@ if (isset($_POST['reg_user'])) {
   if (empty($password)) { array_push($errors, "Password is required"); }
   if ($password != $confirm_password) {
   array_push($errors, "The two passwords do not match");
+      $_SESSION['reg_error'] = $errors;
+      unset($_SESSION['error']);
+      header('location: login.php');
   }
 
   // check database for user, username and email check
@@ -36,11 +39,17 @@ if (isset($_POST['reg_user'])) {
   if ($user) {
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
+      $_SESSION['reg_error'] = $errors;
+      unset($_SESSION['error']);
+      header('location: login.php');
     }
 
     if ($user['email'] === $email) {
-      echo "hello hi";  
+       
       array_push($errors, "email already exists");
+      $_SESSION['reg_error'] = $errors;
+      unset($_SESSION['error']);
+      header('location: login.php');
     }
   }
 
@@ -54,12 +63,15 @@ if (isset($_POST['reg_user'])) {
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
     
+    unset($_SESSION['reg_error']);
+    unset($_SESSION['error']);
+    
+    
     header('location: index.php');
   }
 }
 
 // Login in registered users
-
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -67,10 +79,14 @@ if (isset($_POST['login_user'])) {
   if (empty($username)) {
     
     array_push($errors, "Username is required");
+    $_SESSION['error'] = $errors;
+    header('location: login.php');
   }
   if (empty($password)) {
     
     array_push($errors, "Password is required");
+    $_SESSION['error'] = $errors;
+    header('location: login.php');
   }
 
   if (count($errors) == 0) {
@@ -80,9 +96,12 @@ if (isset($_POST['login_user'])) {
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
       $_SESSION['success'] = "You are now logged in";
+      unset($_SESSION['error']);
       header('location: dashboard.php');
     }else {
       array_push($errors, "Wrong username/password combination");
+      $_SESSION['error'] = $errors;
+      header('location: login.php');
     }
   }
 }
@@ -91,36 +110,62 @@ if (isset($_POST['login_user'])) {
 
 
 if (isset($_POST['get_networth'])) {
-  $investments = mysqli_real_escape_string($db, $_POST['investments']);
-  $cash = mysqli_real_escape_string($db, $_POST['cash']);
-  $bank_account = mysqli_real_escape_string($db, $_POST['bank_account']);
-  $real_estate = mysqli_real_escape_string($db, $_POST['real_estate']);
-  $loans = mysqli_real_escape_string($db, $_POST['loans']);
-  $mortgages = mysqli_real_escape_string($db, $_POST['mortgages']);
-  $utility_bills = mysqli_real_escape_string($db, $_POST['utility_bills']);
-  $other_debts = mysqli_real_escape_string($db, $_POST['other_debts']);
+  /**
+   * Get data from the variosu fields
+   * @param $investmensts
+   * @param $cash
+   * @param $bank_account
+   * @param $real_estate
+   * @param $loans
+   * @param $mortgages
+   * @param $utility_bills
+   * @param $other_debts
+   */
+  $investments    = mysqli_real_escape_string($db, $_POST['investments']);
+  $cash           = mysqli_real_escape_string($db, $_POST['cash']);
+  $bank_account   = mysqli_real_escape_string($db, $_POST['bank_account']);
+  $real_estate    = mysqli_real_escape_string($db, $_POST['real_estate']);
+  $loans          = mysqli_real_escape_string($db, $_POST['loans']);
+  $mortgages      = mysqli_real_escape_string($db, $_POST['mortgages']);
+  $utility_bills  = mysqli_real_escape_string($db, $_POST['utility_bills']);
+  $other_debts    = mysqli_real_escape_string($db, $_POST['other_debts']);
 
+
+    /**
+     * Check the incoming fields to ensure they are filled with data. If filled this block excutes
+     */
   if (!empty($loans) || !empty($mortgages) || !empty($real_estate) || !empty($investments)
    || !empty($cash) || !empty($bank_account) || !empty($utility_bills) || !empty($other_debts) ) {
 
-    $assets = $investments + $cash + $bank_account + $real_estate;
-    $liability = $loans + $mortgages + $utility_bills + $other_debts;
-    $netWorth = $assets - $liability;
+    $assets     = $investments + $cash + $bank_account + $real_estate; //calculates the assets
+    $liability  = $loans + $mortgages + $utility_bills + $other_debts; //calculate the liabilities
+    $netWorth   = $assets - $liability;                                //calculates the networth
+
     // place networth in session
     $_SESSION['net_worth'] = $netWorth;
-    header('location: dashboard.php');
-  } else {
+    header('location: dashboard.php'); //redirect to dasboard.php
+
+  } 
+  else //if the fields are empty  this block executes
+  {
     array_push($errors, "All fields are required");
+    $_SESSION['error'] = $errors;
+    header('location: login.php');
   }
   
 }
 
+
+/**
+ * Performs Logout by destroying and unsetting the sessions
+ */
 if (isset($_GET['logout'])){
       session_destroy();
       unset($_SESSION['username']);
       unset($_SESSION['success']);
       unset($_SESSION['net_worth']);
-      header('location: index.php');
+      header('location: index.php'); //redirects to index.php
 }
+
 
 ?>
