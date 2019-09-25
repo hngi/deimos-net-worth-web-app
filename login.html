@@ -43,16 +43,17 @@
                     <form action="https://hngi.github.io/deimos-net-worth-web-app/dashboard.html">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                         <div class="form-group general-input">
-                            <input class="form-control" type="email" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"
+ placeholder="EMAIL ADDRESS">
                         </div>
                         <div class="form-group general-input">
                             <input class="form-control" type="text" placeholder="USERNAME">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD" required>
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="CONFIRM PASSWORD">
+                            <input class="form-control" type="password" name="" id="" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="text-center">
                             <input type="submit" value="SIGN UP" class="btn btn-default">
@@ -87,10 +88,10 @@
                     <form action="https://hngi.github.io/deimos-net-worth-web-app/dashboard.html">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
-                            <input class="form-control" type="email" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="" id="" placeholder="PASSWORD" required>
                         </div>
                         <div class="text-center">
                             <input type="submit" value="SIGN IN" class="btn btn-default">
