@@ -1,64 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-body{
+body {
     background-color: #000;
     font-weight: 100;
 }
-html{
+
+html {
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     position: absolute;
     opacity: 0;
 }
+
 .btn,
 input.form-control:active,
-input.form-control:focus{
+input.form-control:focus {
     outline: 0;
     border: 0;
     box-shadow: none;
 }
-.col-sm{
+
+.col-sm {
     padding: 0;
 }
-.container-fluid{
+
+.container-fluid {
     height: 100vh;
     overflow: hidden;
 }
-.row{
+
+.row {
     height: 100vh;
     position: relative;
     height: 100%;
     overflow: hidden;
 }
-nav.navbar{
+
+nav.navbar {
     height: 56px;
     padding: 0 0 0 10px;
     margin: 0;
 }
-.signup-wrapper nav.navbar{
+
+.signup-wrapper nav.navbar {
     /* background: #3498DB; */
     background: #6D1AD8;
     box-shadow: 0px 3px 15px #005073;
 }
-.signin-wrapper nav.navbar{
+
+.signin-wrapper nav.navbar {
     background: #FFFFFF;
     box-shadow: 0px 3px 15px #D9D9D9;
 }
-.navbar img{
+
+.navbar img {
     object-fit: cover;
     height: 39.6px;
     width: 48px;
-    background: #6D1AD8;
-
 }
-.col-sm.signup-wrapper, .col-sm.signin-wrapper{
+
+.col-sm.signup-wrapper,
+.col-sm.signin-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
-
 }
-.col-sm.signup-wrapper{
+
+.col-sm.signup-wrapper {
     top: 100%;
     transition: top 0s 1s;
     color: #fff;
@@ -66,33 +76,38 @@ nav.navbar{
     /* background: linear-gradient(180deg, #3498DB 0%, rgba(255, 255, 255, 0) 100%), #00375e; */
 }
 
-.col-sm.signin-wrapper{
+.col-sm.signin-wrapper {
     top: 0;
     transition: top 1s;
     background: #fff;
     color: #000;
 }
 
+
 /* Page actions */
 
-input#toggle_signin:checked ~ .col-sm.signup-wrapper{
+input#toggle_signin:checked~.col-sm.signup-wrapper {
     top: 0;
     z-index: 1;
     transition: top 1s;
 }
-input#toggle_signin:checked ~ .col-sm.signin-wrapper{
+
+input#toggle_signin:checked~.col-sm.signin-wrapper {
     top: -100%;
     transition: top 0s 1s;
 }
 
 
 /* Section */
-section > p{
+
+section>p {
     padding: 26px 0 21px 0;
 }
 
+
 /* Social */
-a.sign-in-common{
+
+a.sign-in-common {
     display: inline-block;
     color: #000;
     background-color: #fff;
@@ -106,37 +121,43 @@ a.sign-in-common{
     border-radius: 10px 0px 10px 10px;
 }
 
-.sign-in-common span{
+.sign-in-common span {
     font-size: 14px;
     vertical-align: middle;
 }
 
-.sign-in-common img{
+.sign-in-common img {
     width: 14px;
-    height: 14px;;
+    height: 14px;
+    ;
     object-fit: cover;
     display: inline-block;
 }
 
-.sign-in-fb span{
+.sign-in-fb span {
     padding-left: 8px;
 }
-.sign-in-google span{
+
+.sign-in-google span {
     padding-left: 16px
 }
 
+
 /* Page Divider */
-section{
+
+section {
     padding: 0 17px;
     position: absolute;
     /* z-index: 1; */
     width: 100%;
 }
-.page-divider{
+
+.page-divider {
     padding: 27px 0;
     /* background-color: red; */
 }
-.page-divider hr{
+
+.page-divider hr {
     border: 1px solid #d2d3d3;
     /* width: calc(50% - 14px); */
     width: calc(50% - 20px);
@@ -144,31 +165,38 @@ section{
     margin-bottom: 0px;
 }
 
-.register-container{
+.register-container {
     position: relative;
     height: 100%;
     overflow: hidden;
 }
+
+
 /* Form area */
-form{
+
+form {
     margin-bottom: 34px;
 }
-form h4{
+
+form h4 {
     text-align: center;
     padding-bottom: 40px;
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
 }
-.signup-wrapper form h4{
+
+.signup-wrapper form h4 {
     padding-bottom: 20px;
 }
-input.form-control{
+
+input.form-control {
     border: none;
     outline: none;
     border-radius: 0;
 }
-section input.form-control{
+
+section input.form-control {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     padding: 8px 0;
     font-size: 1rem;
@@ -176,97 +204,113 @@ section input.form-control{
     width: 100%;
     background-color: transparent;
 }
-.signup-wrapper input.form-control{
+
+.signup-wrapper input.form-control {
     border-bottom: 1.5px solid #fff;
     background-color: transparent;
     color: #fff;
 }
-.form-control::placeholder{
+
+.form-control::placeholder {
     color: rgba(0, 0, 0, 0.38);
     line-height: 24px;
 }
-.signup-wrapper .form-control::placeholder{
+
+.signup-wrapper .form-control::placeholder {
     color: #fff;
 }
-form div a.btn-default, input.btn-default{
+
+form div a.btn-default,
+input.btn-default {
     background-color: #fff;
 }
-form div a.btn-default, input.btn-default{
+
+form div a.btn-default,
+input.btn-default {
     color: #fff;
     /* width: 242.89px; */
     background: rgb(109, 26, 216);
     width: 141px;
-    padding: 12px 0; /* Sums up the height to 48px*/
+    padding: 12px 0;
+    /* Sums up the height to 48px*/
     /* background: linear-gradient(90deg, #3498DB 0%, rgba(255, 255, 255, 0) 100.05%), #005073; */
     /* border-radius: 4px; */
     box-sizing: content-box;
     border-radius: 10px 0px 10px 10px;
 }
-.signin-wrapper input.btn-default{
+
+.signin-wrapper input.btn-default {
     background: rgb(109, 26, 216);
 }
-.signup-wrapper form > div a.btn-default, input.btn-default{
+
+.signup-wrapper form>div a.btn-default,
+input.btn-default {
     background: #fff;
     color: #000;
 }
 
-.col-sm.signin-wrapper section .forgotten-pass{
+.col-sm.signin-wrapper section .forgotten-pass {
     font-size: 12px;
     margin-bottom: 57px;
     color: #000;
 }
-.signup-wrapper .returning-visitor{
+
+.signup-wrapper .returning-visitor {
     color: #fff;
 }
-.signin-wrapper .returning-visitor{
+
+.signin-wrapper .returning-visitor {
     color: #000;
 }
-.info{
-    display: none;
-}
-.hide-for-small.navbar-brand{
+
+.info {
     display: none;
 }
 
+.hide-for-small.navbar-brand {
+    display: none;
+}
 
-@media only screen and (max-height: 679px){
-    form{
+@media only screen and (max-height: 679px) {
+    form {
         margin-bottom: 0;
     }
-    .col-sm.signup-wrapper form > a{
+    .col-sm.signup-wrapper form>a {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    section .forgotten-pass{
+    section .forgotten-pass {
         margin-bottom: 0;
     }
-    .general-input input{
+    .general-input input {
         margin-bottom: 30px;
         font-size: 14px;
         font-weight: normal;
     }
-    .col-sm.signup-wrapper .general-input input{
+    .col-sm.signup-wrapper .general-input input {
         margin-bottom: 20px;
         font-size: 14px;
         font-weight: normal;
     }
-    section > a{
+    section>a {
         padding: 10px 0;
         margin: 0;
     }
 }
 
-@media only screen and (max-height: 679px){
-    .col-sm.signup-wrapper, .col-sm.signin-wrapper{
+@media only screen and (max-height: 679px) {
+    .col-sm.signup-wrapper,
+    .col-sm.signin-wrapper {
         overflow-y: scroll;
     }
 }
-@media only screen and (min-width: 700px){
-    body .container-fluid{
+
+@media only screen and (min-width: 700px) {
+    body .container-fluid {
         /* background: linear-gradient(90deg, #11465E 4.59%, #2981BB 88.87%); */
         background: rgb(109, 26, 216);
     }
-    .row{
+    .row {
         height: 597px;
         width: 861px;
         background: #fff;
@@ -278,11 +322,12 @@ form div a.btn-default, input.btn-default{
         position: absolute;
     }
     .signup-wrapper nav.navbar,
-    .signin-wrapper nav.navbar{
+    .signin-wrapper nav.navbar {
         box-shadow: none;
         background: none;
     }
-    .col-sm.signup-wrapper, .col-sm.signin-wrapper{
+    .col-sm.signup-wrapper,
+    .col-sm.signin-wrapper {
         position: absolute;
         top: 0;
         width: 486px;
@@ -290,40 +335,40 @@ form div a.btn-default, input.btn-default{
         right: initial;
         overflow-y: visible;
     }
-    .col-sm.signin-wrapper{
+    .col-sm.signin-wrapper {
         opacity: 1;
         transition: left 0.6s, opacity 0.6s;
     }
-    .col-sm.signup-wrapper{
+    .col-sm.signup-wrapper {
         opacity: 0;
         z-index: 0;
         transition: left 0.6s, opacity 0.6s;
-        background:  #fff;
+        background: #fff;
         color: #000;
     }
-    .page-divider{
+    .page-divider {
         margin-top: 0;
         margin-bottom: 0;
         padding: 0;
     }
-    .row form h4{
+    .row form h4 {
         font-size: 26px;
         padding-bottom: 0;
     }
-    section{
+    section {
         padding: 0 79px;
     }
-    section form{
+    section form {
         margin-bottom: 0;
     }
-    .row input.form-control{
+    .row input.form-control {
         text-transform: uppercase;
         color: rgba(0, 0, 0, 0.38);
     }
-    section .form-group{
+    section .form-group {
         margin-bottom: 0;
     }
-    section .form-group input.form-control{
+    section .form-group input.form-control {
         margin-bottom: 0px;
         font-size: 16px;
         padding-bottom: 15px;
@@ -332,23 +377,25 @@ form div a.btn-default, input.btn-default{
         height: 24px;
         line-height: 24px;
     }
-    .signup-wrapper section .form-group input.form-control{
+    .signup-wrapper section .form-group input.form-control {
         padding-top: 30px;
         padding-bottom: 15px;
         border-bottom: 1.5px solid #d3d3d3;
         background-color: transparent;
     }
-    section > p{
+    section>p {
         padding: 19px 0;
     }
-    .signup-wrapper section > p{
+    .signup-wrapper section>p {
         margin: 0;
     }
-    section form > div a.btn-default, input.btn-default{
+    section form>div a.btn-default,
+    input.btn-default {
         margin-top: 53px;
         width: 203px;
     }
-    .signup-wrapper form > div a.btn-default, input.btn-default{
+    .signup-wrapper form>div a.btn-default,
+    input.btn-default {
         background: rgb(109, 26, 216);
         /* background: linear-gradient(90.43deg, #3498DB 0.11%, rgba(255, 255, 255, 0) 97.72%), #005073; */
         color: #fff;
@@ -356,23 +403,22 @@ form div a.btn-default, input.btn-default{
         margin-top: 45px;
         margin-bottom: 15px;
     }
-    .col-sm.signup-wrapper .general-input input{
+    .col-sm.signup-wrapper .general-input input {
         margin-bottom: 0;
     }
     .row .form-control::placeholder,
-    .signup-wrapper .form-control::placeholder{
+    .signup-wrapper .form-control::placeholder {
         color: rgba(0, 0, 0, 0.38);
         line-height: 24px;
     }
-
     .hide-for-large.navbar-brand,
-    .hide-for-large{
+    .hide-for-large {
         display: none;
     }
-    .hide-for-small.navbar-brand{
+    .hide-for-small.navbar-brand {
         display: block;
     }
-    a.sign-in-common{
+    a.sign-in-common {
         height: 35.58px;
         line-height: 35.58px;
         border: 1px solid #D2D3D3;
@@ -380,49 +426,47 @@ form div a.btn-default, input.btn-default{
         border-radius: 10px 0px 10px 10px;
     }
     /* Grid */
-    .col-sm section{
+    .col-sm section {
         display: grid;
         grid-template-columns: auto;
     }
-    .col-sm section form{
+    .col-sm section form {
         grid-column: 1/3;
         grid-row: 1;
     }
-    .col-sm.signin-wrapper section .forgotten-pass{
+    .col-sm.signin-wrapper section .forgotten-pass {
         grid-column: 1/3;
         grid-row: 2;
         margin: 27px 0 35px 0;
     }
     .signin-wrapper .page-divider,
-    .signup-wrapper .guide{
+    .signup-wrapper .guide {
         grid-column: 1/3;
         grid-row: 3;
     }
-    .signup-wrapper .page-divider{
+    .signup-wrapper .page-divider {
         grid-column: 1/3;
         grid-row: 2;
     }
     .signin-wrapper .guide,
-    .signup-wrapper .sign-in-with-social{
+    .signup-wrapper .sign-in-with-social {
         grid-column: 1/3;
         grid-row: 4;
     }
-    .signin-wrapper .sign-in-with-social{
+    .signin-wrapper .sign-in-with-social {
         grid-column: 1/3;
         grid-row: 5;
     }
-
-    input#toggle_signup_1:checked ~ .row .info div.a{
+    input#toggle_signup_1:checked~.row .info div.a {
         left: -100%;
         opacity: 0;
     }
-    input#toggle_signup_1:checked ~ .row .info div.b{
+    input#toggle_signup_1:checked~.row .info div.b {
         right: 0;
         opacity: 1;
     }
-
     /* INFO */
-    .info{
+    .info {
         display: block;
         height: 100%;
         width: 375px;
@@ -435,7 +479,7 @@ form div a.btn-default, input.btn-default{
         overflow: hidden;
         color: #fff;
     }
-    .info label{
+    .info label {
         background-color: transparent;
         width: 203px;
         padding-top: 10px;
@@ -445,48 +489,48 @@ form div a.btn-default, input.btn-default{
         border-radius: 10px 0px 10px 10px;
         color: #fff;
     }
-
-    .info div.a, .info div.b{
+    .info div.a,
+    .info div.b {
         position: absolute;
         top: 0;
         width: 100%;
     }
-    .info div.a{
+    .info div.a {
         left: 0;
         transition: left 0.6s, opacity 0.6s;
         opacity: 1;
     }
-    .info div.b{
+    .info div.b {
         opacity: 0;
         right: -100%;
         transition: right 0.6s, opacity 0.6s;
     }
-
-    .info > .a > a, .info > .b > a{
+    .info>.a>a,
+    .info>.b>a {
         margin-top: 133px;
         margin-bottom: 32px;
     }
-    .main-message{
+    .main-message {
         width: 330px;
         margin: 0 auto;
         margin-top: 51px;
         margin-bottom: 77px;
     }
-    input#toggle_signup_1:checked ~ .row .info{
+    input#toggle_signup_1:checked~.row .info {
         right: calc(100% - 375px);
     }
-    input#toggle_signup_1:checked ~ .row .col-sm.signin-wrapper,
-    input#toggle_signup_1:checked ~ .row .col-sm.signup-wrapper{
+    input#toggle_signup_1:checked~.row .col-sm.signin-wrapper,
+    input#toggle_signup_1:checked~.row .col-sm.signup-wrapper {
         left: calc(100% - 486px);
     }
-    input#toggle_signup_1:checked ~ .row .col-sm.signin-wrapper{
+    input#toggle_signup_1:checked~.row .col-sm.signin-wrapper {
         opacity: 0;
     }
-    input#toggle_signup_1:checked ~ .row .col-sm.signup-wrapper{
+    input#toggle_signup_1:checked~.row .col-sm.signup-wrapper {
         opacity: 1;
         z-index: 1;
     }
-    .container-fluid{
+    .container-fluid {
         position: relative;
     }
 }
