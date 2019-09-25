@@ -22,7 +22,7 @@ spl_autoload_register(function ($class) {
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="./img/networth logo.svg">
+    <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
     <title>Deimos' Networth Calculator | Calculate your networth</title>
 </head>
 
@@ -63,7 +63,7 @@ spl_autoload_register(function ($class) {
                         <p><i class="fas fa-check pr-3"></i>Begin plotting your future projections</p>
                         <p><i class="fas fa-check pr-3"></i>or just use it for fun</p>
                     </div>
-                    <form action="login.php>
+                    <form action="login.php">
                     <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Get Started</button>
                   </form>
                 </div>
@@ -79,4 +79,5 @@ spl_autoload_register(function ($class) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

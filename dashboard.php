@@ -18,7 +18,9 @@ $success    = $_SESSION['success'];
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
