@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+      
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(-45deg, rgba(184, 160, 228, 0.952) ,rgba(176, 160, 192, 0.753),rgba(223, 215, 243, 0.78) ,rgba(196, 217, 223, 0.924)) , url(networthlogo.svg) 50% ;
+    background: linear-gradient(-45deg, rgba(184, 160, 228, 0.952) ,rgba(176, 160, 192, 0.753),rgba(223, 215, 243, 0.78) ,rgba(196, 217, 223, 0.924));
     height: 100vh;
     width: 100%;
     background-size: cover;
@@ -15,6 +15,7 @@ body{
 }
 .all{
     display: flex; 
+    font-family: 'ChomskyRegular';
 }
 .seal{
     flex: 1;
@@ -25,11 +26,10 @@ body{
     width: 100%;
     height: 100vh;
     padding-left: 4.6em;
-    margin-top: 50px;      
+    margin-top: 40px;      
 }
 h1{
     color:rgba(85, 32, 182, 0.952);
-    margin-bottom: 0px;
     text-align: center;
     margin-bottom: 40px;
     text-transform: capitalize;
@@ -40,7 +40,6 @@ h1{
     text-align: center
 }
 .signature{
-    /* float: right; */
     left: 30%;
     position: relative;
 }
@@ -61,7 +60,7 @@ p{
     line-height: 1.2em;
 }
 .rated{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .net{
     margin-bottom: 30px;
@@ -73,4 +72,8 @@ p{
 }
 .date{
     margin-top: 31px;
+    font-family:cursive;
+}
+b{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
