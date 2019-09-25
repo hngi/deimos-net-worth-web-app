@@ -8,17 +8,17 @@ body {
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     opacity: 0.9;
     height: 100vh;
+    padding-top: 5px;
 }
 
 h1,
 h4,
 p{
     font-family: 'ChomskyRegular';
-    text-align: center;
 }
 
 h1{
-    font-size: 2.9rem;
+    font-size: 2.2rem;
 }
 
 .logo {
@@ -28,7 +28,7 @@ h1{
 
 .text{
     font-family: 'Pacifico', cursive;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 /*Medium devices (tablets, 768px and up) */
@@ -55,6 +55,7 @@ h1{
     h4,
     .text{ 
         font-size: 2rem;
+        margin-top: 5px;
     }
 
     p{
