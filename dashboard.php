@@ -1,9 +1,21 @@
 <?php
 session_start();
 
+
+
+
+if(isset($_SESSION['error'])){
+    $error = $_SESSION['error'];
+}
+
+if(isset($_SESSION['username'])){    
 $username   = $_SESSION['username'];
-$success    = $_SESSION['success'];
-$error      = $_SESSION['error'];
+}
+
+if(isset($_SESSION['success'])){
+    $success    = $_SESSION['success'];
+}
+
 
   
 
@@ -59,6 +71,7 @@ $error      = $_SESSION['error'];
             <div class="alert alert-primary">
             <h3>
                 <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
+                <?php  unset($_SESSION['net_worth']); ?>
             </h3>
             </div>
             <?php elseif(isset($error)): ?>
@@ -77,8 +90,9 @@ $error      = $_SESSION['error'];
             <div class="line-through"></div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+                <h1 class="form-caption">Assets</h1>
                     <form action="server.php" method="POST">
-                        <h1 class="form-caption">Assets</h1>
+                        
                         <div class="form-group">
                           <label for="Investments">Investments</label>
                           <input type="text" class="form-control" id="Investments" name="investments" placeholder="0 NGN">

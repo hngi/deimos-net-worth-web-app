@@ -4,6 +4,7 @@ session_start();
 	$username = "";
 	$email    = "";
 	$errors = array(); 
+	 
 	$_SESSION['success'] = "";
 
 	// connect to database
@@ -15,10 +16,14 @@ session_start();
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
 		if (empty($username)) {
-			array_push($errors, "Username is required");
+            array_push($errors, "Username is required");
+            $_SESSION['error'] = $errors;
+            // header('location: login.php');   
 		}
 		if (empty($password)) {
-			array_push($errors, "Password is required");
+            array_push($errors, "Password is required");
+            $_SESSION['error'] = $errors;
+            // header('location: login.php');
 		}
 
 		if (count($errors) == 0) {
@@ -31,10 +36,17 @@ session_start();
 				$_SESSION['success'] = "You are now logged in";
 				header('location: dashboard.php');
 			}else {
-				array_push($errors, "Wrong username/password combination");
+                array_push($errors, "Wrong username/password combination");
+                $_SESSION['error'] = $errors;
+                // header('location: login.php');
 			}
 		}
   }
+
+  if(isset($_SESSION['error'])){
+    $error = $_SESSION['error'];
+  }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +66,9 @@ session_start();
 
 <body>
     <div class="container-fluid">
+       
         <input type="checkbox" name="" id="toggle_signup_1">
-        <!-- <?php include('errors.php'); ?> -->
+        
         <div class="row my-auto">
             <input class="d-none" type="checkbox" name="" id="toggle_signin">
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
@@ -74,6 +87,10 @@ session_start();
                             <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
                         </a>
                     </div>
+
+                    
+
+
                     <div class="page-divider d-flex align-items-center">
                         <hr>
                         <span>OR</span>
@@ -81,6 +98,7 @@ session_start();
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
+                       
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
                         </div>
@@ -125,6 +143,10 @@ session_start();
                     </div>
                     <form action="login.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
+                        
+                        
+                        <?php include('error.php'); ?>
+                        <?php unset($_SESSION['error']); ?>
                         <div class="form-group general-input">
                             <input class="form-control" type="text" name="username" placeholder="Username">
                         </div>
