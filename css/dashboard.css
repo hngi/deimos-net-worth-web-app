@@ -88,3 +88,10 @@ main .get-started:hover {
    margin-left: 10px !important;
 }
 
+#badge-bg {
+   background-color: #6D1AD8;
+   color: #fff;
+   flex-direction: row;
+   
+}
+

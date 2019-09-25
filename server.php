@@ -32,12 +32,14 @@ if (isset($_POST['reg_user'])) {
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
+  
   if ($user) {
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
     }
 
     if ($user['email'] === $email) {
+      echo "hello hi";  
       array_push($errors, "email already exists");
     }
   }
@@ -51,6 +53,7 @@ if (isset($_POST['reg_user'])) {
     mysqli_query($db, $query);
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
+    
     header('location: index.php');
   }
 }
@@ -62,9 +65,11 @@ if (isset($_POST['login_user'])) {
   $password = mysqli_real_escape_string($db, $_POST['password']);
 
   if (empty($username)) {
+    
     array_push($errors, "Username is required");
   }
   if (empty($password)) {
+    
     array_push($errors, "Password is required");
   }
 
@@ -115,7 +120,7 @@ if (isset($_GET['logout'])){
       unset($_SESSION['username']);
       unset($_SESSION['success']);
       unset($_SESSION['net_worth']);
-      header('location: index.php',200);
+      header('location: index.php');
 }
 
 ?>
