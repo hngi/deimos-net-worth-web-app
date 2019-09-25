@@ -109,10 +109,10 @@ let tbl_assets = [
 {asset: 'Jewelry'},
 {asset: 'Retirement Accounts'},
 {asset: 'Social Security'},
-{asset: 'Other'},];
+{asset: 'Other'}];
 
 $.each(tbl_assets, function(key, value) {   
-     $('#add').append($("<option></option>")
+     $('.assets_unit').append($("<option></option>")
                     .attr("value",value)
                     .text(value.asset)); 
 });
@@ -143,10 +143,10 @@ const tbl_liability = [
 {liability: 'Student Loan'},
 {liability: 'Unpaid Taxes'},
 {liability: 'Money Owned Other'},
-{liability: 'Other Liabilities'},];
+{liability: 'Other Liabilities'}];
 
 $.each(tbl_liability, function(key, value) {   
-     $('#add2').append($("<option></option>")
+     $('.liability_unit').append($("<option></option>")
                     .attr("value",value)
                     .text(value.liability)); 
 });

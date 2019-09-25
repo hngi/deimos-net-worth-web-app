@@ -22,7 +22,7 @@
                 <img src="img/award.svg" alt="networth logo" class="logo" ;>
 
                 <h2>Certificate of Networth</h2>
-                <span><i>This is to certify that you have been rated a</i></span>
+                <span ><i id="certMsg"></i></span>
 
                 <br><br><br>
 
@@ -59,7 +59,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="width:150px; float:left; border:0; border-bottom:1px solid #000"></td>
+                        <td style="width:150px; float:left; border:0; border-bottom:1px solid #000; fon" ></td>
                     </tr>
                     <tr>
                         <td>
@@ -70,6 +70,20 @@
             </div>
         </div>
     </center>
+    <script>
+const logMsg = document.getElementById("certMsg");
+let userData = JSON.parse(localStorage.getItem("userData")) || [];//getting local storage data
+let email;
+let pass;
+let username;
+userData.map(profile => {
+    email = profile.email;
+    pass = profile.pass;
+    username = profile.username;
+     return logMsg.innerHTML = `<p>This is to certify that <b style="text-transform: uppercase;">${username} </b>have been rated a</p>`;
+   
+ });
+    </script>
 </body>
 
 </html>
