@@ -6,7 +6,7 @@ $email    = "";
 $errors = array(); 
 
 // this connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'registration');
+$db = mysqli_connect('localhost', 'root', '12345678', 'registration');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -80,12 +80,14 @@ if (isset($_POST['login_user'])) {
     
     array_push($errors, "Username is required");
     $_SESSION['error'] = $errors;
+    unset($_SESSION['reg_error']);
     header('location: login.php');
   }
   if (empty($password)) {
     
     array_push($errors, "Password is required");
     $_SESSION['error'] = $errors;
+    unset($_SESSION['reg_error']);
     header('location: login.php');
   }
 
@@ -96,11 +98,12 @@ if (isset($_POST['login_user'])) {
     if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
       $_SESSION['success'] = "You are now logged in";
-      unset($_SESSION['error']);
+      
       header('location: dashboard.php');
     }else {
       array_push($errors, "Wrong username/password combination");
       $_SESSION['error'] = $errors;
+      unset($_SESSION['reg_error']);
       header('location: login.php');
     }
   }
