@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     $password = md5($password);
 
-    $user_check = "SELECT * from users where email = '$email'";
+    $user_check = "SELECT * from users where email = '$email' and password = '$password'";
     $result = mysqli_query($conn, $user_check);
     $user = mysqli_fetch_assoc($result);
     if ($user) {
