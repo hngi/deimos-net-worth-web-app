@@ -43,7 +43,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="server.php" method="POST">
+                    <form action="handle_logic.php" method="POST">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
@@ -87,7 +87,7 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="server.php" method="POST">
+                    <form action="handle_logic.php" method="POST">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
                             <input class="form-control" type="text" name="username" placeholder="Username">
