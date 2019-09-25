@@ -3,6 +3,7 @@ session_start();
 
 $username   = $_SESSION['username'];
 $success    = $_SESSION['success'];
+$error      = $_SESSION['error'];
 
   
 
@@ -18,7 +19,9 @@ $success    = $_SESSION['success'];
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
@@ -58,6 +61,12 @@ $success    = $_SESSION['success'];
                 <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
             </h3>
             </div>
+            <?php elseif(isset($error)): ?>
+            <div class="alert alert-danger">
+            <?php include('error.php'); ?>
+            </div>
+            <?php else:?>
+
             <?php endif; ?>
             
             <div class="row">

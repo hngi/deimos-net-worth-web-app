@@ -67,3 +67,9 @@ main .get-started:hover {
     font-size: 1em;
     font-weight: bold;
 }
+
+@media screen and (max-width: 700px) {
+    main .main__caption {
+        font-size: 2em;
+    }
+}
