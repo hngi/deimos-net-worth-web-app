@@ -8,6 +8,7 @@
     <link href="index.html" rel="canonical">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/certificate.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chomsky" type="text/css" />
 
@@ -15,61 +16,45 @@
     <title>Networth Calculator | Certificate</title>
 </head>
 
-<body>
-    <center>
-        <div class="body">
-            <div class="border">
-                <img src="img/award.svg" alt="networth logo" class="logo" ;>
+<body class="container justify-content-center">
+    <div class="body p-4 justify-content-center">
+        <div class="" id="content"> <!------Logo Background-->
+            <div class="opct p-4" > <!--------------Gradient Overlay-->
+                <div class="d-flex">
+                    <div class="align-self-center">
 
-                <h2>Certificate of Networth</h2>
-                <span><i>This is to certify that you have been rated a</i></span>
+                        <h1>Certificate of Networth</h1> <br>
 
-                <br><br><br>
+                        <p>This is to certify that you have been rated</p> <br>
 
-                <table class="worthLevel">
-                    <tr>
-                        <td>
-                            <span><b>$user.getWorthLevel()</b></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width: 500px; border: 0; border-bottom: 2px solid #000">
-                        </td>
-                    </tr>
-                </table>
+                        <p class="text">$user.getWorthLevel()</p> <br>
 
-                <br>
+                        <p>with a networth of</p> <br>
 
-                <span><i>with a networth of</i></span>
+                        <p class="text">NGN$user.getWorthPoints()</p> <br>
 
-                <br><br>
+                    </div>
 
-                <span><b>NGN$user.getWorthPoints()</b></span>
+                    <div class="justify-content-end align-self-center ml-4 d-none d-sm-block">
 
-                <br><br>
+                        <p>Deimos Team can confirm the Financial Networth of the individual</p>
 
-                <p><em>Signed</em></p>
+                        <img src="img/award.svg" alt="awardseal" class="logo img-fluid">
 
-                <table class="worthLevel signature">
-                    <tr>
-                        <td>
-                            <span>
-                                <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top: -15px; margin-bottom: -10px;">
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:150px; float:left; border:0; border-bottom:1px solid #000"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>Deimos Elders</span>
-                        </td>
-                    </tr>
-                </table>
+                    </div>
+                </div>
+
+                <div class="justify-content-center aside"> <!-------Footer SIgnature---------->
+
+                    <p class="text"><em>Signed</em></p>
+
+                    <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top: -15px; margin-bottom: -5px;" class="blockquote"> <br>
+
+                    <p class="text">Deimos Elders</p>
+        
+                </div>
             </div>
         </div>
-    </center>
+    </div>
 </body>
-
 </html>
