@@ -51,6 +51,13 @@ $success    = $_SESSION['success'];
 
     <section>
         <main class="container">
+            <div class="alert alert-primary">
+            <?php if(isset($_SESSION['net_worth']) ): $netWorth = $_SESSION['net_worth'];  ?>
+            <h3>
+                <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
+            </h3>
+            <?php endif; ?>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-md-12 col-lg-12 text-center">
                     <p class="main__caption">Enter the monetary value of your assets and liabilities to calculate your Net Worth </p>
@@ -104,10 +111,7 @@ $success    = $_SESSION['success'];
                             <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>
                         </div>
 
-                        <?php if(isset($_SESSION['net_worth']) ):
-                            $netWorth = $_SESSION['net_worth'];  ?>
-                        <h3><span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?>   </span> </h3>
-                        <?php endif; ?>
+                        
                         
                     </form>
                     
