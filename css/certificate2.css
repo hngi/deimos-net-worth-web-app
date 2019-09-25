@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg, rgba(184, 160, 228, 0.952) ,rgba(176, 160, 192, 0.753),rgba(223, 215, 243, 0.78) ,rgba(196, 217, 223, 0.924)) , url(networthlogo.svg) 50% ;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center;
+    overflow: hidden;
+}
+.all{
+    display: flex; 
+}
+.seal{
+    flex: 1;
+    display: flex;
+}
+.main{
+    flex: 2;
+    width: 100%;
+    height: 100vh;
+    padding-left: 4.6em;
+    margin-top: 50px;      
+}
+h1{
+    color:rgba(85, 32, 182, 0.952);
+    margin-bottom: 0px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    line-height: 1.9rem;
+    font-size: 39px;
+}
+.second{
+    text-align: center
+}
+.signature{
+    /* float: right; */
+    left: 30%;
+    position: relative;
+}
+.inner{
+    margin: auto;
+}
+h3{
+    width: auto;
+    line-height: 1.8em;
+    text-transform: capitalize;
+    font-size: 24.5px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.2em;
+}
+.rated{
+    margin-bottom: 20px;
+}
+.net{
+    margin-bottom: 30px;
+    margin-top: 20px;
+    color:rgba(85, 32, 182, 0.952);
+}
+.sign{
+    border-bottom: 3px black solid;
+}
+.date{
+    margin-top: 31px;
+}
