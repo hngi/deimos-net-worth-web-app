@@ -76,3 +76,7 @@ main .get-started:hover {
    border: 1px solid #6D1AD8;   
 }
 
+.dashboard-header-span {
+   color: #fff;
+}
+

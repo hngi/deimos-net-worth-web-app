@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$username   = $_SESSION['username'];
+$success    = $_SESSION['success'];
+
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,18 +22,24 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
-            <a class="navbar-brand p-3" href="#"><img src="./assets/svg/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+            <a class="navbar-brand p-3" href="#"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto navbar__menu">
+                <?php if(!isset($success)): ?>
                 <li class="nav-item active">
                     <button class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
                 </li>
                 <li class="nav-item">
                     <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
                 </li>
+                <?php else: ?>
+                <li class="nav-item">
+                   <span class="dashboard-header-span">hello <?php echo $username;?></span>  
+                </li>
+                <?php endif; ?>
             </ul>
             </div>
         </nav>
@@ -40,50 +55,56 @@
             <div class="line-through"></div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-                    <form>
+                    <form action="server.php" method="POST">
                         <h1 class="form-caption">Assets</h1>
                         <div class="form-group">
                           <label for="Investments">Investments</label>
-                          <input type="text" class="form-control " id="Investments" placeholder="0 NGN">
+                          <input type="text" class="form-control" id="Investments" name="investments" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Cash">Cash</label>
-                            <input type="text" class="form-control" id="Cash" placeholder="0 NGN">
+                            <input type="text" class="form-control" id="Cash" name="cash" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Bank Account">Bank Account</label>
-                            <input type="text" class="form-control" id="Bank Account" placeholder="0 NGN">
-                        </div>
+                            <input type="text" class="form-control" id="Bank Account" name="bank_account" placeholder="0 NGN">
+                        </div>  
                         <div class="form-group">
                             <label for="Real Estate">Real Estate</label>
-                            <input type="text" class="form-control" id="Real Estate" placeholder="0 NGN">
+                            <input type="text" class="form-control" id="Real Estate" name="real_estate" placeholder="0 NGN">
                         </div>
-                      </form>
+                        <div>
+                            <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>
+                        </div>
+                      <!-- </form> -->
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-                    <form>
+                    <!-- <form> -->
                         <h1 class="form-caption">Liabilties</h1>
                         <div class="form-group">
                             <label for="Loans">Loans</label>
-                            <input type="text" class="form-control " id="Loans" placeholder="0 NGN">
+                            <input type="text" class="form-control " id="Loans" name="loans" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Mortgages">Mortgages</label>
-                            <input type="text" class="form-control" id="Mortgages" placeholder="0 NGN">
+                            <input type="text" class="form-control" id="Mortgages" name="mortgages" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Utility bills">Utility bills</label>
-                            <input type="text" class="form-control" id="Utility bills" placeholder="0 NGN">
+                            <input type="text" class="form-control" id="Utility bills" name="utility_bills" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Other debts">Other debts</label>
-                            <input type="text" class="form-control" id="Other debts" placeholder="0 NGN">
+                            <input type="text" class="form-control" id="Other debts" name="other_debts" placeholder="0 NGN">
                         </div>
+                        
                     </form>
+                    <?php if(isset($_SESSION['net_worth']) ):
+                        $netWorth = $_SESSION['net_worth'];  ?>
+                       <h3>₦ <?php echo number_format($netWorth,2); ?></h3>
+                    <?php endif; ?>
                 </div>
-                <div>
-                    <button class="get-started"> Get Net Worth</button>
-                </div>
+                
             </div>
         </main>
     </section>
