@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Net Worth</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
+            <a class="navbar-brand p-3" href="#"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto navbar__menu">
+                <li class="nav-item active">
+                    <p class="m-3 pt-1 pl-3 pr-3 pb-1" style="color: #fff;" id="logMsg"></p>
+                    
+                </li>
+                <li class="nav-item">
+                  <button class="m-3 pt-1 pl-3 pr-3 pb-1" ><a href="index.html">Log out</a></button>  
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+</script>
+    <section>
+        <main class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+                    <p class="main__caption">Enter the monetary value of your assets and liabilities to calculate your Net Worth </p>
+                </div>
+            </div>
+            <div class="line-through"></div>
+            <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+        <h4 align="center" class="asset-lia-head">Enter Asset Details</h4>
+   <br />
+<form method="post" id="insert_form">
+    <div class="table-repsonsive">
+     <span id="error"></span>
+     <table class="table table-bordered" id="item_table">
+      <tr>
+        <th>Select Assets Name</th>
+       <th>Enter Value</th>
+       <th><button type="button" name="add" class="btn btn-success btn-sm add"><span class="glyphicon glyphicon-plus">+</span></button></th>
+      </tr>
+     </table>
+    </div>
+   </div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+   <h4 align="center" class="asset-lia-head">Enter Laibility Details</h4>
+   <br />
+    <div class="table-repsonsive">
+     <span id="error1"></span>
+     <table class="table table-bordered" id="liability_table">
+      <tr>
+        <th>Select Laibility Name</th>
+       <th>Enter Value</th>
+       <th><button type="button" name="add1" class="btn btn-success btn-sm add1"><span class="glyphicon glyphicon-plus">+</span></button></th>
+      </tr>
+     </table>
+    </div>
+   </form>
+     </div>
+        <div>
+            <div>
+            <div class="net-output">Your Current Net Worth is :<span id="result" class="result"></span></div>
+            </div>
+                 <label class="get-started">Get Net Worth</label>&nbsp<span>
+                <input type="submit" name="submit" id="save" onclick="netData(event)" class="save-networth" value="Get Certificate" /></span> 
+                </div>
+
+            </div>
+        </main>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+     <script>
+$(document).ready(function(){
+ $(document).on('click', '.add', function(){
+  let html = '';
+  html += '<tr>';
+  html += '<td><select name="assets_unit[]" id="add" class="form-control assets_unit"><option value="">Select Unit</option></select></td>';
+   html += '<td><input type="text" name="assets_name[]" class="form-control assets_name" data-asset="" placeholder="0 NGN"/></td>';
+  html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus">-</span></button></td></tr>';
+$('#item_table').append(html);
+
+// assets array option    
+let tbl_assets = [
+{asset: 'Cash'}, 
+{asset: 'Real Estate(market value)'}, 
+{asset: 'Automobile(present value)'},
+{asset: 'Treasury Bills'},
+{asset: 'Jewelry'},
+{asset: 'Retirement Accounts'},
+{asset: 'Social Security'},
+{asset: 'Other'},];
+
+$.each(tbl_assets, function(key, value) {   
+     $('#add').append($("<option></option>")
+                    .attr("value",value)
+                    .text(value.asset)); 
+});
+});
+
+// click to add and remove select input
+$(document).on('click', '.remove', function(){
+  $(this).closest('tr').remove();
+ });
+
+ 
+$(document).ready(function(){
+  $(document).on('click', '.add1', function(){
+  let html = '';
+  html += '<tr>';
+  html += '<td><select name="liability_unit[]" id="add2" class="form-control liability_unit"><option value="">Select Laibility Unit</option></select></td>';
+   html += '<td><input type="text" name="liability_name[]" class="form-control liability_name" data-liable="" placeholder="0 NGN"/></td>';
+  html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus">-</span></button></td></tr>';
+  $('#liability_table').append(html);
+ 
+// liability array option 
+const tbl_liability = [
+{liability: 'Account Payable'}, 
+{liability: 'Auto Loan'}, 
+{liability: 'Credit Card Debt'},
+{liability: 'Consumer Loan'},
+{liability: 'Real Estate Mortgages'},
+{liability: 'Student Loan'},
+{liability: 'Unpaid Taxes'},
+{liability: 'Money Owned Other'},
+{liability: 'Other Liabilities'},];
+
+$.each(tbl_liability, function(key, value) {   
+     $('#add2').append($("<option></option>")
+                    .attr("value",value)
+                    .text(value.liability)); 
+});
+});
+ 
+ $(document).on('click', '.remove1', function(){
+  $(this).closest('tr').remove();
+ });
+ 
+ $('#insert_form').on('submit', function(event){
+  event.preventDefault();
+  let error = '';
+  $('.assets_name').each(function(){
+   let count = 1;
+   if($(this).val() == '')
+   {
+    error += "<p>Enter value at row "+count+"</p>";
+    return false;
+   }
+   count = count + 1;
+  });
+  
+  $('.liability_name').each(function(){
+   let count = 1;
+   if($(this).val() == '')
+   {
+    error += "<p>Select Unit at row "+count+"</p>";
+    return false;
+   }
+   count = count + 1;
+  });
+
+  const form_data = $(this).serialize();
+  if(error == '')
+  {
+   $.ajax({
+    url:"insert.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+     if(data == 'ok')
+     {
+      $('#item_table').find("tr:gt(0)").remove();
+      $('#error').html('<div class="alert alert-success">Net Worth Details Saved</div>');
+     }
+    }
+   });
+  }
+  else
+  {
+   $('#error').html('<div class="alert alert-danger">'+error+'</div>');
+  }
+    });
+  });
+});
+</script>
+<!-- net worth calculator -->
+<script>
+
+  $(document).on('click', '.get-started', function(){
+  const lia = $('input[name^=liability_name]').map(function(idx, elem) {
+    return $(elem).val();
+  }).get();
+
+  const ass = $('input[name^=assets_name]').map(function(idx, elem) {
+    return $(elem).val();
+  }).get();
+
+let totalAss = 0;
+  for(let i = 0; i < ass.length; i++) {
+    totalAss += ass[i] << 0;
+}
+
+let totalLia = 0;
+ for(let i = 0; i < lia.length; i++) {
+  totalLia += lia[i] << 0;
+}
+  let Nworth = totalAss - totalLia;
+  $('#result').html("NGN "+Nworth);
+  $('#hide-result').val(Nworth);
+  return Nworth;
+});
+</script>
+
+<!-- script to save to web local storage -->
+<script>
+let netWorthData = JSON.parse(localStorage.getItem("netWorthData")) || [];
+let save = document.getElementById("save");
+// let result = document.getElementById("hide-result").value;
+
+netData = (e)=> {
+  e.preventDefault();
+  console.log(result);
+  if(result = ''){
+    alert ("Please input asset and liability details!");
+    return false;
+  }else{
+  const d = new Date();
+  const date = d.toDateString();
+  const profile = {
+    date_save: date
+}
+  netWorthData.push(profile);
+  localStorage.setItem("netWorthData", JSON.stringify(netWorthData));
+  alert ("Your netWorth certificate is ready!");
+  window.location.assign("certificate.html");
+}
+}; 
+</script>
+<script src="js/success.js"></script>
+</body>
+</html>
