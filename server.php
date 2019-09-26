@@ -95,7 +95,7 @@
     
           $_SESSION['success'] = "Registration successful, Login Now!";
           $_SESSION['username'] = $username ;
-          header('location: login.php');
+          header('location: dashboard.php');
        
         }
       }

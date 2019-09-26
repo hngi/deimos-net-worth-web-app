@@ -68,9 +68,9 @@ if(isset($_SESSION['success'])){
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
                     
                 </h4>
-
-                <button type="submit" class="get-started" name="get_networth"><a href="certificate.php">View Certificate</a></button>
-          </div>
+<style>.get-started:focus { color:#000 !important; }</style>
+    <form action="certificate.php">  <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
+        </form>  </div>
             <?php elseif(isset($error)): ?>
            
                 <?php include('error.php'); ?>
@@ -93,19 +93,19 @@ if(isset($_SESSION['success'])){
                         
                         <div class="form-group">
                           <label for="Investments">Investments</label>
-                          <input type="text" class="form-control" id="Investments" name="investments" placeholder="0 NGN">
+               <input type="number" class="form-control" id="Investments" name="investments" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Cash">Cash</label>
-                            <input type="text" class="form-control" id="Cash" name="cash" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Cash" name="cash" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Bank Account">Bank Account</label>
-                            <input type="text" class="form-control" id="Bank Account" name="bank_account" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Bank Account" name="bank_account" placeholder="0 NGN">
                         </div>  
                         <div class="form-group">
                             <label for="Real Estate">Real Estate</label>
-                            <input type="text" class="form-control" id="Real Estate" name="real_estate" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Real Estate" name="real_estate" placeholder="0 NGN">
                         </div>
 
                         
@@ -116,19 +116,19 @@ if(isset($_SESSION['success'])){
                         <h1 class="form-caption" style="font-size:1.7rem !important;">Liabilties</h1>
                         <div class="form-group">
                             <label for="Loans">Loans</label>
-                            <input type="text" class="form-control " id="Loans" name="loans" placeholder="0 NGN">
+                            <input type="number" class="form-control " id="Loans" name="loans" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Mortgages">Mortgages</label>
-                            <input type="text" class="form-control" id="Mortgages" name="mortgages" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Mortgages" name="mortgages" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Utility bills">Utility bills</label>
-                            <input type="text" class="form-control" id="Utility bills" name="utility_bills" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Utility bills" name="utility_bills" placeholder="0 NGN">
                         </div>
                         <div class="form-group">
                             <label for="Other debts">Other debts</label>
-                            <input type="text" class="form-control" id="Other debts" name="other_debts" placeholder="0 NGN">
+                            <input type="number" class="form-control" id="Other debts" name="other_debts" placeholder="0 NGN">
                         </div>
                         <div>
                             <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>

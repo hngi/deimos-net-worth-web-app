@@ -8,7 +8,9 @@ switch ($_SESSION['net_worth']) {
     case $_SESSION['net_worth'] < 100000:
         
         $_SESSION['worthlevel'] = "Double your hustle";
-        break;
+        break; 
+    case $_SESSION['net_worth'] > 100000:
+   $_SESSION['worthlevel'] = "Money Shark!"; break;
     
     default:
          $_SESSION['worthlevel'] = "";
@@ -57,7 +59,7 @@ switch ($_SESSION['net_worth']) {
                 <br>
                 <!-- <p class="text">$user.getWorthLevel()</p> <br> -->
 
-                <h4>with a networth of</h4> <br>
+                
 
                
                  <br>
@@ -78,7 +80,7 @@ switch ($_SESSION['net_worth']) {
 
 
                 <form action="dashboard.php">
-                    <button type="submit" class="btn btn-primary">Back to Dashbaord</button>
+                    <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Back to Dashboard</button>
                 </form>
                 
 
