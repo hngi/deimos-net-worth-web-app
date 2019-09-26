@@ -95,8 +95,8 @@ $(document).ready(function(){
  $(document).on('click', '.add', function(){
   let html = '';
   html += '<tr>';
-  html += '<td><select name="assets_unit[]" id="add" class="form-control assets_unit"><option value="">Select Unit</option></select></td>';
-   html += '<td><input type="text" name="assets_name[]" class="form-control assets_name" data-asset="" placeholder="0 NGN"/></td>';
+  html += '<td><select name="assets_unit[]" id="add" class="form-control assets_name"><option value="">Select Unit</option></select></td>';
+   html += '<td><input type="number" name="assets_name[]" class="form-control assets_unit" data-asset="" placeholder="0 NGN"/></td>';
   html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus">-</span></button></td></tr>';
 $('#item_table').append(html);
 
@@ -112,7 +112,7 @@ let tbl_assets = [
 {asset: 'Other'}];
 
 $.each(tbl_assets, function(key, value) {   
-     $('.assets_unit').append($("<option></option>")
+     $('.assets_name').append($("<option></option>")
                     .attr("value",value)
                     .text(value.asset)); 
 });
@@ -128,8 +128,8 @@ $(document).ready(function(){
   $(document).on('click', '.add1', function(){
   let html = '';
   html += '<tr>';
-  html += '<td><select name="liability_unit[]" id="add2" class="form-control liability_unit"><option value="">Select Laibility Unit</option></select></td>';
-   html += '<td><input type="text" name="liability_name[]" class="form-control liability_name" data-liable="" placeholder="0 NGN"/></td>';
+  html += '<td><select name="liability_unit[]" id="add2" class="form-control liability_name"><option value="">Select Laibility Unit</option></select></td>';
+   html += '<td><input type="number" name="liability_name[]" class="form-control liability_unit" data-liable="" placeholder="0 NGN"/></td>';
   html += '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus">-</span></button></td></tr>';
   $('#liability_table').append(html);
  
@@ -146,7 +146,7 @@ const tbl_liability = [
 {liability: 'Other Liabilities'}];
 
 $.each(tbl_liability, function(key, value) {   
-     $('.liability_unit').append($("<option></option>")
+     $('.liability_name').append($("<option></option>")
                     .attr("value",value)
                     .text(value.liability)); 
 });
@@ -226,9 +226,19 @@ let totalLia = 0;
   totalLia += lia[i] << 0;
 }
   let Nworth = totalAss - totalLia;
-  $('#result').html("NGN "+Nworth);
-  $('#hide-result').val(Nworth);
+   const newASS = ReplaceNumberWithCommas(Nworth);
+  $('#result').html(" NGN "+newASS);
   return Nworth;
+
+ function ReplaceNumberWithCommas(numComma) {
+    //Seperates the components of the number
+    const n= numComma.toString().split(".");
+    //Comma-fies the first part
+    n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Combines the two sections
+    return n.join(".");
+}
+
 });
 </script>
 
