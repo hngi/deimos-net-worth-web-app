@@ -63,7 +63,7 @@ spl_autoload_register(function ($class) {
                         <p><i class="fas fa-check pr-3"></i>Begin plotting your future projections</p>
                         <p><i class="fas fa-check pr-3"></i>or just use it for fun</p>
                     </div>
-                    <form action="login.php>
+                    <form action="login.php">
                     <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Get Started</button>
                   </form>
                 </div>
