@@ -67,7 +67,7 @@ session_start();
     
     <section>
         <main class="container">
-            <div class="row">
+            <div class="row" style="margin-top:-20px;">
                 <div class="main_pad col-xs-12 col-sm-12 col-md-6 col-lg-7">
                     <h1 class="main__caption mt-1 mb-3">Your 'Net Worth' is your financial strength. </h1>
                     <p class="main__description">Use Networth to calculate the true financial worth for you and your friends. Get a FREE certificate</p>
@@ -81,7 +81,7 @@ session_start();
 
                     <?php if(!isset($_SESSION['username'])): ?>
                         <form action="login.php">
-                            <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Get Started</button>
+                            <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2" style="margin-bottom:40px;">Get Started</button>
                         </form>
                     <?php else: ?>
                         <form action="dashboard.php">
