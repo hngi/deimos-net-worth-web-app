@@ -66,8 +66,12 @@ if(isset($_SESSION['success'])){
             <div class="alert alert-primary">
                 <h4>
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
-                    <?php  unset($_SESSION['net_worth']); ?>
+                    
                 </h4>
+                <form action="certificate.php">
+                    <button type="submit" class="btn btn-primary">View Certificate</button>
+                </form>
+                
             </div>
             <?php elseif(isset($error)): ?>
            
