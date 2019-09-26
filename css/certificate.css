@@ -1,63 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico&display=swap');
 
-.body{
-    width:800px; 
-    height:600px; 
-    padding: 20px;
-    text-align:center; 
+.body {
+    width: 100%;
+    height: 60%;
+    text-align: center;
     background: #6D1AD8;
+}
+
+#content{
+    background: url('../img/logo.jpg');
+}
+
+.opct{
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+    opacity: 0.9;
     font-family: 'ChomskyRegular';
-    font-weight: normal;
-    font-style: normal;
-    z-index: 3;
 }
 
-.border{
-    width: 780px;
-    height:590px;
-    margin: 0 auto;
-    text-align:center;
-    background: white;
-    border-bottom-right-radius: 20%;
-    border-top-left-radius: 20%;
+.logo {
+    width: 15em;
 }
 
-.logo{
-    width: 10em;
-    margin-bottom: -40px;
-    margin-top: -10px;
+.text{
+    font-family: 'Pacifico', cursive;
 }
 
-
-h2{
-    font-size: 50px; 
-    font-weight:bold;
-}
-
-.worthLevel{
-    margin: 0 auto;
-}
-
-.worthLevel>tr > span{
-    font-size: 1.5em;
-    line-height:1.5em;
-}
-
-span > i{
-    font-size: 25px;
-}
-
-span > b{
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
-
-.signature{
-    margin-top: 10px;
-}
-
-span{
-    font-size: 20px;
-}
+/*Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+    .body {
+        width: 80%;
+        height: 60%;
+        text-align: center;
+        background: #6D1AD8;
+    }
+  }

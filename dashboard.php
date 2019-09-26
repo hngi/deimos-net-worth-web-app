@@ -9,6 +9,7 @@ $success    = $_SESSION['success'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,9 @@ $success    = $_SESSION['success'];
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
@@ -125,5 +128,7 @@ $success    = $_SESSION['success'];
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="Js/dashboard.js"></script>
 </body>
+
 </html>

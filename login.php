@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +10,7 @@
     <link href="index.html" rel="canonical">
     <title>Deimos Login | Calculate Your Net Worth</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
     <!-- <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -19,14 +18,13 @@
 <body>
     <div class="container-fluid">
         <input type="checkbox" name="" id="toggle_signup_1">
-        <!-- <?php include('errors.php'); ?> -->
         <div class="row my-auto">
             <input class="d-none" type="checkbox" name="" id="toggle_signin">
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
             <div class="col-sm signup-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand hide-for-large" href="index.html"><img src="./img/networth logo.svg"></a>
-                    <a class="navbar-brand hide-for-small" href="index.html"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-large" href="index.html"><img src="./img/Purple logo Group.png"></a>
+                    <a class="navbar-brand hide-for-small" href="index.html"><img src="./img/Purple logo Group.png"></a>
                 </nav>
                 <section>
                     <p class="text-center guide">SIGN UP WITH...</p>
@@ -43,22 +41,22 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="handle_logic.php" method="POST">
+                    <form action="https://hngi.github.io/deimos-net-worth-web-app/dashboard.html">
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
-                        <div class="form-group ">
-                            <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
+                        <div class="form-group general-input">
+                            <input class="form-control" type="email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
                         </div>
-                        <div class="form-group ">
-                            <input class="form-control" type="text" name="username" placeholder="USERNAME">
+                        <div class="form-group general-input">
+                            <input class="form-control" type="text" required="" placeholder="USERNAME">
                         </div>
-                        <div class="form-group ">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
+                        <div class="form-group general-input">
+                            <input class="form-control" type="password" required="" name="" id="" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                         </div>
-                        <div class="form-group ">
-                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD">
+                        <div class="form-group general-input">
+                            <input class="form-control" type="password" required="" name="" id="" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
+                            <input type="submit" value="SIGN UP" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center hide-for-large">
@@ -70,15 +68,15 @@
             </div>
             <div class="col-sm signin-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg" alt="Team Logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
                 </nav>
                 <section>
                     <p class="text-center guide">SIGN IN WITH...</p>
                     <div class="sign-in-with-social d-flex justify-content-between">
-                        <a href="https://www.google.com" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
+                        <a href="#" target="blank" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
                             <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
                         </a>
-                        <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
+                        <a href="#" target="blank" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
                             <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
                         </a>
                     </div>
@@ -87,16 +85,16 @@
                         <span>OR</span>
                         <hr>
                     </div>
-                    <form action="handle_logic.php" method="POST">
+                    <form action="https://hngi.github.io/deimos-net-worth-web-app/dashboard.html">
                         <h4>SIGN IN WITH EMAIL</h4>
                         <div class="form-group general-input">
-                            <input class="form-control" type="text" name="username" placeholder="Username">
+                            <input class="form-control" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
+                            <input class="form-control" required="" type="password" name="" id="" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN IN" name="login_user" class="btn btn-default">
+                            <input type="submit" value="SIGN IN" class="btn btn-default  signin-button">
                         </div>
                     </form>
                     <div class="text-center forgotten-pass">
@@ -114,8 +112,8 @@
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Hey There</h2>
-                    <p class="text-center main-message">Let’s hop on the path to discovering the true worth of your wealth. Please, enter your personal details </p>
+                    <h2 class="greetings text-center"> Welcome Back</h2>
+                    <p class="text-center main-message">" Do you Know ? 'Your net worth to the world is usually determined by what remains after your bad habits have been subtracted from your good ones." Proceed to know your financial Strengths NOW</p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN UP</label>
@@ -126,9 +124,9 @@
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Welcome back</h2>
-                    <p class="text-center main-message">" Do you Know ? '____________' "  Finance and money quote database can be picked at random
-Proceed to know your financial Strengths NOW</p>
+                    <h2 class="greetings text-center">Hey There</h2>
+                    <p class="text-center main-message">Let’s hop on the path to discovering the true worth of your wealth. Please, enter your personal details.
+                    </p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN IN</label>
