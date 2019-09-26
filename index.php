@@ -64,9 +64,9 @@ session_start();
             </div>
         </nav>
     </header>
-
+    <main class="container">
     <section>
-        <main class="container">
+       
             <div class="row">
                 <div class="main_pad col-xs-12 col-sm-12 col-md-6 col-lg-7">
                     <h1 class="main__caption mt-1 mb-3">Your 'Net Worth' is your financial strength. </h1>
@@ -96,8 +96,9 @@ session_start();
                     <img class="land-logo" src='./img/deimo-networth.png' width="500px">
                 </div>
             </div>
-        </main>
+        
     </section>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
