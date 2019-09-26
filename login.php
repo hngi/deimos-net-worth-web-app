@@ -163,7 +163,7 @@ session_start();
                         
                         
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Enter username">
+                            <input class="form-control" style="padding:20px;" type="text" name="username" placeholder="Enter username">
                         </div>
                         <div class="form-group general-input">
                             <input class="form-control" style="padding:20px;" type="password" name="password" id="" placeholder="Enter password">
