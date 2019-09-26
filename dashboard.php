@@ -70,7 +70,7 @@ if(isset($_SESSION['success'])){
             <?php if(isset($_SESSION['net_worth']) ): $netWorth = $_SESSION['net_worth'];  ?>
             <div class="alert alert-primary">
             <h3>
-                <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
+                Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
                 <?php  unset($_SESSION['net_worth']); ?>
             </h3>
             </div>

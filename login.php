@@ -148,13 +148,13 @@ session_start();
                         <?php include('error.php'); ?>
                         <?php unset($_SESSION['error']); ?>
                         <div class="form-group general-input">
-                            <input class="form-control" type="text" name="username" placeholder="Username">
+                            <input class="form-control" style="padding-left:20px;" type="text" name="username" placeholder="Username">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
+                            <input class="form-control" style="padding-left:20px;" type="password" name="password" id="" placeholder="PASSWORD">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN IN" name="login_user" class="btn btn-default">
+                            <input type="submit" style="color:#fff !important;" value="SIGN IN" name="login_user" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center forgotten-pass">
