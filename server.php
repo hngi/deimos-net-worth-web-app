@@ -22,8 +22,9 @@
 
     if (empty($username) && empty($email) && empty($password) && empty($confirm_password) ) {
           array_push($errors, "All fields are required");
-        $_SESSION['error'] = $errors;
-        header('location: login.php');
+          $_SESSION['error'] = $errors;
+          unset($_SESSION['success']);
+          header('location: login.php');
     }
 
 
