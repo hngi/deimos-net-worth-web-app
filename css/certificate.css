@@ -8,7 +8,6 @@ body {
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     opacity: 0.9;
     height: 100vh;
-    padding-top: 5px;
 }
 
 h1,
@@ -18,17 +17,22 @@ p{
 }
 
 h1{
-    font-size: 2.2rem;
+    font-size: 1.9rem;
 }
 
 .logo {
     margin: 20pt 0 0 80pt;
-    width: 100pt
+    width: 90pt
+}
+
+h4,
+.text{
+    font-size: 1rem;
 }
 
 .text{
     font-family: 'Pacifico', cursive;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 /*Medium devices (tablets, 768px and up) */
