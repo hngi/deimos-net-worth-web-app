@@ -152,7 +152,7 @@ session_start();
                         <hr>
                     </div>
                     <form action="login.php" method="POST">
-                        <h4>SIGN IN WITH EMAIL</h4>
+                        <h4 style="margin-top:-15px;">SIGN IN WITH USERNAME</h4>
                         
                         
                         <?php include('error.php'); ?>
