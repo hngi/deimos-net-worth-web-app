@@ -9,7 +9,7 @@ session_start();
 	// $_SESSION['success'] = "";
 
 	// connect to database
-    $db = mysqli_connect('localhost', 'root', '', 'deimos');
+    $db = mysqli_connect('localhost', 'root', '', 'registration');
     
     // LOGIN USER
 	if (isset($_POST['login_user'])) {
@@ -82,7 +82,7 @@ session_start();
                     <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/networth logo.svg"></a>
                 </nav>
                 <section>
-                    <p class="text-center guide">SIGN UP WITH...</p>
+                    <!-- <p class="text-center guide">SIGN UP WITH...</p>
                     <div class="sign-in-with-social d-flex justify-content-between">
                         <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
                             <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
@@ -90,15 +90,13 @@ session_start();
                         <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
                             <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
                         </a>
-                    </div>
+                    </div> -->
 
                     
 
 
                     <div class="page-divider d-flex align-items-center">
-                        <hr>
-                        <span>OR</span>
-                        <hr>
+                        
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN UP</h4>
@@ -141,7 +139,7 @@ session_start();
                     <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg" alt="Team Logo"></a>
                 </nav>
                 <section>
-                    <p class="text-center guide">SIGN IN WITH...</p>
+                    <!-- <p class="text-center guide">SIGN IN WITH...</p>
                     <div class="sign-in-with-social d-flex justify-content-between">
                         <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
                             <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
@@ -154,7 +152,7 @@ session_start();
                         <hr>
                         <span>OR</span>
                         <hr>
-                    </div>
+                    </div> -->
                     <form action="login.php" method="POST">
                         <h4>SIGN IN</h4>
                         
