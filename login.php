@@ -7,7 +7,7 @@ session_start();
 	$_SESSION['success'] = "";
 
 	// connect to database
-    $db = mysqli_connect('localhost', 'root', '', 'deimos');
+    $db = mysqli_connect('localhost', 'root', '', 'registration');
     
     // LOGIN USER
 	if (isset($_POST['login_user'])) {

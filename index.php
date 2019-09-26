@@ -7,7 +7,6 @@ spl_autoload_register(function ($class) {
     }
 });
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

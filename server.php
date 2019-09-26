@@ -7,7 +7,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'deimos');
+	$db = mysqli_connect('localhost', 'root', '','registration');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
@@ -112,7 +112,7 @@ if (isset($_POST['get_networth'])) {
   {
     array_push($errors, "All fields are required");
     $_SESSION['error'] = $errors;
-    header('location: login.php');
+    header('location: dashboard.php');
   }
   
 }

@@ -3,6 +3,7 @@ session_start();
 
 $username   = $_SESSION['username'];
 $success    = $_SESSION['success'];
+$error      = $_SESSION['error'];
 
   
 
@@ -60,6 +61,12 @@ $success    = $_SESSION['success'];
                 <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
             </h3>
             </div>
+            <?php elseif(isset($error)): ?>
+            <div class="alert alert-danger">
+            <?php include('error.php'); ?>
+            </div>
+            <?php else:?>
+
             <?php endif; ?>
             
             <div class="row">
