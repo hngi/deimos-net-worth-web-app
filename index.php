@@ -85,7 +85,7 @@ session_start();
                         </form>
                     <?php else: ?>
                         <form action="dashboard.php">
-                            <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2">Dashboard &gt; &gt;</button>
+                            <button class="get-started pl-4 pr-4 mt-3 pt-2 pb-2" style="margin-bottom:40px;">Dashboard &gt; &gt;</button>
                         </form>
 
                         
