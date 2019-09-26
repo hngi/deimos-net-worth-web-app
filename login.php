@@ -1,4 +1,5 @@
 <?php
+include('error.php'); 
 session_start();
 	// variable declaration
 	$username = "";
@@ -60,7 +61,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="og:title" property="og:title" content="">
-    <link href="index.html" rel="canonical">
+    <link href="index.php" rel="canonical">
     <title>Deimos Login | Calculate Your Net Worth</title>
     <link rel="stylesheet" href="css/login.css">
     <!-- <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
@@ -77,8 +78,8 @@ session_start();
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
             <div class="col-sm signup-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand hide-for-large" href="index.html"><img src="./img/networth logo.svg"></a>
-                    <a class="navbar-brand hide-for-small" href="index.html"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-large" href="index.php"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/networth logo.svg"></a>
                 </nav>
                 <section>
                     <p class="text-center guide">SIGN UP WITH...</p>
@@ -100,8 +101,11 @@ session_start();
                         <hr>
                     </div>
                     <form action="server.php" method="POST">
-                        <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
-                       
+                        <h4>SIGN UP</h4>
+
+                        <?php include('error.php'); ?>
+                        <?php unset($_SESSION['error']); ?>
+
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
                         </div>
@@ -146,7 +150,7 @@ session_start();
                         <hr>
                     </div>
                     <form action="login.php" method="POST">
-                        <h4>SIGN IN WITH EMAIL</h4>
+                        <h4>SIGN IN</h4>
                         
                         
                         <?php include('error.php'); ?>
