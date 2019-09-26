@@ -8,7 +8,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '','registration');
+	$db = mysqli_connect('localhost', 'root', '','deimos');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
