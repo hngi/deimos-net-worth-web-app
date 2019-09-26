@@ -30,10 +30,34 @@
 
 
     // form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($password)) { array_push($errors, "Password is required"); }
-		if ($password != $confirm_password) {array_push($errors, "The two passwords do not match");}
+    if(empty($username)) 
+    { 
+        array_push($errors, "Username is required");
+        $_SESSION['error'] = $errors; 
+        unset($_SESSION['success']); 
+        header('location: login.php');  
+    }
+    if(empty($email)) 
+    { 
+        array_push($errors, "Email is required"); 
+        $_SESSION['error'] = $errors;
+        unset($_SESSION['success']); 
+        header('location: login.php');
+    }
+    if(empty($password)) 
+    { 
+        array_push($errors, "Password is required");
+        $_SESSION['error'] = $errors; 
+        unset($_SESSION['success']); 
+        header('location: login.php'); 
+    }
+    if($password != $confirm_password) 
+    {
+      array_push($errors, "The two passwords do not match"); 
+      $_SESSION['error'] = $errors;
+      unset($_SESSION['success']); 
+      header('location: login.php');
+    } 
 		
     
     
