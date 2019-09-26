@@ -3,12 +3,12 @@
 	// variable declaration
 	$username = "";
 	$email    = "";
-  $errors = array(); 
-  $regError = [];
+	$errors = array(); 
+	$regError = [];
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '','registration');
+	$db = mysqli_connect('localhost', 'root', '','deimos');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
@@ -18,7 +18,7 @@
 		$username         = mysqli_real_escape_string($db, $_POST['username']);
 		$email            = mysqli_real_escape_string($db, $_POST['email']);
 		$password         = mysqli_real_escape_string($db, $_POST['password']);
-    $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+		$confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
 
     if (empty($username) && empty($email) && empty($password) && empty($confirm_password) ) {
           array_push($errors, "All fields are required");
@@ -65,6 +65,7 @@
       $checkEmail   = "SELECT * FROM users WHERE email='$email' LIMIT 1";
       $checkResult  = mysqli_query($db, $checkEmail);
 
+	  // checks user username
       $checkUsername   = "SELECT * FROM users WHERE username='$username' LIMIT 1";
       $checkUsernameResult  = mysqli_query($db, $checkUsername);
       
