@@ -86,8 +86,8 @@ if(isset($_SESSION['success'])){
             </div>
             <div class="line-through"></div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-                <h1 class="form-caption">Assets</h1>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3" style="padding:25px;">
+                <h1 class="form-caption" style="font-size:1.7rem !important;">Assets</h1>
                     <form action="server.php" method="POST">
                         
                         <div class="form-group">
@@ -110,9 +110,9 @@ if(isset($_SESSION['success'])){
                         
                       <!-- </form> -->
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3" style="padding:25px;">
                     <!-- <form> -->
-                        <h1 class="form-caption">Liabilties</h1>
+                        <h1 class="form-caption" style="font-size:1.7rem !important;">Liabilties</h1>
                         <div class="form-group">
                             <label for="Loans">Loans</label>
                             <input type="text" class="form-control " id="Loans" name="loans" placeholder="0 NGN">

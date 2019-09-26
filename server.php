@@ -20,19 +20,44 @@
 		$password         = mysqli_real_escape_string($db, $_POST['password']);
 		$confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
 
-		if (empty($username) && empty($email) && empty($password) && empty($confirm_password) ) {
-			array_push($errors, "All fields are required");
-			$_SESSION['error'] = $errors;
-			// header('location: login.php');
-		}
+    if (empty($username) && empty($email) && empty($password) && empty($confirm_password) ) {
+          array_push($errors, "All fields are required");
+          $_SESSION['error'] = $errors;
+          unset($_SESSION['success']);
+          header('location: login.php');
+    }
 
 
 
     // form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($password)) { array_push($errors, "Password is required"); }
-		if ($password != $confirm_password) {array_push($errors, "The two passwords do not match");}
+    if(empty($username)) 
+    { 
+        array_push($errors, "Registration unsuccessful, Username is required. Click the sign up link and try again");
+        $_SESSION['error'] = $errors; 
+        unset($_SESSION['success']); 
+        header('location: login.php');  
+    }
+    if(empty($email)) 
+    { 
+        array_push($errors, "Registration unsuccessful, Email is required. Click the sign up link and try again"); 
+        $_SESSION['error'] = $errors;
+        unset($_SESSION['success']); 
+        header('location: login.php');
+    }
+    if(empty($password)) 
+    { 
+        array_push($errors, "Registration unsuccessful, Password is required . Click the sign up link and try again");
+        $_SESSION['error'] = $errors; 
+        unset($_SESSION['success']); 
+        header('location: login.php'); 
+    }
+    if($password != $confirm_password) 
+    {
+      array_push($errors, "Registration unsuccessful, passwords doesn't match . Click the sign up link and try again"); 
+      $_SESSION['error'] = $errors;
+      unset($_SESSION['success']); 
+      header('location: login.php');
+    } 
 		
     
     
@@ -47,13 +72,13 @@
       if(mysqli_num_rows($checkResult) == 1) 
       {
         
-          array_push($errors, "Email already exist, Please try a different email");
+          array_push($errors, "Registration unsuccessful, email already exist, Please click the sign up link and try a different email");
           $_SESSION['error'] = $errors;
           header('location: login.php');
       }
       elseif(mysqli_num_rows($checkUsernameResult) == 1)
       {
-          array_push($errors, "Username taken, Please try a different username");
+          array_push($errors, "Registration unsuccessful, Username taken, Please click the sign up link and try a different username");
           $_SESSION['error'] = $errors;
           header('location: login.php');
       }

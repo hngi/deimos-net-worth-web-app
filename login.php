@@ -107,17 +107,23 @@ session_start();
                         <?php unset($_SESSION['error']); ?>
 
                         <div class="form-group ">
-                            <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Enter email address">
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="text" name="username" placeholder="USERNAME">
+                            <input class="form-control" type="text" name="username" placeholder="Enter username">
                         </div>
-                        <div class="form-group ">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        
+                        
+                        <div class="form-group">
+                        <label for="passsword" style="font-size:12px; padding:10px; margin-top:15px;" class="bagde badge-info">
+                            <span class="">*</span> 
+                            password must contain at least an Upper Case, a symbol e.g @,and a number
+                        </label>
+                            <input class="form-control" type="password" name="password" id="" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD">
+                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="Confirm password">
                         </div>
                         <div class="text-center">
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
@@ -161,13 +167,13 @@ session_start();
                         
                         
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Username">
+                            <input class="form-control" style="padding:20px;" type="text" name="username" placeholder="Enter username">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="password" name="password" id="" placeholder="PASSWORD">
+                            <input class="form-control" style="padding:20px;" type="password" name="password" id="" placeholder="Enter password">
                         </div>
                         <div class="text-center">
-                            <input type="submit" style="color:#fff !important;" value="SIGN IN" name="login_user" class="btn btn-default">
+                            <input type="submit" style="color:#fff !important; margin-bottom: 10px;" value="SIGN IN" name="login_user" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center forgotten-pass">
