@@ -17,6 +17,7 @@ switch ($_SESSION['net_worth']) {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +25,9 @@ switch ($_SESSION['net_worth']) {
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="og:title" property="og:title" content="">
+
     <link href="index.php" rel="canonical">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -49,17 +52,36 @@ switch ($_SESSION['net_worth']) {
 
                 <h4>This is to certify that you have been rated</h4> <br>
 
+
+                <!-- <p class="text"><?php echo $netWorth; ?></p>  -->
+                <br>
+                <!-- <p class="text">$user.getWorthLevel()</p> <br> -->
+
+                <h4>with a networth of</h4> <br>
+
+               
+                 <br>
+
+
                 <p class="text"><?php echo $_SESSION['worthlevel']?></p> <br>
 
                 <h4>with a networth of</h4> <br>
 
-                <p class="text">NGN <?php echo $_SESSION['net_worth']?></p> <br>
+                <p class="text">NGN <?php echo number_format($_SESSION['net_worth'],2); ?></p> <br>
                 <?php  unset($_SESSION['net_worth']); ?>
+
                 <p id="footer"><em>Signed</em></p>
                 <div class="">
                 <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top:-15px; margin-bottom: -15px;" >
                 </div> <br>
                 <p>Deimos Elders</p>
+
+
+                <form action="dashboard.php">
+                    <button type="submit" class="btn btn-primary">Back to Dashbaord</button>
+                </form>
+                
+
             </div>
         </div>
     </div>

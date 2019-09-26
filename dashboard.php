@@ -68,8 +68,9 @@ if(isset($_SESSION['success'])){
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
                     
                 </h4>
+
                 <button type="submit" class="get-started" name="get_networth"><a href="certificate.php">View Certificate</a></button>
-            </div>
+          </div>
             <?php elseif(isset($error)): ?>
            
                 <?php include('error.php'); ?>
