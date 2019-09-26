@@ -5,7 +5,7 @@ session_start();
 	$email    = "";
 	$errors = array(); 
 	 
-	$_SESSION['success'] = "";
+	// $_SESSION['success'] = "";
 
 	// connect to database
     $db = mysqli_connect('localhost', 'root', '', 'registration');
@@ -33,7 +33,7 @@ session_start();
 
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
+				// $_SESSION['success'] = "You are now logged in";
 				header('location: dashboard.php');
 			}else {
                 array_push($errors, "Wrong username/password combination");
@@ -46,6 +46,9 @@ session_start();
   if(isset($_SESSION['error'])){
     $error = $_SESSION['error'];
   }
+ /*  if(isset($_SESSION['success'])){
+    $success = $_SESSION['success'];
+  } */
   
 ?>
 <!DOCTYPE html>
@@ -80,7 +83,7 @@ session_start();
                 <section>
                     <p class="text-center guide">SIGN UP WITH...</p>
                     <div class="sign-in-with-social d-flex justify-content-between">
-                        <a href="https://www.google.com" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
+                        <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
                             <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
                         </a>
                         <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
@@ -130,7 +133,7 @@ session_start();
                 <section>
                     <p class="text-center guide">SIGN IN WITH...</p>
                     <div class="sign-in-with-social d-flex justify-content-between">
-                        <a href="https://www.google.com" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
+                        <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
                             <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
                         </a>
                         <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
@@ -148,6 +151,11 @@ session_start();
                         
                         <?php include('error.php'); ?>
                         <?php unset($_SESSION['error']); ?>
+
+                        <?php include('success.php'); ?>
+                        <?php unset($_SESSION['success']); ?>
+                        
+                        
                         <div class="form-group general-input">
                             <input class="form-control" style="padding:20px;" type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Username">
                         </div>

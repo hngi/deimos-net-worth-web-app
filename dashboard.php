@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-
-
-
 if(isset($_SESSION['error'])){
     $error = $_SESSION['error'];
 }
@@ -15,9 +12,6 @@ $username   = $_SESSION['username'];
 if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
 }
-
-
-  
 
 ?>
 <!DOCTYPE html>
@@ -37,13 +31,14 @@ if(isset($_SESSION['success'])){
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
-            <a class="navbar-brand p-3" href="#"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+            <?php include('logo.php'); ?>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto navbar__menu">
-                <?php if(!isset($success)): ?>
+                <?php if(!isset($username)): ?>
                 <li class="nav-item active">
                     <button class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
                 </li>
@@ -69,15 +64,15 @@ if(isset($_SESSION['success'])){
             
             <?php if(isset($_SESSION['net_worth']) ): $netWorth = $_SESSION['net_worth'];  ?>
             <div class="alert alert-primary">
-            <h3>
-                Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
-                <?php  unset($_SESSION['net_worth']); ?>
-            </h3>
+                <h4>
+                    Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
+                    <?php  unset($_SESSION['net_worth']); ?>
+                </h4>
             </div>
             <?php elseif(isset($error)): ?>
-            <div class="alert alert-danger">
-            <?php include('error.php'); ?>
-            </div>
+           
+                <?php include('error.php'); ?>
+           
             <?php else:?>
 
             <?php endif; ?>
