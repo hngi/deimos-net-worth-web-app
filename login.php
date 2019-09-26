@@ -100,13 +100,14 @@ session_start();
                         <h4>SIGN UP USING YOUR EMAIL ADDRESS</h4>
                        
                         <div class="form-group ">
-                            <input class="form-control" type="email" name="email" placeholder="EMAIL ADDRESS">
+                            <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
                         </div>
                         <div class="form-group ">
                             <input class="form-control" type="text" name="username" placeholder="USERNAME">
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD">
+                            <input class="form-control" type="password" name="password" id="" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                         </div>
                         <div class="form-group ">
                             <input class="form-control" type="password" name="confirm_password" id="" placeholder="CONFIRM PASSWORD">
@@ -148,7 +149,7 @@ session_start();
                         <?php include('error.php'); ?>
                         <?php unset($_SESSION['error']); ?>
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="text" name="username" placeholder="Username">
+                            <input class="form-control" style="padding:20px;" type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Username">
                         </div>
                         <div class="form-group general-input">
                             <input class="form-control" style="padding:20px;" type="password" name="password" id="" placeholder="PASSWORD">

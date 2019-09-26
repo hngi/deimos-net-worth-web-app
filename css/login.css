@@ -246,7 +246,7 @@ input.btn-default {
 .signup-wrapper form>div a.btn-default,
 input.btn-default {
     background: #fff;
-    color: #000;
+    color: #fff;
 }
 
 .col-sm.signin-wrapper section .forgotten-pass {
@@ -257,6 +257,11 @@ input.btn-default {
 
 .signup-wrapper .returning-visitor {
     color: #fff;
+}
+
+label.box>span {
+    cursor: pointer !important;
+    text-decoration: underline;
 }
 
 .signin-wrapper .returning-visitor {
@@ -298,11 +303,21 @@ input.btn-default {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .signup-wrapper form>div input.btn-default {
+        color: #000;
+    }
+}
+
 @media only screen and (max-height: 679px) {
     .col-sm.signup-wrapper,
     .col-sm.signin-wrapper {
         overflow-y: scroll;
     }
+}
+
+@media only screen and (max-width: 400px) {
+    .info div.b {}
 }
 
 @media only screen and (min-width: 700px) {
@@ -362,7 +377,6 @@ input.btn-default {
         margin-bottom: 0;
     }
     .row input.form-control {
-        text-transform: uppercase;
         color: rgba(0, 0, 0, 0.38);
     }
     section .form-group {
@@ -488,6 +502,7 @@ input.btn-default {
         /* border-radius: 6px; */
         border-radius: 10px 0px 10px 10px;
         color: #fff;
+        cursor: pointer;
     }
     .info div.a,
     .info div.b {
