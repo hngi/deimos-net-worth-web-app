@@ -65,8 +65,8 @@
                     VALUES('$username', '$email', '$password')";
           mysqli_query($db, $query);
     
-          $_SESSION['username'] = $username;
-          $_SESSION['success'] = "You are now logged in";
+          $_SESSION['success'] = "Registration successful, Login Now!";
+          $_SESSION['username'] = $username ;
           header('location: login.php');
        
         }
