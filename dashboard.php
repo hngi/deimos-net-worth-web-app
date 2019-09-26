@@ -72,6 +72,7 @@ if(isset($_SESSION['success'])){
             <?php elseif(isset($error)): ?>
            
                 <?php include('error.php'); ?>
+                <?php unset($_SESSION['error']); ?>
            
             <?php else:?>
 
