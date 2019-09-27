@@ -40,22 +40,23 @@ if(isset($_SESSION['success'])){
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto navbar__menu">
                 <?php if(!isset($username)): ?>
-                <li class="nav-item active">
-                    <button class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
-                </li>
-                <li class="nav-item">
-                    <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
-                </li>
+                
                 <?php else: ?>
                 <li class="nav-item">
-                   <span class="dashboard-header-span">Hello, <?php echo $username;?></span>  
+                   <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
                 </li>
+                <li class="nav-item">
+                   <form action="server.php">
+                        <button type="submit"> &gt; &gt; &nbsp;Logout</button>
+                   </form>
+                </li>
+                
                 <?php endif; ?>
             </ul>
 
-                <form action="server.php" method="GET">
+                <!-- <form action="server.php" method="GET">
                     <button type="submit" id="btn-css" name="logout">Logout</button>
-                </form>
+                </form> -->
             </div>
         </nav>
     </header>

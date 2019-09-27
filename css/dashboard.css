@@ -84,8 +84,10 @@ main .get-started:hover {
    background-color: #6D1AD8 !important;
    color: #fff !important;
    border:2px solid #fff !important;
-   border-radius: 25px !important;
+   border-radius: 4px !important;
+   padding:5px;
    margin-left: 10px !important;
+   
 }
 
 #badge-bg {

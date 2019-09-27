@@ -1,3 +1,7 @@
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff !important;
+.navbar-toggler {
+    border-color: rgb(255, 255, 255) !important;
+}
+
+.navbar-toggler-icon {
+    background-color:#fff !important;
 }
