@@ -94,7 +94,8 @@
           mysqli_query($db, $query);
     
           $_SESSION['success'] = "Registration successful, Login Now!";
-          $_SESSION['username'] = $username ;
+          $_SESSION['username'] = $username;
+              unset($_SESSION['error']);
           header('location: dashboard.php');
        
         }
