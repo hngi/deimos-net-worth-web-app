@@ -54,9 +54,6 @@ if(isset($_SESSION['success'])){
                 <?php endif; ?>
             </ul>
 
-                <!-- <form action="server.php" method="GET">
-                    <button type="submit" id="btn-css" name="logout">Logout</button>
-                </form> -->
             </div>
         </nav>
     </header>
@@ -70,7 +67,7 @@ if(isset($_SESSION['success'])){
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
                     
                 </h4>
-<style>.get-started:focus { color:#000 !important; }</style>
+
     <form action="certificate.php">  <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
         </form>  </div>
             <?php elseif(isset($error)): ?>
@@ -89,57 +86,124 @@ if(isset($_SESSION['success'])){
             </div>
             <div class="line-through"></div>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3" style="padding:25px;">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3 offset-md-3" style="padding:25px;">
                 <h1 class="form-caption" style="font-size:1.7rem !important;">Assets</h1>
+                <div style="position:relative; margin-bottom:20px;">
+                    <span class="add-form-element badge" style="background-color:#6D1AD8; 
+                                                                color:#fff; 
+                                                                padding:5px;" data-toggle="modal" 
+                    data-target="#modal">Add new field <i class="fas fa-plus" style="color: #fff"></i></span>
+                </div>
+                
                     <form action="server.php" method="POST">
+                        <div id="asset-form">
+                            <div class="form-group">
+                            <label for="Investments">Investments</label>
+                                <input type="number" class="form-control" id="Investments" name="asset[]" placeholder="0 NGN">
+                            </div>
+                            <div class="form-group">
+                                <label for="Cash">Cash</label>
+                                <input type="number" class="form-control" id="Cash" name="asset[]" placeholder="0 NGN">
+                            </div>
+                            <div class="form-group">
+                                <label for="Bank Account">Bank Account</label>
+                                <input type="number" class="form-control" id="Bank Account" name="asset[]" placeholder="0 NGN">
+                            </div>  
+                            <div class="form-group">
+                                <label for="Real Estate">Real Estate</label>
+                                <input type="number" class="form-control" id="Real Estate" name="asset[]" placeholder="0 NGN">
+                            </div>
+
+                            <!-- Button trigger modal -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Add New Asset</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input class="form-control" id="new-asset" placeholder="Enter Asset Title">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal"   id="add-asset">Add Asset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         
-                        <div class="form-group">
-                          <label for="Investments">Investments</label>
-               <input type="number" class="form-control" id="Investments" name="investments" placeholder="0 NGN">
-                        </div>
-                        <div class="form-group">
-                            <label for="Cash">Cash</label>
-                            <input type="number" class="form-control" id="Cash" name="cash" placeholder="0 NGN">
-                        </div>
-                        <div class="form-group">
-                            <label for="Bank Account">Bank Account</label>
-                            <input type="number" class="form-control" id="Bank Account" name="bank_account" placeholder="0 NGN">
-                        </div>  
-                        <div class="form-group">
-                            <label for="Real Estate">Real Estate</label>
-                            <input type="number" class="form-control" id="Real Estate" name="real_estate" placeholder="0 NGN">
+
                         </div>
 
-                        
-                      <!-- </form> -->
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3" style="padding:25px;">
-                    <!-- <form> -->
                         <h1 class="form-caption" style="font-size:1.7rem !important;">Liabilties</h1>
-                        <div class="form-group">
-                            <label for="Loans">Loans</label>
-                            <input type="number" class="form-control " id="Loans" name="loans" placeholder="0 NGN">
+                        <div style="position:relative; margin-bottom:20px;">
+                            <span class="add-form-element badge" style="background-color:#6D1AD8; 
+                                                                color:#fff; 
+                                                                padding:5px;"
+                                                                 data-toggle="modal" data-target="#modal-liability">Add new field 
+                                <i class="fas fa-plus" style="color: #fff"></i></span>
                         </div>
-                        <div class="form-group">
-                            <label for="Mortgages">Mortgages</label>
-                            <input type="number" class="form-control" id="Mortgages" name="mortgages" placeholder="0 NGN">
-                        </div>
-                        <div class="form-group">
-                            <label for="Utility bills">Utility bills</label>
-                            <input type="number" class="form-control" id="Utility bills" name="utility_bills" placeholder="0 NGN">
-                        </div>
-                        <div class="form-group">
-                            <label for="Other debts">Other debts</label>
-                            <input type="number" class="form-control" id="Other debts" name="other_debts" placeholder="0 NGN">
+                        <div id="liabilities-form">
+                            <div class="form-group">
+                                <label for="Loans">Loans</label>
+                                <input type="number" class="form-control " id="Loans" name="liability[]" placeholder="0 NGN">
+                            </div>
+                            <div class="form-group">
+                                <label for="Mortgages">Mortgages</label>
+                                <input type="number" class="form-control" id="Mortgages" name="liability[]" placeholder="0 NGN">
+                            </div>
+                            <div class="form-group">
+                                <label for="Utility bills">Utility bills</label>
+                                <input type="number" class="form-control" id="Utility bills" name="liability[]" placeholder="0 NGN">
+                            </div>
+                            <div class="form-group">
+                                <label for="Other debts">Other debts</label>
+                                <input type="number" class="form-control" id="Other debts" name="liability[]" placeholder="0 NGN">
+                            </div>
+
+                            <div class="modal fade" id="modal-liability" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Add New Liability</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input class="form-control" id="new-liability" placeholder="Enter Liability Title">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="add-liability">Add Liability</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+
                         </div>
                         <div>
                             <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>
                         </div>
+                        
+                      </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3" style="padding:25px;">
+                    <!-- <form> -->
+                        
+                        
 
                         
                         
-                    </form>
+                    <!-- </form> -->
                     
+
                 </div>
                 
             </div>
@@ -148,5 +212,6 @@ if(isset($_SESSION['success'])){
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
