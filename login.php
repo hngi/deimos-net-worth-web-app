@@ -151,9 +151,7 @@ session_start();
                             <input type="submit" style="color:#fff !important; margin-bottom: 10px;" value="SIGN IN" name="login_user" class="btn btn-default">
                         </div>
                     </form>
-                    <div class="text-center forgotten-pass">
-                        <a href="#" class="forgotten-pass"><b>Forgot password</b></a>
-                    </div>
+                    
                     <div class="text-center hide-for-large">
                         <a href="#" class="returning-visitor">
                             <label class="box" for="toggle_signin">New to Deimos? <span>SIGN UP</span></label>
