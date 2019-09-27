@@ -8,7 +8,9 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '','registration');
+
+	$db = mysqli_connect('localhost', 'root', '12345678','registration');
+
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
@@ -93,7 +95,7 @@
     
           $_SESSION['success'] = "Registration successful, Login Now!";
           $_SESSION['username'] = $username ;
-          header('location: login.php');
+          header('location: dashboard.php');
        
         }
       }

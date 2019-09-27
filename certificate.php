@@ -7,7 +7,19 @@ $worthlevel="";
 switch ($_SESSION['net_worth']) {
     case $_SESSION['net_worth'] < 100000:
         
-        $_SESSION['worthlevel'] = "Double your hustle";
+        $_SESSION['worthlevel'] = "Typical Average Nigerian";
+        break; 
+        
+    case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
+        $_SESSION['worthlevel'] = "Money Shark!"; 
+        break;
+
+    case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
+        $_SESSION['worthlevel'] = "Dangote!"; 
+        break;
+
+    case $_SESSION['net_worth'] > 1000000:
+        $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
         break;
     
     default:
@@ -32,6 +44,7 @@ switch ($_SESSION['net_worth']) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/certificate.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chomsky" type="text/css" />
 
     <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
@@ -52,17 +65,6 @@ switch ($_SESSION['net_worth']) {
 
                 <h4>This is to certify that you have been rated</h4> <br>
 
-
-                <!-- <p class="text"><?php echo $netWorth; ?></p>  -->
-                <br>
-                <!-- <p class="text">$user.getWorthLevel()</p> <br> -->
-
-                <h4>with a networth of</h4> <br>
-
-               
-                 <br>
-
-
                 <p class="text"><?php echo $_SESSION['worthlevel']?></p> <br>
 
                 <h4>with a networth of</h4> <br>
@@ -78,7 +80,7 @@ switch ($_SESSION['net_worth']) {
 
 
                 <form action="dashboard.php">
-                    <button type="submit" class="btn btn-primary">Back to Dashbaord</button>
+                    <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Back to Dashboard</button>
                 </form>
                 
 

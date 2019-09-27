@@ -8,8 +8,10 @@ body {
 #content{
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     opacity: 0.9;
-    height: 100vh;
-    padding-top: 5px;
+width:100%;
+position:relative !important;   
+ height: 100% !important;
+   // padding-top: 5px;
 }
 
 h1,

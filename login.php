@@ -9,7 +9,9 @@ session_start();
 	// $_SESSION['success'] = "";
 
 	// connect to database
-    $db = mysqli_connect('localhost', 'root', '', 'registration');
+
+    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+
     
     // LOGIN USER
 	if (isset($_POST['login_user'])) {
@@ -64,6 +66,7 @@ session_start();
     <link href="index.php" rel="canonical">
     <title>Deimos Login | Calculate Your Net Worth</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <!-- <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -82,27 +85,13 @@ session_start();
                     <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/networth logo.svg"></a>
                 </nav>
                 <section>
-                    <!-- <p class="text-center guide">SIGN UP WITH...</p>
-                    <div class="sign-in-with-social d-flex justify-content-between">
-                        <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
-                            <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
-                        </a>
-                        <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
-                            <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
-                        </a>
-                    </div> -->
-
-                    
-
-
-                    <div class="page-divider d-flex align-items-center">
+                   <div class="page-divider d-flex align-items-center">
                         
                     </div>
                     <form action="server.php" method="POST">
                         <h4>SIGN UP</h4>
 
-                        <?php include('error.php'); ?>
-                        <?php unset($_SESSION['error']); ?>
+                        
 
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Enter email address">
@@ -127,8 +116,8 @@ session_start();
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
                         </div>
                     </form>
-                    <div class="text-center hide-for-large">
-                        <a href="#" class="returning-visitor">
+                    <div class="text-center hide-for-large" style="margin-top:20px; margin-bottom:30px;">
+                        <a href="#" class="returning-visitor" >
                             <label class="box" for="toggle_signin">Already have an account? <span>LOGIN</span></label>
                         </a>
                     </div>
@@ -139,22 +128,11 @@ session_start();
                     <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg" alt="Team Logo"></a>
                 </nav>
                 <section>
-                    <!-- <p class="text-center guide">SIGN IN WITH...</p>
-                    <div class="sign-in-with-social d-flex justify-content-between">
-                        <a href="#" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
-                            <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
-                        </a>
-                        <a href="#" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
-                            <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
-                        </a>
-                    </div>
-                    <div class="page-divider d-flex align-items-center">
-                        <hr>
-                        <span>OR</span>
-                        <hr>
-                    </div> -->
+                    
                     <form action="login.php" method="POST">
                         <h4 style="margin-top:40px;">SIGN IN</h4>
+
+                        
                         
                         
                         <?php include('error.php'); ?>
@@ -174,9 +152,7 @@ session_start();
                             <input type="submit" style="color:#fff !important; margin-bottom: 10px;" value="SIGN IN" name="login_user" class="btn btn-default">
                         </div>
                     </form>
-                    <div class="text-center forgotten-pass">
-                        <a href="#" class="forgotten-pass"><b>Forgot password</b></a>
-                    </div>
+                    
                     <div class="text-center hide-for-large">
                         <a href="#" class="returning-visitor">
                             <label class="box" for="toggle_signin">New to Deimos? <span>SIGN UP</span></label>
@@ -189,8 +165,12 @@ session_start();
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Hey There</h2>
-                    <p class="text-center main-message">Let’s hop on the path to discovering the true worth of your wealth. Please, enter your personal details </p>
+                    <h2 class="greetings text-center">Welcome Back</h2>
+                    <p class="text-center main-message">
+                    Do you Know ? 'Your net worth to the world is 
+                        usually determined by what remains after your bad habits have been subtracted 
+                        from your good ones." Proceed to know your financial Strengths NOW
+                    </p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN UP</label>
@@ -201,9 +181,11 @@ session_start();
                     <a href="" class="text-center d-block">
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
-                    <h2 class="greetings text-center">Welcome back</h2>
-                    <p class="text-center main-message">" Do you Know ? '____________' "  Finance and money quote database can be picked at random
-Proceed to know your financial Strengths NOW</p>
+                    <h2 class="greetings text-center">Hey There</h2>
+                    <p class="text-center main-message">
+                        Let’s hop on the path to discovering the true worth of 
+                        your wealth. Please, enter your personal details.
+                    </p>
                     <div class="text-center main-button">
                         <a href="" class="">
                             <label for="toggle_signup_1">SIGN IN</label>
