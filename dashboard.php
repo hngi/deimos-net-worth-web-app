@@ -47,7 +47,7 @@ if(isset($_SESSION['success'])){
                 </li>
                 <li class="nav-item">
                    <form action="server.php">
-                        <button type="submit"> &gt; &gt; &nbsp;Logout</button>
+                        <button type="submit" name="logout"> &gt; &gt; &nbsp;Logout</button>
                    </form>
                 </li>
                 
