@@ -111,7 +111,7 @@
 
 
   
-if (isset($_POST['get_networth'])) {
+if (isset($_POST['get_networth']) && is_array($_POST['asset']) && is_array($_POST['liability'])) {
   /**
    * Get data from the various fields
    * @param $asset
