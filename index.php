@@ -11,11 +11,12 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="og:title" property="og:title" content="">
-    <link href="index.html" rel="canonical">
+    <link href="index.php" rel="canonical">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="icon" type="image/x-icon" href="./img/Purple logo Group.png">
     <title>Deimos' Networth Calculator | Calculate your networth</title>
 </head>
