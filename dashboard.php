@@ -67,7 +67,7 @@ if(isset($_SESSION['success'])){
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
                     
                 </h4>
-<style>.get-started:focus { color:#000 !important; }</style>
+
     <form action="certificate.php">  <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
         </form>  </div>
             <?php elseif(isset($error)): ?>
@@ -212,6 +212,6 @@ if(isset($_SESSION['success'])){
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="Js/dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
