@@ -115,8 +115,8 @@ session_start();
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
                         </div>
                     </form>
-                    <div class="text-center hide-for-large">
-                        <a href="#" class="returning-visitor">
+                    <div class="text-center hide-for-large" style="margin-top:30px;">
+                        <a href="#" class="returning-visitor" >
                             <label class="box" for="toggle_signin">Already have an account? <span>LOGIN</span></label>
                         </a>
                     </div>
@@ -183,9 +183,9 @@ session_start();
                         <img src="./img/profile-pic.svg" alt="" class="profile-pic">
                     </a>
                     <h2 class="greetings text-center">Hey There</h2>
-                    <p class="text-center main-message">"
+                    <p class="text-center main-message">
                         Let’s hop on the path to discovering the true worth of 
-                        your wealth. Please, enter your personal details."
+                        your wealth. Please, enter your personal details.
                     </p>
                     <div class="text-center main-button">
                         <a href="" class="">
