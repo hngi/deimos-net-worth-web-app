@@ -19,7 +19,7 @@ switch ($_SESSION['net_worth']) {
         break;
 
     case $_SESSION['net_worth'] > 1000000:
-        $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
+        $_SESSION['worthlevel'] = "Bill Gate Wanna Be!"; 
         break;
     
     default:
