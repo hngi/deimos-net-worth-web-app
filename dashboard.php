@@ -92,7 +92,7 @@ if(isset($_SESSION['success'])){
                     <span class="add-form-element badge" style="background-color:#6D1AD8; 
                                                                 color:#fff; 
                                                                 padding:5px;" data-toggle="modal" 
-                    data-target="#modal">Add new field <i class="fas fa-plus" style="color: #6D1AD8"></i></span>
+                    data-target="#modal">Add new field <i class="fas fa-plus" style="color: #fff"></i></span>
                 </div>
                 
                     <form action="server.php" method="POST">
@@ -145,7 +145,7 @@ if(isset($_SESSION['success'])){
                                                                 color:#fff; 
                                                                 padding:5px;"
                                                                  data-toggle="modal" data-target="#modal-liability">Add new field 
-                                <i class="fas fa-plus" style="color: #6D1AD8"></i></span>
+                                <i class="fas fa-plus" style="color: #fff"></i></span>
                         </div>
                         <div id="liabilities-form">
                             <div class="form-group">
