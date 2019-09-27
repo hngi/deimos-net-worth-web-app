@@ -7,10 +7,20 @@ $worthlevel="";
 switch ($_SESSION['net_worth']) {
     case $_SESSION['net_worth'] < 100000:
         
-        $_SESSION['worthlevel'] = "Double your hustle";
+        $_SESSION['worthlevel'] = "Typical Average Nigerian";
         break; 
+        
     case $_SESSION['net_worth'] > 100000:
-   $_SESSION['worthlevel'] = "Money Shark!"; break;
+        $_SESSION['worthlevel'] = "Money Shark!"; 
+        break;
+
+    case $_SESSION['net_worth'] > 200000:
+        $_SESSION['worthlevel'] = "Dangote!"; 
+        break;
+
+    case $_SESSION['net_worth'] > 1000000:
+        $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
+        break;
     
     default:
          $_SESSION['worthlevel'] = "";
@@ -53,17 +63,6 @@ switch ($_SESSION['net_worth']) {
                 <h1>Certificate of Networth</h1> <br>
 
                 <h4>This is to certify that you have been rated</h4> <br>
-
-
-                <!-- <p class="text"><?php echo $netWorth; ?></p>  -->
-                <br>
-                <!-- <p class="text">$user.getWorthLevel()</p> <br> -->
-
-                
-
-               
-                 <br>
-
 
                 <p class="text"><?php echo $_SESSION['worthlevel']?></p> <br>
 
