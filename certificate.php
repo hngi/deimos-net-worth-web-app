@@ -10,11 +10,11 @@ switch ($_SESSION['net_worth']) {
         $_SESSION['worthlevel'] = "Typical Average Nigerian";
         break; 
         
-    case $_SESSION['net_worth'] > 100000:
+    case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
         $_SESSION['worthlevel'] = "Money Shark!"; 
         break;
 
-    case $_SESSION['net_worth'] > 200000:
+    case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
         $_SESSION['worthlevel'] = "Dangote!"; 
         break;
 
