@@ -54,9 +54,6 @@ if(isset($_SESSION['success'])){
                 <?php endif; ?>
             </ul>
 
-                <!-- <form action="server.php" method="GET">
-                    <button type="submit" id="btn-css" name="logout">Logout</button>
-                </form> -->
             </div>
         </nav>
     </header>
