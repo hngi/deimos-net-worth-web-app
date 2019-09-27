@@ -115,7 +115,7 @@ session_start();
                             <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
                         </div>
                     </form>
-                    <div class="text-center hide-for-large" style="margin-top:30px;">
+                    <div class="text-center hide-for-large" style="margin-top:20px; margin-bottom:30px;">
                         <a href="#" class="returning-visitor" >
                             <label class="box" for="toggle_signin">Already have an account? <span>LOGIN</span></label>
                         </a>
