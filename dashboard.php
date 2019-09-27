@@ -130,7 +130,7 @@ if(isset($_SESSION['success'])){
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-primary"   id="add-asset">Add Asset</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal"   id="add-asset">Add Asset</button>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@ if(isset($_SESSION['success'])){
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-primary"  id="add-liability">Add Liability</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="add-liability">Add Liability</button>
                                         </div>
                                     </div>
                                 </div>
