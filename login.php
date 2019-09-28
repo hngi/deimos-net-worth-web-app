@@ -10,7 +10,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+    $db = mysqli_connect('localhost', 'root', '', 'registration');
 
     
     // LOGIN USER
@@ -22,33 +22,32 @@ session_start();
             array_push($errors, "Username is required");
             $_SESSION['error'] = $errors;
             // header('location: login.php');   
-		}
-		if (empty($password)) {
+		}elseif (empty($password)) {
             array_push($errors, "Password is required");
             $_SESSION['error'] = $errors;
             // header('location: login.php');
-		}
-
-		if (count($errors) == 0) {
+		}elseif (count($errors) == 0) {
 			$password = md5($password);
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
 
-			if (mysqli_num_rows($results) == 1) {
-				$_SESSION['username'] = $username;
-				// $_SESSION['success'] = "You are now logged in";
-				header('location: dashboard.php');
-			}else {
-                array_push($errors, "Wrong username/password combination");
-                $_SESSION['error'] = $errors;
-                // header('location: login.php');
-			}
+                if (mysqli_num_rows($results) == 1) {
+                    $_SESSION['username'] = $username;
+                    // $_SESSION['success'] = "You are now logged in";
+                    unset($_SESSION['error']);
+                    var_dump('what'); die();
+                    header('location: dashboard.php');
+                }else {
+                    array_push($errors, "Wrong username/password combination");
+                    $_SESSION['error'] = $errors;
+                    // header('location: login.php');
+                }
 		}
   }
 
-  if(isset($_SESSION['error'])){
+  /* if(isset($_SESSION['error'])){
     $error = $_SESSION['error'];
-  }
+  } */
  /*  if(isset($_SESSION['success'])){
     $success = $_SESSION['success'];
   } */
@@ -113,7 +112,7 @@ session_start();
                             <input class="form-control" type="password" name="confirm_password" id="" placeholder="Confirm password">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
+                            <input type="submit" value="SIGN UP" name="submit" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center hide-for-large" style="margin-top:20px; margin-bottom:30px;">
