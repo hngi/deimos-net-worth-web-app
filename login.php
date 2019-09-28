@@ -34,12 +34,11 @@ session_start();
                 if (mysqli_num_rows($results) == 1) {
                     $_SESSION['username'] = $username;
                     unset($_SESSION['error']);
-                    var_dump('what'); die();
                     header('location: dashboard.php');
                 }else {
                     array_push($errors, "Wrong username/password combination");
                     $_SESSION['error'] = $errors;
-                    // header('location: login.php');
+                    header('location: login.php');
                 }
 		}
   }
