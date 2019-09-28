@@ -18,22 +18,21 @@ session_start();
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
-		if (empty($username)) {
+		if (empty($username) && !empty($password)) {
             array_push($errors, "Username is required");
             $_SESSION['error'] = $errors;
             // header('location: login.php');   
-		}elseif (empty($password)) {
+		}elseif (empty($password) && !empty($username) ) {
             array_push($errors, "Password is required");
             $_SESSION['error'] = $errors;
             // header('location: login.php');
-		}elseif (count($errors) == 0) {
+		}elseif (!empty($password) && !empty($username)){
 			$password = md5($password);
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
 
                 if (mysqli_num_rows($results) == 1) {
                     $_SESSION['username'] = $username;
-                    // $_SESSION['success'] = "You are now logged in";
                     unset($_SESSION['error']);
                     var_dump('what'); die();
                     header('location: dashboard.php');
