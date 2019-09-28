@@ -34,7 +34,7 @@ if (isset($_POST['get_networth']) && !count($_POST['asset']) > 0 && !count($_POS
     } 
     else //if the fields are empty this block executes
     {
-      array_push($errors, "All Fields are empty");
+      array_push($errors, "All Fields are required to compute your Networth");
       $_SESSION['error'] = $errors;
       header('location: dashboard.php');
     }
