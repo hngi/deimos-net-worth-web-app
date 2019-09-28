@@ -1,10 +1,10 @@
 <?php
-include('error.php'); 
+
 session_start();
 	// variable declaration
-	$username = "";
-	$email    = "";
-	$errors = array(); 
+	$username   = "";
+	$email      = "";
+	$errors     = []; 
 	 
 	// $_SESSION['success'] = "";
 
