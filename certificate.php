@@ -66,6 +66,7 @@ switch ($_SESSION['net_worth']) {
                 <h4>This is to certify that you have been rated</h4> <br>
 
                 <p class="text"><?php echo $_SESSION['worthlevel']?></p> <br>
+                <?php unset($_SESSION['worthlevel']); ?>
 
                 <h4>with a networth of</h4> <br>
 
