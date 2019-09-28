@@ -11,15 +11,23 @@ $worthlevel="";
             break; 
             
         case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
-            $_SESSION['worthlevel'] = "Money Shark!"; 
+            $_SESSION['worthlevel'] = "Shatta Bandle!"; 
             break;
     
         case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
             $_SESSION['worthlevel'] = "Dangote!"; 
             break;
+
+        case ($_SESSION['net_worth'] > 1000000 && $_SESSION['net_worth'] < 5000000):
+            $_SESSION['worthlevel'] = "Zuckerberg Apprentice!"; 
+            break;
     
-        case $_SESSION['net_worth'] > 1000000:
+        case( $_SESSION['net_worth'] > 5000000 && $_SESSION['net_worth'] < 10000000):
             $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
+            break;
+
+        case $_SESSION['net_worth'] > 10000000:
+            $_SESSION['worthlevel'] = "Jeff Bezos!"; 
             break;
         
         default:
