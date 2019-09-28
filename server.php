@@ -60,7 +60,7 @@
       }
     
   }else{
-        array_push($errors, "Registration unsuccessful, Username, email, password, are required. Click the sign up link and try again");
+        array_push($errors, "Registration unsuccessful! All fields are required. Click the sign up link and try again");
         $_SESSION['error'] = $errors; 
         unset($_SESSION['success']); 
         header('location: login.php');
