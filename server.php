@@ -35,7 +35,7 @@
             $_SESSION['error'] = $errors;
             header('location: login.php');
         }
-        elseif( (mysqli_num_rows($checkResult) == 0) && (mysqli_num_rows($checkUsernameResult) == 1) )
+        elseif( ((mysqli_num_rows($checkUsernameResult) == 1) && mysqli_num_rows($checkResult) == 0) )
         {
             array_push($errors, "Registration unsuccessful, Username taken, Please click the sign up link and try a different username");
             $_SESSION['error'] = $errors;
