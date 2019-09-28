@@ -10,7 +10,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+    $db = mysqli_connect('localhost', 'root', '', 'registration');
 
     
     // LOGIN USER
@@ -110,7 +110,7 @@ session_start();
                             <input class="form-control" type="password" name="confirm_password" id="" placeholder="Confirm password">
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN UP" name="submit" class="btn btn-default">
+                            <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
                         </div>
                     </form>
                     <div class="text-center hide-for-large" style="margin-top:20px; margin-bottom:30px;">

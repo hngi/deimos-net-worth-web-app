@@ -9,15 +9,16 @@
 	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-  $db = mysqli_connect('localhost', 'root', '12345678','registration');
+  $db = mysqli_connect('localhost', 'root', '','registration');
   
+    
+
+	// REGISTER USER
+	if ( isset($_POST['reg_user']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['confirm_password']) ) {
     $username         = mysqli_real_escape_string($db, $_POST['username']);
 		$email            = mysqli_real_escape_string($db, $_POST['email']);
 		$password         = mysqli_real_escape_string($db, $_POST['password']);
     $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
-
-	// REGISTER USER
-	if (isset($_POST['submit'])) {
     // ifempty($username) && empty($email) && empty($password) && empty($confirm_password)
     if( !empty($username) && !empty($email) && !empty($password) && !empty($confirm_password) ) // form validation: ensure that the form is correctly filled
       { 
@@ -81,6 +82,33 @@ if (isset($_GET['logout'])){
   unset($_SESSION['net_worth']);
   header('location: index.php'); //redirects to index.php
 }
+
+
+if (isset($_POST['get_networth']) && !empty($_POST['asset']) && !empty($_POST['liability'])) {
+  /**
+   * Get data from the various fields
+   * @param $asset
+   * @param $liability
+   */
+
+    
+    $asset        = $_POST['asset'];
+    $liability    = $_POST['liability'];
+    $sumAsset     = array_sum($asset);
+    $sumLiability = array_sum($liability);
+
+    $networthTotal = $sumAsset - $sumLiability;
+    // place networth in session
+    $_SESSION['net_worth'] = $networthTotal;
+    header('location: dashboard.php'); //redirect to dasboard.php
+
+  } 
+  else //if the fields are empty this block executes
+  {
+    array_push($errors, "All fields are required");
+    $_SESSION['error'] = $errors;
+    header('location: dashboard.php');
+  }
     
   
 ?>
