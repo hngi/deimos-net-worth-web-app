@@ -15,7 +15,8 @@ Input Cash
 
 Input Liability
 
-Application Calculates the total net worth of the user at that point in time.
+This application calculates your total networth at that any point in time, issues you a certificate
+and gives you tips and information on how to increase your networth.
 
 
 # Installation Guide
