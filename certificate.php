@@ -3,29 +3,31 @@ session_start();
 
 $networth ="";
 $worthlevel="";
-
-switch ($_SESSION['net_worth']) {
-    case $_SESSION['net_worth'] < 100000:
-        
-        $_SESSION['worthlevel'] = "Typical Average Nigerian";
-        break; 
-        
-    case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
-        $_SESSION['worthlevel'] = "Money Shark!"; 
-        break;
-
-    case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
-        $_SESSION['worthlevel'] = "Dangote!"; 
-        break;
-
-    case $_SESSION['net_worth'] > 1000000:
-        $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
-        break;
+ if(isset($_SESSION['net_worth'])) {
+    switch ($_SESSION['net_worth']) {
+        case $_SESSION['net_worth'] < 100000:
+            
+            $_SESSION['worthlevel'] = "Typical Average Nigerian";
+            break; 
+            
+        case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
+            $_SESSION['worthlevel'] = "Money Shark!"; 
+            break;
     
-    default:
-         $_SESSION['worthlevel'] = "";
-        break;
-}
+        case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
+            $_SESSION['worthlevel'] = "Dangote!"; 
+            break;
+    
+        case $_SESSION['net_worth'] > 1000000:
+            $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
+            break;
+        
+        default:
+             $_SESSION['worthlevel'] = "";
+            break;
+    }
+ }
+
 
 ?>
 

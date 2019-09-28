@@ -70,7 +70,7 @@ if(isset($_SESSION['success'])){
                     <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
                 </form>  
             </div>
-            <?php unset($_SESSION['net_worth']); ?>
+            
             <?php elseif(isset($error)): ?>
            
                 <?php include('error.php'); ?>
