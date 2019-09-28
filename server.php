@@ -9,7 +9,7 @@
 	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-  $db = mysqli_connect('localhost', 'root', '','registration');
+  $db = mysqli_connect('localhost', 'root', '12345678','registration');
   
     
 
