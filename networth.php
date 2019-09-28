@@ -11,7 +11,7 @@ $errors   = [];
 // connect to database
 
 
-if (isset($_POST['get_networth']) && !count($_POST['asset']) > 0 && !count($_POST['liability'] > 0)) {
+if (isset($_POST['get_networth']) && count($_POST['asset']) < 1 && !count($_POST['liability'] < 1)) {
     /**
      * Get data from the various fields
      * @param $asset
