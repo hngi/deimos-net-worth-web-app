@@ -3,154 +3,91 @@
 	// variable declaration
 	$username = "";
 	$email    = "";
-	$errors = array(); 
+	$errors   = []; 
 	$regError = [];
-	$_SESSION['success'] = "";
+	// $_SESSION['success'] = "";
+	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-
-	$db = mysqli_connect('localhost', 'root', '12345678','registration');
-
+  $db = mysqli_connect('localhost', 'root', '12345678','registration');
+  
+    
 
 	// REGISTER USER
-	if (isset($_POST['reg_user'])) {
-
-    
-		// receive all input values from the form
-		$username         = mysqli_real_escape_string($db, $_POST['username']);
+	if ( isset($_POST['reg_user']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['confirm_password']) ) {
+    $username         = mysqli_real_escape_string($db, $_POST['username']);
 		$email            = mysqli_real_escape_string($db, $_POST['email']);
 		$password         = mysqli_real_escape_string($db, $_POST['password']);
-		$confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+    $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+    // ifempty($username) && empty($email) && empty($password) && empty($confirm_password)
+    if( !empty($username) && !empty($email) && !empty($password) && !empty($confirm_password) ) // form validation: ensure that the form is correctly filled
+      { 
+        // checks user email
+        $checkEmail   = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+        $checkResult  = mysqli_query($db, $checkEmail);
 
-    if (empty($username) && empty($email) && empty($password) && empty($confirm_password) ) {
-          array_push($errors, "All fields are required");
-          $_SESSION['error'] = $errors;
-          unset($_SESSION['success']);
-          header('location: login.php');
-    }
+        // checks user username
+        $checkUsername   = "SELECT * FROM users WHERE username='$username' LIMIT 1";
+        $checkUsernameResult  = mysqli_query($db, $checkUsername);
 
-
-
-    // form validation: ensure that the form is correctly filled
-    if(empty($username)) 
-    { 
-        array_push($errors, "Registration unsuccessful, Username is required. Click the sign up link and try again");
+        if(mysqli_num_rows($checkResult) == 1) 
+        {
+            array_push($errors, "Registration unsuccessful, email already exist, Please click the sign up link and try a different email");
+            $_SESSION['error'] = $errors;
+            header('location: login.php');
+        }
+        elseif( ((mysqli_num_rows($checkUsernameResult) == 1) && mysqli_num_rows($checkResult) == 0) )
+        {
+            array_push($errors, "Registration unsuccessful, Username taken, Please click the sign up link and try a different username");
+            $_SESSION['error'] = $errors;
+            header('location: login.php');
+        }elseif( (mysqli_num_rows($checkUsernameResult) == 0) && (mysqli_num_rows($checkResult) == 0)){
+            // var_dump('gff'); die();
+              // register user if there are no errors in the form
+              $password = md5($password);//encrypt the password before saving in the database
+              $query = "INSERT INTO users (username, email, password) 
+                        VALUES('$username', '$email', '$password')";
+              mysqli_query($db, $query);
+        
+              // $_SESSION['success'] = "Registration successful, Login Now!";
+              $_SESSION['username'] = $username;
+              unset($_SESSION['error']);
+              header('location: dashboard.php');     
+        }else{
+        array_push($errors, "Registration unsuccessful, Username or email, already exist. Click the sign up link and try again");
         $_SESSION['error'] = $errors; 
-        unset($_SESSION['success']); 
-        header('location: login.php');  
-    }
-    if(empty($email)) 
-    { 
-        array_push($errors, "Registration unsuccessful, Email is required. Click the sign up link and try again"); 
-        $_SESSION['error'] = $errors;
         unset($_SESSION['success']); 
         header('location: login.php');
-    }
-    if(empty($password)) 
-    { 
-        array_push($errors, "Registration unsuccessful, Password is required . Click the sign up link and try again");
+      }
+    
+  }else{
+        array_push($errors, "Registration unsuccessful! All fields are required. Click the sign up link and try again");
         $_SESSION['error'] = $errors; 
         unset($_SESSION['success']); 
-        header('location: login.php'); 
-    }
-    if($password != $confirm_password) 
-    {
-      array_push($errors, "Registration unsuccessful, passwords doesn't match . Click the sign up link and try again"); 
-      $_SESSION['error'] = $errors;
-      unset($_SESSION['success']); 
-      header('location: login.php');
-    } 
-		
-    
-    
-      // checks user email
-      $checkEmail   = "SELECT * FROM users WHERE email='$email' LIMIT 1";
-      $checkResult  = mysqli_query($db, $checkEmail);
-
-	  // checks user username
-      $checkUsername   = "SELECT * FROM users WHERE username='$username' LIMIT 1";
-      $checkUsernameResult  = mysqli_query($db, $checkUsername);
-      
-      if(mysqli_num_rows($checkResult) == 1) 
-      {
-        
-          array_push($errors, "Registration unsuccessful, email already exist, Please click the sign up link and try a different email");
-          $_SESSION['error'] = $errors;
-          header('location: login.php');
-      }
-      elseif(mysqli_num_rows($checkUsernameResult) == 1)
-      {
-          array_push($errors, "Registration unsuccessful, Username taken, Please click the sign up link and try a different username");
-          $_SESSION['error'] = $errors;
-          header('location: login.php');
-      }
-      else 
-      {
-        if (count($errors) == 0) {
-          // register user if there are no errors in the form
-          $password = md5($password);//encrypt the password before saving in the database
-          $query = "INSERT INTO users (username, email, password) 
-                    VALUES('$username', '$email', '$password')";
-          mysqli_query($db, $query);
-    
-          $_SESSION['success'] = "Registration successful, Login Now!";
-          $_SESSION['username'] = $username ;
-          header('location: dashboard.php');
-       
-        }
-      }
-  
-
-		
-
-		
-		
-
-	}
-
-
-
-  
-if (isset($_POST['get_networth']) && is_array($_POST['asset']) && is_array($_POST['liability'])) {
-  /**
-   * Get data from the various fields
-   * @param $asset
-   * @param $liability
-   */
-
-    
-    $asset        = $_POST['asset'];
-    $liability    = $_POST['liability'];
-    $sumAsset     = array_sum($asset);
-    $sumLiability = array_sum($liability);
-
-    $networthTotal = $sumAsset - $sumLiability;
-    // place networth in session
-    $_SESSION['net_worth'] = $networthTotal;
-    header('location: dashboard.php'); //redirect to dasboard.php
-
-  } 
-  else //if the fields are empty this block executes
-  {
-    array_push($errors, "All fields are required");
-    $_SESSION['error'] = $errors;
-    header('location: dashboard.php');
+        header('location: login.php');
+        // header('location: login.php');
   }
-  
+
+  }
 
 
 
+
+
+
+    
 /**
  * Performs Logout by destroying and unsetting the sessions
  */
 if (isset($_GET['logout'])){
-      session_destroy();
-      unset($_SESSION['username']);
-      unset($_SESSION['success']);
-      unset($_SESSION['error']);
-      unset($_SESSION['reg_error']);
-      unset($_SESSION['net_worth']);
-      header('location: index.php'); //redirects to index.php
+  session_destroy();
+  unset($_SESSION['username']);
+  unset($_SESSION['success']);
+  unset($_SESSION['error']);
+  unset($_SESSION['reg_error']);
+  unset($_SESSION['net_worth']);
+  header('location: index.php'); //redirects to index.php
 }
-
+    
+  
 ?>

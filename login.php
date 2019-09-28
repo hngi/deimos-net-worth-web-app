@@ -1,11 +1,8 @@
 <?php
-include('error.php'); 
 session_start();
 	// variable declaration
-	$username = "";
-	$email    = "";
-	$errors = array(); 
-	 
+	$errors     = []; 
+	
 	// $_SESSION['success'] = "";
 
 	// connect to database
@@ -18,40 +15,32 @@ session_start();
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
-		if (empty($username)) {
+		if (empty($username) && !empty($password)) {
             array_push($errors, "Username is required");
-            $_SESSION['error'] = $errors;
-            // header('location: login.php');   
-		}
-		if (empty($password)) {
+            $_SESSION['error'] = $errors;  
+		}elseif (empty($password) && !empty($username) ) {
             array_push($errors, "Password is required");
             $_SESSION['error'] = $errors;
-            // header('location: login.php');
-		}
-
-		if (count($errors) == 0) {
+		}elseif (empty($password) && empty($username) ) {
+            array_push($errors, "Please enter Username and Password to continue!");
+            $_SESSION['error'] = $errors;
+		}elseif (!empty($password) && !empty($username)){
 			$password = md5($password);
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
-
-			if (mysqli_num_rows($results) == 1) {
-				$_SESSION['username'] = $username;
-				// $_SESSION['success'] = "You are now logged in";
-				header('location: dashboard.php');
-			}else {
-                array_push($errors, "Wrong username/password combination");
-                $_SESSION['error'] = $errors;
-                // header('location: login.php');
-			}
+           
+                if (mysqli_num_rows($results) == 1) {
+                    $_SESSION['username'] = $username;
+                    unset($_SESSION['error']);
+                    header('location: dashboard.php');
+                }else {
+                    array_push($errors, "Wrong username/password combination");
+                    $_SESSION['error'] = $errors;
+                }
 		}
   }
 
-  if(isset($_SESSION['error'])){
-    $error = $_SESSION['error'];
-  }
- /*  if(isset($_SESSION['success'])){
-    $success = $_SESSION['success'];
-  } */
+
   
 ?>
 <!DOCTYPE html>
@@ -129,15 +118,19 @@ session_start();
                     
                 </nav>
                 <section>
-                    
+
+
+
+                
+                
                     <form action="login.php" method="POST">
-                        <h4 style="margin-top:40px;">SIGN IN</h4>
+                        <h4 style="margin-top:40px;">SIGN IN TO DEIMOS</h4>
+                        
+                        
+                        <?php include 'error.php'; ?>
 
                         
-                        
-                        
-                        <?php include('error.php'); ?>
-                        <?php unset($_SESSION['error']); ?>
+                       
 
                         <?php include('success.php'); ?>
                         <?php unset($_SESSION['success']); ?>

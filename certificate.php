@@ -3,29 +3,40 @@ session_start();
 
 $networth ="";
 $worthlevel="";
-
-switch ($_SESSION['net_worth']) {
-    case $_SESSION['net_worth'] < 100000:
-        
-        $_SESSION['worthlevel'] = "Typical Average Nigerian";
-        break; 
-        
-    case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
-        $_SESSION['worthlevel'] = "Money Shark!"; 
-        break;
-
-    case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
-        $_SESSION['worthlevel'] = "Dangote!"; 
-        break;
-
-    case $_SESSION['net_worth'] > 1000000:
-        $_SESSION['worthlevel'] = "Bill Gate Wanna Be!"; 
-        break;
+ if(isset($_SESSION['net_worth'])) {
+    switch ($_SESSION['net_worth']) {
+        case $_SESSION['net_worth'] < 100000:
+            
+            $_SESSION['worthlevel'] = "Typical Average Nigerian";
+            break; 
+            
+        case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
+            $_SESSION['worthlevel'] = "Shatta Bandle!"; 
+            break;
     
-    default:
-         $_SESSION['worthlevel'] = "";
-        break;
-}
+        case ($_SESSION['net_worth'] > 200000 && $_SESSION['net_worth'] < 1000000):
+            $_SESSION['worthlevel'] = "Dangote!"; 
+            break;
+
+        case ($_SESSION['net_worth'] > 1000000 && $_SESSION['net_worth'] < 5000000):
+            $_SESSION['worthlevel'] = "Zuckerberg Apprentice!"; 
+            break;
+    
+        case( $_SESSION['net_worth'] > 5000000 && $_SESSION['net_worth'] < 10000000):
+            $_SESSION['worthlevel'] = "Bill Gate Wonna Be!"; 
+            break;
+
+        case $_SESSION['net_worth'] > 10000000:
+            $_SESSION['worthlevel'] = "Jeff Bezos!"; 
+            break;
+        
+        default:
+             $_SESSION['worthlevel'] = "";
+            break;
+    }
+ }
+
+
 
 ?>
 
@@ -66,6 +77,7 @@ switch ($_SESSION['net_worth']) {
                 <h4>This is to certify that you have been rated</h4> <br>
 
                 <p class="text"><?php echo $_SESSION['worthlevel']?></p> <br>
+                <?php unset($_SESSION['worthlevel']); ?>
 
                 <h4>with a networth of</h4> <br>
 

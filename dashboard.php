@@ -65,11 +65,12 @@ if(isset($_SESSION['success'])){
             <div class="alert alert-primary">
                 <h4>
                     Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
-                    
                 </h4>
-
-    <form action="certificate.php">  <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
-        </form>  </div>
+                <form action="certificate.php">  
+                    <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
+                </form>  
+            </div>
+            
             <?php elseif(isset($error)): ?>
            
                 <?php include('error.php'); ?>
@@ -95,7 +96,7 @@ if(isset($_SESSION['success'])){
                     data-target="#modal">Add new field <i class="fas fa-plus" style="color: #fff"></i></span>
                 </div>
                 
-                    <form action="server.php" method="POST">
+                    <form action="networth.php" method="POST">
                         <div id="asset-form">
                             <div class="form-group">
                             <label for="Investments">Investments</label>

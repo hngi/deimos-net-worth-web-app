@@ -13,7 +13,7 @@ const addElement = (type) => {
     let newLabel = document.createElement('label');
     let newInput = document.createElement('input');
     newInput.classList.add('form-control');
-    newInput.type = 'text';
+    newInput.type = 'number';
     newInput.placeholder = '0 NGN';
     newBlock.classList.add('form-group');
     if(type === 'Asset'){
