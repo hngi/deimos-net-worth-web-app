@@ -9,7 +9,7 @@
 	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-  $db = mysqli_connect('localhost', 'root', '12345678','registration');
+  $db = mysqli_connect('localhost', 'root', '','registration');
   
     
 
@@ -65,11 +65,17 @@
         $_SESSION['error'] = $errors; 
         unset($_SESSION['success']); 
         header('location: login.php');
-        header('location: login.php');
+        // header('location: login.php');
   }
 
   }
-  
+
+
+
+
+
+
+    
 /**
  * Performs Logout by destroying and unsetting the sessions
  */
@@ -82,35 +88,6 @@ if (isset($_GET['logout'])){
   unset($_SESSION['net_worth']);
   header('location: index.php'); //redirects to index.php
 }
-
-
-if (isset($_POST['get_networth']) && !count($_POST['asset']) > 0 && !count($_POST['liability'] > 0)) {
-  /**
-   * Get data from the various fields
-   * @param $asset
-   * @param $liability
-   */
-  var_dump($_POST['asset']); die();
-
-    // if(!empty($_POST['asset']) && !empty($_POST['liability']) ){
-      $asset        = $_POST['asset'];
-      $liability    = $_POST['liability'];
-      $sumAsset     = array_sum($asset);
-      $sumLiability = array_sum($liability);
-  
-      $networthTotal = $sumAsset - $sumLiability;
-     
-      $_SESSION['net_worth'] = $networthTotal;
-      header('location: dashboard.php'); //redirect to dasboard.php
-   
-    
-  } 
-  else //if the fields are empty this block executes
-  {
-    array_push($errors, "All Fields are empty");
-    $_SESSION['error'] = $errors;
-    header('location: dashboard.php');
-  }
     
   
 ?>

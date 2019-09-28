@@ -96,7 +96,7 @@ if(isset($_SESSION['success'])){
                     data-target="#modal">Add new field <i class="fas fa-plus" style="color: #fff"></i></span>
                 </div>
                 
-                    <form action="server.php" method="POST">
+                    <form action="networth.php" method="POST">
                         <div id="asset-form">
                             <div class="form-group">
                             <label for="Investments">Investments</label>
