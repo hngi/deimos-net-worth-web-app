@@ -9,7 +9,7 @@
 	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-  $db = mysqli_connect('localhost', 'root', '','registration');
+  $db = mysqli_connect('localhost', 'root', '12345678','registration');
   
     $username         = mysqli_real_escape_string($db, $_POST['username']);
 		$email            = mysqli_real_escape_string($db, $_POST['email']);
