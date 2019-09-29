@@ -52,6 +52,7 @@ $_SESSION['net_worth'] = $netVal; //assign to session
  }
 
 
+
 ?>
 
 

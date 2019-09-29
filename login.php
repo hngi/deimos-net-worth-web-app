@@ -7,7 +7,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+    $db = mysqli_connect('localhost', 'root', '', 'deimos');
 
     
     // LOGIN USER
@@ -71,7 +71,7 @@ session_start();
             <div class="col-sm signup-wrapper pl-0 pr-0">
                 <nav class="navbar">
                     <a class="navbar-brand hide-for-large" href="index.php"><img src="./img/networth logo.svg"></a>
-                    <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/networth logo.svg"></a>
+                    <a class="navbar-brand hide-for-small" href="index.php"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
                 </nav>
                 <section>
                    <div class="page-divider d-flex align-items-center">
@@ -114,7 +114,8 @@ session_start();
             </div>
             <div class="col-sm signin-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg" alt="Team Logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
+                    
                 </nav>
                 <section>
 
