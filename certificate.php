@@ -3,6 +3,21 @@ session_start();
 
 $networth ="";
 $worthlevel="";
+
+$newNetWorth = $_GET['net_session']; //get the incoming netvalue
+
+/**Process data */
+$exVal = explode(',',$newNetWorth);
+$parts=array_filter($exVal);
+$networthValue = implode("",$parts);
+
+
+
+$netVal = (int)$networthValue; //convert to int
+$_SESSION['net_worth'] = $netVal; //assign to session
+
+
+// var_dump($netVal); die();
  if(isset($_SESSION['net_worth'])) {
     switch ($_SESSION['net_worth']) {
         case $_SESSION['net_worth'] < 100000:
