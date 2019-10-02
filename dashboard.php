@@ -64,10 +64,29 @@ if(isset($_SESSION['success'])){
             <?php if(isset($_SESSION['net_worth']) ): $netWorth = $_SESSION['net_worth'];  ?>
             <div class="alert alert-primary">
                 <h4>
-                    Your Net Worth : <span class="badge" id="badge-bg">₦ <?php echo number_format($netWorth,2); ?> </span> 
+                    Your Net Worth : ₦<span class="badge" id="badge-bg"><?php echo number_format($netWorth); ?> </span> 
+                    <input type="hidden" id="netWorth" value="<?php echo $netWorth; ?>">
                 </h4>
-                <form action="certificate.php">  
-                    <button type="submit" class="btn btn-primary" name="get_networth">View Certificate</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="text">Want to add or remove an expense? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
+                         <span class="badge badge-secondary">"SUBTRACT"</span> </span>
+                        <form style="margin-top:20px;">
+                            <input type="number" class="form-control" id="addValue" placeholder="0 NGN">
+                        </form>
+                        <button type="button" class="btn btn-primary btn-sm" 
+                        style="margin:20px; border-radius:25px;" id="addMoney" disabled>Add <i class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm" disabled style="margin:20px; border-radius:25px;" id="subtractMoney">Subtract <i class="fa fa-minus"></i></button>
+                    </div>
+                   <!--  <div class="col-md-6">
+                        
+                        
+                        
+                    </div> -->
+                </div>
+                
+                <form>  
+                    <button type="button" class="btn btn" style="background-color:#6D1AD8; color:#fff; border-radius:10px;" id="getNetworth" name="get_networth">View Certificate</button>
                 </form>  
             </div>
             
@@ -210,9 +229,77 @@ if(isset($_SESSION['success'])){
             </div>
         </main>
     </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    
+     <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
+    <script>
+        function numberWithCommas(x) {
+            var parts = x.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
+
+        document.getElementById("addValue").addEventListener("keyup", function() {
+            var nameInput = document.getElementById('addValue').value;
+            if (nameInput != "") {
+                document.getElementById('addMoney').removeAttribute("disabled");
+            } else {
+                document.getElementById('addMoney').setAttribute("disabled", null);
+            }
+            
+        });
+        
+        document.getElementById("addValue").addEventListener("keyup", function() {
+            var nameInput = document.getElementById('addValue').value;
+            if (nameInput != "") {
+                document.getElementById('subtractMoney').removeAttribute("disabled");
+            } else {
+                document.getElementById('subtractMoney').setAttribute("disabled", null);
+            }
+            
+        });
+
+
+        $(document).ready(() => {
+            $('#addMoney').click(() => {
+                let networth = document.getElementById('badge-bg').innerHTML;
+                let userInput = $('#addValue').val();
+
+                let convertedNetWorth = parseInt(networth.replace(/,/g, ''));
+                let convertedUserInput = parseInt(userInput);
+                let sum = convertedNetWorth + convertedUserInput;
+                
+                let newValue = numberWithCommas(sum);
+                document.getElementById('badge-bg').innerHTML = newValue;
+            })
+
+            $('#subtractMoney').click(() => {
+                let networth = document.getElementById('badge-bg').innerHTML;
+                let userInput = $('#addValue').val();
+
+                let convertedNetWorth = parseInt(networth.replace(/,/g, ''));
+                let convertedUserInput = parseInt(userInput);
+                let sum = convertedNetWorth - convertedUserInput;
+                
+                let newValue = numberWithCommas(sum);
+                document.getElementById('badge-bg').innerHTML = newValue;
+            })
+        });
+
+        $(document).ready(() => {
+            $('#getNetworth').click(() => {
+                let newNetWorth = document.getElementById('badge-bg').innerHTML;
+                $.post('controller.php',{newNetWorth:newNetWorth},(response) => {
+                    window.location = "certificate.php?net_session="+response;
+                });
+            })
+        });
+          
+    </script>
 </body>
 </html>

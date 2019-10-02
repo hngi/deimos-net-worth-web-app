@@ -7,7 +7,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '', 'deimos');
+    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
 
     
     // LOGIN USER
@@ -77,7 +77,7 @@ session_start();
                    <div class="page-divider d-flex align-items-center">
                         
                     </div>
-                    <form action="server.php" method="POST">
+                    <form action="server.php" method="POST" id="signupW"
                         <h4>SIGN UP</h4>
 
                         
