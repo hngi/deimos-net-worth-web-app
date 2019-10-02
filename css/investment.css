@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,700&display=swap');
 
-
+/* Navbar*/
 #header__nav .header__nav__brand {
     font-size: 15px;
     color: #6D1AD8;
@@ -23,6 +23,8 @@
     font-size: 1em;
     font-weight: bold;
 }
+
+/* Landing Area*/
 
 .tab{
     background-color: #6D1AD8;
@@ -56,14 +58,16 @@ p{
     color: #6D1AD8;
 }
 
-#team{
+#invCoin{
     width: 50rem;
-    margin-left: -13rem;
+    margin-left: -15rem;
 }
 
+/* all button on body*/
 .btn-default{
     border: 2px #6D1AD8 solid;
     color: #6D1AD8;
+    border-radius: 10px 0 10px 10px;
 }
 
 .btn-default:hover{
@@ -71,14 +75,26 @@ p{
     color: white;
 }
 
+/*buttons in footer area*/
+
+.btn-ft{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    border-radius: 10px 0 10px 10px;
+}
+
+.btn-ft:hover{
+    border: 2px white solid;
+}
+
+
 .footer{
     background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
-    background: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
 
 #investor{
     width: 40rem;
-    margin-left: -2rem;
+    margin-left: -5rem;
 }
