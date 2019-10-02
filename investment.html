@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investment Advice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/investment.css">
+    <link rel="icon" type="image/x-icon" href="img/Purple logo Group.png">
+</head>
+
+<body >
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/logo.jpg">
+                <span class=" header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto navbar__menu">
+                <?php if(isset($_SESSION['username'])): ?>
+                    <form action="dashboard.php">
+                        <li class="nav-item active">
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Dashboard</button>
+                        </li>
+                    </form>
+
+                    <form action="server.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="logout">Logout</button>
+                        </li>
+                    </form>
+                <?php else: ?>
+                    <form action="login.php">
+                        <li class="nav-item active">
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
+                        </li>
+                    </form>
+                    <form action="login.php">
+                        <li class="nav-item">
+                            <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
+                        </li>
+                    </form>
+                <?php endif; ?>
+
+
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row align-items-center">  <!--------Content-------->
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 mb-5 content">
+                <h1>Hello <br> $firstname,</h1>
+                
+                <br>
+
+                <h2>We can grow your <br> your assets from <span class="tab">$netWorth</span> </h2>
+                    
+                <br> 
+                    
+                <h2> Let's show you how. </h2> 
+                
+                <p>  Re-evaluate your invstement strategies with Networth.</p>
+            
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 d-none d-md-block">
+                <img src="img/growMoney.png" alt="team-logo" id="team">
+
+            </div>
+        </div>
+
+        <div class="shadow-lg p-5 mb-5 bg-white rounded cta">
+
+            <h2> OPPORTUNITIES </h2>
+
+            <br>
+
+            <p> At Deimos Networth, we strive to help you make financial decisions with confidence. To do this, many or all of the products featured here are from our partners. However, this doesn’t influence our evaluations. Our opinions are our own.</p>
+
+        </div>
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+             <h3> Partner with Hotels.ng </h2>
+             <p> You can now earn more than N100,000 monthly referring new corporate clients to hotels.ng. </p>
+
+             <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <h3> Partner with an on-demand Taxi Service</h3>
+
+            <p> Lagos residents often don’t use their cars for days or weeks at a time. That idle time can translate to money with services like Uber & Taxify, which let you get people around. Earning potential varies by car and location, but standard vehicles typically rent for N3000 to N5000 per hour.</p>
+
+            <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <h3>Mutual Funds</h3>
+
+            <p> Mutual funds enable you to invest in many companies at once, from the largest and most stable, to the new and fast-growing. They have teams of managers who choose companies for the fund to invest in, based on the fund type. Mutual funds spreads your investment among many companies and helps you avoid the risks that come with investing in single stocks.</p>
+
+            <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+        
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <h3> List your spare bedroom on Airbnb</h3>
+
+            <p> Have a spare bedroom — or two? Making it available on vacation rental sites can provide a lucrative side income. For example, Airbnb hosts earn an average of $924 per month, according to data from Earnest, an online lender. If you’re a renter, just make sure that everything is kosher with your rental agreement beforehand.</p>
+
+            <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <h3> Pick up freelance work online</h3>
+
+            <p> Websites such as Upwork, Fiverr and Freelancer offer opportunities to do a variety of freelance jobs, such as writing, programming, design, marketing, data entry and being a virtual assistant. Fluent in a second language? Check sites such as Gengo or One Hour Translation, or drum up business through a site of your own. No matter what kind of freelancing you do, keep track of the going rate for the kind of work you provide so you know if you’re charging too much or too little.</p>
+
+            <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <h3> Make deliveries for O-ride, Jumia Food</h3>
+
+            <p> Websites such as Upwork, Fiverr and Freelancer offer opportunities to do a variety of freelance jobs, such as writing, programming, design, marketing, data entry and being a virtual assistant. Fluent in a second language? Check sites such as Gengo or One Hour Translation, or drum up business through a site of your own. No matter what kind of freelancing you do, keep track of the going rate for the kind of work you provide so you know if you’re charging too much or too little.</p>
+
+            <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
+        </div>
+    </div>
+
+    <div class="container-fluid footer p-5">
+        <div class="row align-items-center">  <!--------Content-------->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 mb-3">
+                <h1>Looking for more Specialized Investments? </h1>
+                
+                <br>
+
+                <h2>Get Insights from our Investment Advisors.</h2> 
+                <p>  Deimos Networth Team has been proud to help our clients pursue their financial goals while giving them more time to focus on what really matters in life. Everything we offer — from guidance, to powerful trading tools, to retirement resources — is built around one thing....you.</p>
+
+                <br>
+
+                <button class="btn btn-success btn-lg sign-up-btn px-4 py-2">
+                    
+                    Contact Us
+
+                </button>
+            
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 d-none d-lg-block d-xl-block">
+                <img src="img/invest.png" alt="investor" id="investor">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,700&display=swap');
+
+
+#header__nav .header__nav__brand {
+    font-size: 15px;
+    color: #6D1AD8;
+}
+
+#header__nav .navbar__menu button {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header__nav .navbar__menu button:hover {
+    background: #fff;
+    color: #6D1AD8;
+    border-radius: 10px 0 10px 10px;
+    border: #6d1ad8 2px solid;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.tab{
+    background-color: #6D1AD8;
+    color: #fff;
+}
+
+
+.cta{
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+    color: white;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+h3{
+    font-weight: 300;
+    color:  #6D1AD8;
+}
+
+h3,
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.content{
+    z-index: 1;
+    color: #6D1AD8;
+}
+
+#team{
+    width: 50rem;
+    margin-left: -13rem;
+}
+
+.btn-default{
+    border: 2px #6D1AD8 solid;
+    color: #6D1AD8;
+}
+
+.btn-default:hover{
+    background: #6D1AD8;
+    color: white;
+}
+
+.footer{
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+    background: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#investor{
+    width: 40rem;
+    margin-left: -2rem;
+}
