@@ -377,7 +377,7 @@ label.box>span {
         margin-bottom: 0;
     }
     .row input.form-control {
-        color: rgba(0, 0, 0, 0.38);
+        color: #000000;
     }
     section .form-group {
         margin-bottom: 0;
