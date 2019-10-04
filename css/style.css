@@ -94,9 +94,7 @@ main .get-started:hover {
     .land-logo {
         display: none;
     }
-    .navbar-brand {
-        padding-left: 1rem;
-    }
+    .navbar-brand {}
     .main_pad {
         margin-left: unset;
     }

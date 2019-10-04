@@ -1,61 +1,71 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-.body {
-    width: 800px;
-    height: 600px;
-    padding: 20px;
-    text-align: center;
-    background: #6D1AD8;
-    font-family: 'ChomskyRegular';
-    font-weight: normal;
-    font-style: normal;
-    z-index: 3;
+
+body {
+    background: url('../img/logo.jpg');
 }
 
-.border {
-    width: 780px;
-    height: 590px;
-    margin: 0 auto;
-    text-align: center;
-    background: white;
-    border-bottom-right-radius: 20%;
-    border-top-left-radius: 20%;
+#content{
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+    opacity: 0.9;
+width:100%;
+position:relative !important;   
+ height: 100% !important;
+   // padding-top: 5px;
+}
+
+h1,
+h4,
+p{
+    font-family: 'ChomskyRegular';
+}
+
+h1{
+    font-size: 2.2rem;
 }
 
 .logo {
-    width: 10em;
-    margin-bottom: -40px;
-    margin-top: -10px;
+    margin: 20pt 0 0 80pt;
+    width: 100pt
 }
 
-h2 {
-    font-size: 50px;
-    font-weight: bold;
+.text{
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3rem;
 }
 
-.worthLevel {
-    margin: 0 auto;
-}
+/*Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+    #content{
+        padding-top: 50pt;
+    }
 
-.worthLevel>tr>span {
-    font-size: 1.5em;
-    line-height: 1.5em;
-}
+    .logo {
+        margin: 20pt 0 0 80pt;
+        width: 200pt
+    }
 
-span>i {
-    font-size: 25px;
-}
+    h1,
+    h4,
+    p{
+        text-align: left;
+    }
 
-span>b {
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
+    h1{
+        font-size: 4rem;
+    }
 
-.signature {
-    margin-top: 10px;
-}
+    h4,
+    .text{ 
+        font-size: 2rem;
+        margin-top: 5px;
+    }
 
-span {
-    font-size: 20px;
-}
+    p{
+        font-size: 1.3rem;
+    }
+
+    #footer{
+        margin-top: 4em;
+    }
+  }

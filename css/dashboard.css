@@ -33,7 +33,7 @@ main {
    margin: 30px auto 0 auto;
 }
 main .main__caption {
-   font-size: 1.5em;
+   font-size: 1.2em;
    font-weight: bold;
    line-height: 1.5;
    color: #545454;
@@ -74,5 +74,31 @@ main .get-started:hover {
    background: #fff;
    color: #6d1ad8;
    border: 1px solid #6D1AD8;   
+}
+
+.dashboard-header-span {
+   color: #fff;
+}
+
+#btn-css {
+   background-color: #6D1AD8 !important;
+   color: #fff !important;
+   border:2px solid #fff !important;
+   border-radius: 4px !important;
+   padding:5px;
+   margin-left: 10px !important;
+   
+}
+
+#badge-bg {
+   background-color: #6D1AD8;
+   color: #fff;
+   flex-direction: row;
+   
+}
+
+.add-form-element {
+   color: #545454;
+   cursor: pointer;
 }
 
