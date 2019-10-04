@@ -43,6 +43,11 @@ if(isset($_SESSION['success'])){
                 
                 <?php else: ?>
                 <li class="nav-item">
+                    <span class="m-3 pt-1 pl-3 pr-3 pb-1" style="font-weight:bold; ">
+                        <a href="leaderboard.php" style="text-decoration:none!important; color:#fff !important;">Leaderboard &nbsp; |&nbsp;</a>
+                    </span>
+                </li>
+                <li class="nav-item">
                    <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
                 </li>
                 <li class="nav-item">
@@ -207,6 +212,11 @@ if(isset($_SESSION['success'])){
                         
                         
 
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Current Date:</label>
+                            <input type="date" name="current_date" class="form-control">
                         </div>
                         <div>
                             <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>
