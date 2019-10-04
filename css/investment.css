@@ -87,7 +87,6 @@ p{
     border: 2px white solid;
 }
 
-
 .footer{
     background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
     background-size: cover;
@@ -99,7 +98,3 @@ p{
     width: 40rem;
     margin-left: -5rem;
 }
-
-/* li a:hover{
-    color: white;
-} */

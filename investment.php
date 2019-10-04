@@ -76,7 +76,11 @@ if (isset($_POST["send"])) {
                 
                     <?php else: ?>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
+=======
+                    <span class="dashboard-header-span" style="font-weight:bold; color:#6D1AD8;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
+>>>>>>> 1a960cfa76eb14c29af195a5542042133f4894f5
                     </li>
                     
                     <li class="nav-item">
@@ -130,7 +134,7 @@ if (isset($_POST["send"])) {
 
                 <br>
 
-                <h2> Re-evaluate your invstement strategies with Networth&trade;. Let's show you how. </h2>
+                <h2> Re-evaluate your invstement strategies with Networth&trade;. Let's show you how.</h2>
 
 
             </div>
