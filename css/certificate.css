@@ -8,9 +8,9 @@ body {
 #content{
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     opacity: 0.9;
-width:100%;
-position:relative !important;   
- height: 100% !important;
+    width:100%;
+    position:relative !important;   
+    height: 100% !important;
    // padding-top: 5px;
 }
 
@@ -32,6 +32,15 @@ h1{
 .text{
     font-family: 'Pacifico', cursive;
     font-size: 1.3rem;
+}
+
+.btn-grad{
+    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.btn-grad:hover{
+    border: 1px solid white;
 }
 
 /*Medium devices (tablets, 768px and up) */

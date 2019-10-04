@@ -76,8 +76,16 @@ if (isset($_POST["send"])) {
                 
                     <?php else: ?>
                     <li class="nav-item">
-                    <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
+                        <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
                     </li>
+                    
+                    <li class="nav-item">
+                        <form action="dashboard.php">
+                            <button type="submit" class="btn btn-default m-3 pt-1 pl-3 pr-3 pb-1">Return to Dashboard</button>
+                        </form>
+                    </li>
+                   
+
                     <li class="nav-item">
                     <form action="server.php">
                             <button type="submit" name="logout"> &gt; &gt; &nbsp;Logout</button>
@@ -85,13 +93,8 @@ if (isset($_POST["send"])) {
                     </li>
                     
                     <?php endif; ?>
-                    <!-- <form action="dashboard.php">
-                        <li class="nav-item active">
-                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Dashboard</button>
-                        </li>
-                    </form>
 
-                    <form action="server.php" method="GET">
+                    <!-- <form action="server.php" method="GET">
                         <li>
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css"
                                 name="logout">Logout</button>
@@ -127,9 +130,7 @@ if (isset($_POST["send"])) {
 
                 <br>
 
-                <h2> Let's show you how. </h2>
-
-                <p> Re-evaluate your invstement strategies with Networth.</p>
+                <h2> Re-evaluate your invstement strategies with Networth&trade;. Let's show you how. </h2>
 
 
             </div>
@@ -192,7 +193,7 @@ if (isset($_POST["send"])) {
 
             <p> Have a spare bedroom — or two? Making it available on vacation rental sites can provide a lucrative side
                 income. For example, Airbnb hosts earn an average of $924 per month, according to data from Earnest, an
-                online lender. If you’re a renter, just make sure that everything is kosher with your rental agreement
+                online lender. If you’re a renter, just make sure that everything is okay with your rental agreement
                 beforehand.</p>
 
             <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
@@ -213,13 +214,9 @@ if (isset($_POST["send"])) {
 
         <div class="shadow-sm p-3 mb-5 bg-white rounded">
             <!--------suggesttions-------------------->
-            <h3> Make deliveries for O-ride, Jumia Food</h3>
+            <h3> Join our Lending Club</h3>
 
-            <p> Websites such as Upwork, Fiverr and Freelancer offer opportunities to do a variety of freelance jobs,
-                such as writing, programming, design, marketing, data entry and being a virtual assistant. Fluent in a
-                second language? Check sites such as Gengo or One Hour Translation, or drum up business through a site
-                of your own. No matter what kind of freelancing you do, keep track of the going rate for the kind of
-                work you provide so you know if you’re charging too much or too little.</p>
+            <p> P2P Lending is one of our highly recommended short term investments. Instead of buying shares in a company (and its future profits) you are lending your money to someone else with guaranteed returns as high as 30%. Instead of having to go through every single loan request, (which you can still do), use our online tools that allow you to target a certain rate of return and search only through loans that fit the bill. </p>
 
             <button class="btn btn-default btn-sm px-4 py-2"> Read More</button>
         </div>
@@ -234,7 +231,7 @@ if (isset($_POST["send"])) {
                 <br>
 
                 <h3 class="text-white ">Get Insights from our Investment Advisors.</h3>
-                <p> Deimos Networth Team has been proud to help our clients pursue their financial goals while giving
+                <p> Deimos Networth&trade; Team has been proud to help our clients pursue their financial goals while giving
                     them more time to focus on what really matters in life. Everything we offer — from guidance, to
                     powerful trading tools, to retirement resources — is built around one thing....you.</p>
 

@@ -101,8 +101,8 @@ $_SESSION['net_worth'] = $netVal; //assign to session
 
                 <p id="footer"><em>Signed</em></p>
                 <div class="">
-                <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top:-15px; margin-bottom: -15px;" >
-                </div> <br>
+                <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top:-15px; margin-bottom: -5px;" >
+                </div>
                 <p>Deimos Elders</p>
 
 
@@ -110,7 +110,7 @@ $_SESSION['net_worth'] = $netVal; //assign to session
                     <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Back to Dashboard</button>
                 </form>
                 <form action="investment.php">
-                    <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Get Investment Advice</button>
+                    <button type="submit" style="margin-bottom:40px;" class="btn btn-default btn-grad text-white font-weight-bold"">Get FREE Investment Advice</button>
                 </form>
                 
 

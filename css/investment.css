@@ -80,6 +80,7 @@ p{
 .btn-ft{
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     border-radius: 10px 0 10px 10px;
+    
 }
 
 .btn-ft:hover{
