@@ -13,6 +13,7 @@ if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,10 @@ if(isset($_SESSION['success'])){
                 
                 <?php else: ?>
                 <li class="nav-item">
-                   <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
+                   <a class="dashboard-header-span" style="font-weight:bold;" href="investment.php">Investment Advice &nbsp; | &nbsp;</a>  
+                </li>
+                <li class="nav-item">
+                   <span class="dashboard-header-span" style="font-weight:bold;"> &nbsp; Hello, <?php echo ucfirst($username);?> &nbsp; | </span>  
                 </li>
                 <li class="nav-item">
                    <form action="server.php">

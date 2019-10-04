@@ -97,7 +97,7 @@ $_SESSION['net_worth'] = $netVal; //assign to session
                 <h4>with a networth of</h4> <br>
 
                 <p class="text">NGN <?php echo number_format($_SESSION['net_worth'],2); ?></p> <br>
-                <?php  unset($_SESSION['net_worth']); ?>
+                
 
                 <p id="footer"><em>Signed</em></p>
                 <div class="">
@@ -108,6 +108,9 @@ $_SESSION['net_worth'] = $netVal; //assign to session
 
                 <form action="dashboard.php">
                     <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Back to Dashboard</button>
+                </form>
+                <form action="investment.php">
+                    <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Get Investment Advice</button>
                 </form>
                 
 
