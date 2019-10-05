@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico&display=swap');
+
+body {
+    background: url('../img/logo.jpg');
+}
+
+#content{
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+    opacity: 0.9;
+    height: 100vh;
+}
+
+h1,
+h4,
+p{
+    font-family: 'ChomskyRegular';
+}
+
+h1{
+    font-size: 1.9rem;
+}
+
+.logo {
+    margin: 20pt 0 0 80pt;
+    width: 90pt
+}
+
+h4,
+.text{
+    font-size: 1rem;
+}
+
+.text{
+    font-family: 'Pacifico', cursive;
+    font-size: 1rem;
+}
+
+/*Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+    #content{
+        padding-top: 50pt;
+    }
+
+    .logo {
+        margin: 20pt 0 0 80pt;
+        width: 200pt
+    }
+
+    h1,
+    h4,
+    p{
+        text-align: left;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    h4,
+    .text{ 
+        font-size: 2rem;
+        margin-top: 5px;
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+
+    #footer{
+        margin-top: 4em;
+    }
+  }

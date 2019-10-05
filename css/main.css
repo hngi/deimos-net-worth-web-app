@@ -1,67 +1,64 @@
-body {
-  background: #6d1ad8;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* color: #ffffff; */
-}
 
-.welcome-image {
-  padding: 250px;
-  text-align: center;
-}
-.welcome-image p {
-  font-size: 40px;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-}
-.signup-nav {
-  color: #fff;
-  cursor: pointer;
-}
+            @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|UnifrakturMaguntia&display=swap');
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+            
+            body {
+                height: 100vh;
+                font-family: 'ChomskyRegular';
+            }
+            
+            .container {
+                background-image: linear-gradient( 320deg, #6c24b4 25%, #fff 25%, #ffffff 75%);
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                width: 88vw;
+                height: 98vh;
+                margin: 2px auto;
+                border: 1px solid black;
+            }
+            
+            .left {
+                font-size: 1em;
+                text-align: center;
+                color: #2d195e
+            }
+            
+            .left>h1 {
+                border-top: 4px solid #2d195e;
+                margin: 10px auto;
+                width: 250px;
+            }
+            
+            #medal {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .right {
+                width: 60%;
+                margin: 30vh auto;
+                text-align: center;
+                line-height: 1.5;
+                color: #2d195e
+            }
+            
+            #cert {
+                font-size: 1em;
+                text-transform: uppercase;
+                margin-bottom: 50px;
+                border-bottom: 4px solid #2d195e;
+                font-family: 'Farro', sans-serif;
+            }
+            
+            #sign img {
+                width: 80px;
+                height: 80px;
+                border-bottom: #2d195e solid 2px;
+            }
 
-.login-nav {
-  cursor: pointer;
-  color: #ffffff;
-  padding-right: 20px;
-}
-.navbar-brand,
-.navbar-brand:hover {
-  color: #ffffff;
-}
-.networth {
-  color: #fff;
-}
-.container {
-  padding-top: 60px;
-}
-.container span {
-  font-size: 45px;
-  font-weight: 500px;
-}
-
-.container ul {
-  list-style-type: none;
-}
-.icon-space {
-  padding-right: 10px;
-}
-.networth-hr {
-  border: 1px solid #fff;
-  width: 30%;
-  margin-bottom: 10px;
-}
-.get-started-btn {
-  background: #fff;
-  color: #6d1ad8;
-  border-radius: 8px 0px 8px 8px;
-  border: 2px solid #fff;
-  font-weight: 600;
-  padding: 2px 25px;
-}
-.ul-caption {
-  padding: 0px;
-}
-.ul-caption li {
-  margin-bottom: 10px;
-}
