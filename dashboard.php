@@ -78,14 +78,14 @@ if(isset($_SESSION['success'])){
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="text">Want to add or remove an Asset or Liability? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
-                         <span class="badge badge-secondary">"SUBTRACT"</span> </span>
+                        <span class="text">Want to add or remove an Asset or Liability? Enter the  value and press <span class="badge badge-secondary"> "+" </span> or
+                         <span class="badge badge-secondary">"-"</span> </span>
                         <form style="margin-top:20px;">
                             <input type="number" class="form-control" id="addValue" placeholder="0 NGN">
                         </form>
                         <button type="button" class="btn btn-primary btn-sm" 
-                        style="margin:20px; border-radius:25px;" id="addMoney" disabled>Add <i class="fa fa-plus"></i></button>
-                        <button type="button" class="btn btn-danger btn-sm" disabled style="margin:20px; border-radius:25px;" id="subtractMoney">Subtract <i class="fa fa-minus"></i></button>
+                        style="margin:20px; border-radius:25px;" id="addMoney" disabled>+ <i class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm" disabled style="margin:20px; border-radius:25px;" id="subtractMoney">-<i class="fa fa-minus"></i></button>
                     </div>
                    <!--  <div class="col-md-6">
                         

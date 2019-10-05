@@ -1,88 +1,84 @@
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 
 /* NAVBAR STYLING */
 
 .navbar {
-    background: #6D1AD8;
+  background: #6d1ad8;
 }
 
 #header__nav .header__nav__brand {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 #header__nav .navbar__menu button {
-    background: #6D1AD8;
-    color: #fff;
-    border-radius: 10px 0 10px 10px;
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
+  background: #6d1ad8;
+  color: #fff;
+  border-radius: 10px 0 10px 10px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 #header__nav .navbar__menu button:hover {
-    background: #fff;
-    color: #6d1ad8;
-    border-radius: 10px 0 10px 10px;
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
+  background: #fff;
+  color: #6d1ad8;
+  border-radius: 10px 0 10px 10px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
 }
-
 
 /*SHOWCASE*/
 
 .showcase {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    font-size: 2rem;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
 }
 
 .showcase-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 
 /* FOOTER */
 
 .footer {
-    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+  background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 #investor {
-    width: 40rem;
-    margin-left: -5rem;
+  width: 40rem;
+  margin-left: -5rem;
 }
 
 .contact-button {
-    background: #6d1ad8;
-    color: #fff;
-    border-radius: 10px 0 10px 10px;
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer !important;
+  background: #6d1ad8;
+  color: #fff;
+  border-radius: 10px 0 10px 10px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer !important;
 }
 
 .contact-button:hover {
-    background: #fff;
-    color: #6d1ad8;
+  background: #fff;
+  color: #6d1ad8;
 }
-
 
 /* RESPONSIVE STYLING */
 
 @media screen and (min-width: 1600px) {
-    .navbar-brand {
-        padding-left: 8rem;
-    }
-} 
+  .navbar-brand {
+    padding-left: 8rem;
+  }
+}
