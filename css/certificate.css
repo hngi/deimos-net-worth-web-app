@@ -8,9 +8,6 @@ body {
 #content {
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
   opacity: 0.9;
-
-  height: 100vh;
-
   width: 100%;
   position: relative !important;
   height: 100% !important;
@@ -23,8 +20,8 @@ p {
   font-family: "ChomskyRegular";
 }
 
-head h1 {
-  font-size: 1.9rem;
+h1 {
+  font-size: 2.2rem;
 }
 
 .logo {

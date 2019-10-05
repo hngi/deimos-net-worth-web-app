@@ -10,9 +10,6 @@
 		$body = "From:".$name."\n E-Mail:".$email."\n Message:\n".$message;
         //print_r($body); die;
 
-		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
-
- 
 		// Check if name has been entered
 		if (empty($_POST['name'])) {
 			$errName = 'Please enter your name';
@@ -96,7 +93,6 @@
 
                         <form action="login.php">
                             <li class="nav-item">
-                                <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Logout</button>
 
                             </li>
                         </form>
@@ -156,12 +152,6 @@
 
                             <fieldset class="form-group">
 
-                                <textarea class="form-control" name="message" required placeholder="Enter Message" value="
-                                    <?php if(isset($_POST['message'])){
-                                        echo htmlspecialchars($_POST['message']);
-                                    }?>"></textarea>
-
-                                <textarea class="form-control" name="message" id="contactMessage" required placeholder="Message" value="
                                     <?php if(isset($_POST['message'])){
                                         echo htmlspecialchars($_POST['message']);
                                     }?>">
