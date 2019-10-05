@@ -83,7 +83,7 @@
         <!--SHOWCASE-->
 
         <section class="showcase">
-            <img src="img/Contact-Us-Banner2.jpg" alt="Contact" class="showcase" style="width:100%">
+            <img src="img/contact-banner.jpg" alt="Contact" class="showcase" style="width:100%">
             <div class="showcase-text">Contact Us</div>
         </section>
 
