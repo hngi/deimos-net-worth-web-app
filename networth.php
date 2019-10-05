@@ -7,7 +7,7 @@ $errors   = [];
 
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', '12345678','registration');
+$db = mysqli_connect('localhost', 'root', '','registration');
 
 
 if (isset($_POST['get_networth']) ) {
@@ -52,8 +52,10 @@ if (isset($_POST['get_networth']) ) {
           
           // $date=date($_POST['current_date']);
           // 
-          $dateSave = date("Y-m-d H:i:s",strtotime($_POST['current_date']));
-          // var_dump($dateSave); die();
+          // var_dump($_POST['current_date']); die();
+          // $dateSave = date("Y-m-d H:i:s",strtotime($_POST['current_date']));
+          $dateSave = $_POST['current_date'];
+          // var_dump($_POST['current_date']); die();
 
          
           $query = "INSERT INTO networth (user_id,username, networth,created_at) VALUES ('$user_id', '$username','$networthTotal','$dateSave')";
