@@ -15,22 +15,15 @@ if(isset($_POST['leaderboard'])) {
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             
-            
-            
-            /* $userId = $row['id'];
-            $userId = (int)$userId; */
             $db_data = [
                 'id' => $row['id'],
                 'username' => $row['username'],
                 'networth' => $row['networth'],
                 'created_at' => $row['created_at'],
             ];
-           /*  $netw = $row['networth'];
-            $created_at = $row['created_at']; */
 
             array_push($data, $db_data);
             $_SESSION['data'] = $data;
-            // var_dump($_SESSION['data']);
             header("Location: leaderboard.php");
         }
         

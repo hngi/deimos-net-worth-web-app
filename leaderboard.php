@@ -10,7 +10,6 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $db_data = [
-                // 'id' => $row['id'],
                 'username' => $row['username'],
                 'networth' => $row['networth'],
                 'created_at' => $row['created_at'],
@@ -121,45 +120,44 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                 $data = $_SESSION['data'];
                              ?>
                             
-                            <?php foreach($data as $leader) : ?> 
-                             
-                            <tr>
-                               <?php 
-                                    $string = $leader['username'];
-                                    $expr = '/(?<=\s|^)[a-z]/i';
-                                    preg_match_all($expr, $string, $matches);
-                                    $result = implode('', $matches[0]);
-                                    $result = strtoupper($result);
-                                ?>
-                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
-                                <td><?php echo number_format($leader['networth']);  ?></td>
-                                <td><?php echo $leader['created_at'];  ?></td>
-                            </tr>
-                            <?php  endforeach; ?>
-                            <?php unset($_SESSION['data']); ?>
+                                    <?php foreach($data as $leader) : ?> 
+                                    
+                                    <tr>
+                                    <?php 
+                                            $string = $leader['username'];
+                                            $expr = '/(?<=\s|^)[a-z]/i';
+                                            preg_match_all($expr, $string, $matches);
+                                            $result = implode('', $matches[0]);
+                                            $result = strtoupper($result);
+                                        ?>
+                                        <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
+                                        <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <td><?php echo $leader['created_at'];  ?></td>
+                                    </tr>
+                                    <?php  endforeach; ?>
+                                    <?php unset($_SESSION['data']); ?>
 
                             <?php elseif(isset($_SESSION['data_default']) && !isset($_SESSION['data']) ):
                                 $data = $_SESSION['data_default'];
                              ?>
                             
-                            <?php foreach($data as $leader) : ?> 
-                             
-                            <tr>
-                               
-                                <?php 
-                                    $string = $leader['username'];
-                                    $expr = '/(?<=\s|^)[a-z]/i';
-                                    preg_match_all($expr, $string, $matches);
-                                    $result = implode('', $matches[0]);
-                                    $result = strtoupper($result);
-                                ?>
-                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
-                                <td><?php echo number_format($leader['networth']);  ?></td>
-                                <td><?php echo $leader['created_at'];  ?></td>
-                            </tr>
-                            <?php  endforeach; ?>
+                                    <?php foreach($data as $leader) : ?>
+                                    <tr>
+                                        <?php 
+                                            $string = $leader['username'];
+                                            $expr = '/(?<=\s|^)[a-z]/i';
+                                            preg_match_all($expr, $string, $matches);
+                                            $result = implode('', $matches[0]);
+                                            $result = strtoupper($result);
+                                        ?>
+                                        <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
+                                        <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <td><?php echo $leader['created_at'];  ?></td>
+                                    </tr>
+                                    <?php  endforeach; ?>
 
-                            <?php elseif(isset($_SESSION['error']) && isset($_SESSION['data_default'])): ?>
+                            <?php elseif(isset($_SESSION['error']) ): ?>
+                            <!-- && isset($_SESSION['data_default']) -->
                                 <?php include('error.php'); ?>
                                 <?php unset($_SESSION['error']); ?>
                                 <?php unset($_SESSION['data_default']); ?>
