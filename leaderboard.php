@@ -130,8 +130,17 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                             $result = implode('', $matches[0]);
                                             $result = strtoupper($result);
                                         ?>
-                                        <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
-                                        <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <td>
+                                            <span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?>
+                                            </span>
+                                        </td>
+                                        <?php $netw = (int)$leader['networth'];?>
+
+                                        <?php if ($netw < 0):  ?>
+                                            <td><?php echo number_format($leader['networth']);  ?> (debtor)</td>
+                                        <?php else: ?> 
+                                            <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <?php endif; ?>
                                         <td><?php echo $leader['created_at'];  ?></td>
                                     </tr>
                                     <?php  endforeach; ?>
