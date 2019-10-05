@@ -50,7 +50,6 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
 </head>
 
 
-
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
