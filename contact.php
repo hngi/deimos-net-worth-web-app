@@ -9,6 +9,9 @@
 		
 		$body = "From:".$name."\n E-Mail:".$email."\n Message:\n".$message;
         //print_r($body); die;
+
+		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+
  
 		// Check if name has been entered
 		if (empty($_POST['name'])) {
@@ -26,7 +29,11 @@
 		}
  
         // If there are no errors, send the email
+ 
         // !$errName && !$errEmail && !$errMessage && !$errHuman
+
+        // $errName && !$errEmail && !$errMessage && !$errHuman
+
         // mail ($to, $subject, $body, $from)
         if (!isset($errName) && !isset($errEmail) && !isset($errMessage)) {
 	        if (mail ($to, $subject, $body, $header)) {
@@ -47,7 +54,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="og:title" property="og:title" content="">
+
         <link href="index.html" rel="canonical">
+
+        <link href="index.php" rel="canonical">
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
@@ -59,20 +70,34 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
+
                 <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+
+                <a class="navbar-brand" href="index.php"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto navbar__menu">
+ 
                         <form action="index.html">
+
+                        <form action="index.php">
+
                             <li class="nav-item active">
                                 <button class="m-3 pt-1 pl-3 pr-3 pb-1">Home</button>
                             </li>
                         </form>
+
                         <form action="login.html">
                             <li class="nav-item">
                                 <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Login</button>
+
+                        <form action="login.php">
+                            <li class="nav-item">
+                                <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Logout</button>
+
                             </li>
                         </form>
                     </ul>
@@ -130,10 +155,18 @@
                             </fieldset>
 
                             <fieldset class="form-group">
+
                                 <textarea class="form-control" name="message" required placeholder="Enter Message" value="
                                     <?php if(isset($_POST['message'])){
                                         echo htmlspecialchars($_POST['message']);
                                     }?>"></textarea>
+
+                                <textarea class="form-control" name="message" id="contactMessage" required placeholder="Message" value="
+                                    <?php if(isset($_POST['message'])){
+                                        echo htmlspecialchars($_POST['message']);
+                                    }?>">
+                                </textarea>
+
                                 <?php 
                                 if(isset($errMessage)){
                                     echo "<p class='text-danger'>".$errMessage."</p>";
@@ -169,5 +202,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </body>
-
     </html>
+    </html> 
+

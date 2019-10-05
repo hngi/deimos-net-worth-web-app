@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-# deimos-networth-web-app
-
-Aishat oyindamola Azeez contributed
-=======
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f9c2ad84-b2da-4231-9ace-19b0565c8308/deploy-status)](https://app.netlify.com/sites/deimos-networth/deploys)
 
-
 # deimos-networth-web-app
+
 A Calculator that takes in assets, cash and liabilities and calculates how much a user is worth
 
 ## Functionality
+
 User Registration
 
 User Login
@@ -20,8 +16,13 @@ Input Cash
 
 Input Liability
 
+HEAD
 Application Calculates the total net worth of the user at that point in time.
 
+This application calculates your total networth at that any point in time, issues you a certificate
+and gives you tips and information on how to increase your networth.
+
+> > > > > > > 3c51fb45795557cfb21271df35aac742ba0ebca6
 
 # Installation Guide
 
@@ -52,4 +53,3 @@ php -S localhost:8000
 ```bash
 Visit localhost:8000 in your browser
 ```
->>>>>>> 5d33e46ecc81c690785065f317da9874f2e5c73e
