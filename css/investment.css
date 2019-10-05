@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,700&display=swap');
+
+/* Navbar*/
+#header__nav .header__nav__brand {
+    font-size: 15px;
+    color: #6D1AD8;
+}
+
+#header__nav .navbar__menu button {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header__nav .navbar__menu button:hover {
+    background: #fff;
+    color: #6D1AD8;
+    border-radius: 10px 0 10px 10px;
+    border: #6d1ad8 2px solid;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Landing Area*/
+
+.tab{
+    background-color: #6D1AD8;
+    color: #fff;
+}
+
+
+.cta{
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+    color: white;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+h3{
+    font-weight: 300;
+    color:  #6D1AD8;
+}
+
+h3,
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.content{
+    z-index: 1;
+    color: #6D1AD8;
+}
+
+#invCoin{
+    width: 50rem;
+    margin-left: -15rem;
+}
+
+/* all button on body*/
+.btn-default{
+    border: 2px #6D1AD8 solid;
+    color: #6D1AD8;
+    border-radius: 10px 0 10px 10px;
+}
+
+.btn-default:hover{
+    background: #6D1AD8;
+    color: white;
+}
+
+/*buttons in footer area*/
+
+.btn-ft{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    border-radius: 10px 0 10px 10px;
+    
+}
+
+.btn-ft:hover{
+    border: 2px white solid;
+}
+
+.footer{
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#investor{
+    width: 40rem;
+    margin-left: -5rem;
+}
