@@ -46,7 +46,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="og:title" property="og:title" content="">
-        <link href="index.html" rel="canonical">
+        <link href="index.php" rel="canonical">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/36afc40636.js" crossorigin="anonymous"></script>
@@ -58,18 +58,18 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
-                <a class="navbar-brand" href="index.html"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+                <a class="navbar-brand" href="index.php"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto navbar__menu">
-                        <form action="index.html">
+                        <form action="index.php">
                             <li class="nav-item active">
                                 <button class="m-3 pt-1 pl-3 pr-3 pb-1">Home</button>
                             </li>
                         </form>
-                        <form action="login.html">
+                        <form action="login.php">
                             <li class="nav-item">
                                 <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Logout</button>
                             </li>
