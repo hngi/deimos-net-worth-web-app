@@ -7,10 +7,14 @@ body {
 #content {
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
     opacity: 0.9;
+<<<<<<< HEAD
+    height: 100vh;
+=======
     width: 100%;
     position: relative !important;
     height: 100% !important;
     padding-top: 5px;
+>>>>>>> 67da7684747c845bedaee17ffe1cb91523885388
 }
 
 h1,
@@ -19,18 +23,28 @@ p {
     font-family: 'ChomskyRegular';
 }
 
+<<<<<<< HEAD
+h1{
+    font-size: 1.9rem;
+=======
 h1 {
     font-size: 2.2rem;
+>>>>>>> 67da7684747c845bedaee17ffe1cb91523885388
 }
 
 .logo {
     margin: 20pt 0 0 80pt;
-    width: 100pt
+    width: 90pt
+}
+
+h4,
+.text{
+    font-size: 1rem;
 }
 
 .text {
     font-family: 'Pacifico', cursive;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .btn-grad {
