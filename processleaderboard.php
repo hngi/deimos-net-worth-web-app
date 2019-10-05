@@ -29,8 +29,8 @@ if(isset($_POST['leaderboard'])) {
         
     }
     else {
-        array_push($errors, "No records found");
-        $_SESSION['error'] = $errors;
+        // array_push($errors, "");
+        $_SESSION['error_lb'] = "No records found";
         header("Location: leaderboard.php");
     }
    
