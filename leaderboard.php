@@ -139,7 +139,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                         <?php else: ?> 
                                             <td><?php echo number_format($leader['networth']);  ?></td>
                                         <?php endif; ?>
-                                        <td><?php echo $leader['created_at'];  ?></td>
+                                        <td><?php echo date('M j', strtotime($leader['created_at']) );  ?></td>
                                     </tr>
                                     <?php  endforeach; ?>
                                     <?php unset($_SESSION['data']); ?>
