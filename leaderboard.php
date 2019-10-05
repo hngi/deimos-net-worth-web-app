@@ -149,8 +149,14 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                             <?php foreach($data as $leader) : ?> 
                              
                             <tr>
-                               
-                                <td><?php echo $leader['username'];  ?></td>
+                               <?php 
+                                    $string = $leader['username'];
+                                    $expr = '/(?<=\s|^)[a-z]/i';
+                                    preg_match_all($expr, $string, $matches);
+                                    $result = implode('', $matches[0]);
+                                    $result = strtoupper($result);
+                                ?>
+                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
                                 <td><?php echo number_format($leader['networth']);  ?></td>
                                 <td><?php echo $leader['created_at'];  ?></td>
                             </tr>
@@ -164,7 +170,14 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                              
                             <tr>
                                
-                                <td><?php echo $leader['username'];  ?></td>
+                                <?php 
+                                    $string = $leader['username'];
+                                    $expr = '/(?<=\s|^)[a-z]/i';
+                                    preg_match_all($expr, $string, $matches);
+                                    $result = implode('', $matches[0]);
+                                    $result = strtoupper($result);
+                                ?>
+                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
                                 <td><?php echo number_format($leader['networth']);  ?></td>
                                 <td><?php echo $leader['created_at'];  ?></td>
                             </tr>

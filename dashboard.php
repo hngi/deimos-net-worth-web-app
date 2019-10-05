@@ -216,10 +216,10 @@ if(isset($_SESSION['success'])){
 
                         </div>
                         <hr>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="">Current Date:</label>
                             <input type="date" name="current_date" class="form-control">
-                        </div>
+                        </div> -->
                         <div>
                             <button type="submit" class="get-started" name="get_networth"> Get Net Worth</button>
                         </div>
