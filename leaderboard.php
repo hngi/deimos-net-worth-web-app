@@ -114,7 +114,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                             <th>Date</th>
                         </thead>
                         <tbody>
-                            <?php if(isset($_SESSION['data'])):
+                            <?php if(isset($_SESSION['data'])  && !isset($_SESSION['data_default'])):
                                 $data = $_SESSION['data'];
                              ?>
                             
@@ -169,6 +169,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                         <td><?php echo date('M j', strtotime($leader['created_at']) );  ?></td>
                                     </tr>
                                     <?php  endforeach; ?>
+                                    <?php unset($_SESSION['data_default']); ?>
 
                             <?php elseif(isset($_SESSION['error_lb'])): ?>
                             
