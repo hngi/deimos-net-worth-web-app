@@ -112,7 +112,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                     <table class="table table-hover table-bordered">
                         <thead>
                             
-                            <th>Name</th>
+                            <th>Initial</th>
                             <th>Networth (₦)</th>
                             <th>Date</th>
                         </thead>
