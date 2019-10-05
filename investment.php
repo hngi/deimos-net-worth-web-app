@@ -78,7 +78,7 @@ if (isset($_POST["send"])) {
                 
                     <?php else: ?>
                     <li class="nav-item">
-                        <span class="dashboard-header-span" style="font-weight:bold;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
+                        <span class="dashboard-header-span" style="font-weight:bold; color:#6D1AD8;">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
                     </li>
                     
                     <li class="nav-item">
