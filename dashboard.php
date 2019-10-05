@@ -70,7 +70,7 @@ if(isset($_SESSION['success'])){
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="text">Want to add or remove an expense? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
+                        <span class="text">Want to add or remove an Asset or Liability? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
                          <span class="badge badge-secondary">"SUBTRACT"</span> </span>
                         <form style="margin-top:20px;">
                             <input type="number" class="form-control" id="addValue" placeholder="0 NGN">
