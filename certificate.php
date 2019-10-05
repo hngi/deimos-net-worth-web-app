@@ -16,13 +16,14 @@ $networthValue = implode("",$parts);
 $netVal = (int)$networthValue; //convert to int
 $_SESSION['net_worth'] = $netVal; //assign to session
 
+require('location.php');
 
 // var_dump($netVal); die();
  if(isset($_SESSION['net_worth'])) {
     switch ($_SESSION['net_worth']) {
         case $_SESSION['net_worth'] < 100000:
             
-            $_SESSION['worthlevel'] = "Typical Average Nigerian";
+            $_SESSION['worthlevel'] = $country_name;
             break; 
             
         case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
@@ -95,13 +96,13 @@ $_SESSION['net_worth'] = $netVal; //assign to session
                     <h4>This is to certify that you have been rated</h4> <br>
 
                     <p class="text">
-                        <?php echo $_SESSION['worthlevel']?>
+                        Typical Average <?php echo $_SESSION['worthlevel']?>
                     </p> <br>
                     <?php unset($_SESSION['worthlevel']); ?>
 
                     <h4>with a networth of</h4> <br>
 
-                    <p class="text">NGN
+                    <p class="text"><?php $currency = array_search($country_name, $curr);if ($currency) {echo $currency;}else{echo $country_code; }?>
                         <?php echo number_format($_SESSION['net_worth'],2); ?>
                     </p> <br>
 
