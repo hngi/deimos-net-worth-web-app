@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Landing-page</title>
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Animate.css Framework -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9428dce252.js" crossorigin="anonymous"></script>
+    <!-- main-css -->
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <!-- THE NAVIGATION BAR -->
+    <header>
+      <nav class="navbar navbar-default  ">
+        <div>
+          <a href=""><img src="/img/networth logo.svg" alt=""/></a>
+          <a class="navbar-brand" href="#">Net Worth</a>
+        </div>
+        <div>
+          <ul class="nav">
+            <li
+              class="nav-item login-nav"
+              data-toggle="modal"
+              data-target="#exampleMode"
+            >Log In</li>
+            <li
+              class="nav-item signup-nav"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            > Sign Up</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section>
+    
+      <div class="container">
+      <div class="row">
+          <div class="col-sm-8 networth">
+             <span>Your 'Net Worth is your<br> financial stength</span>
+             <p>use net Worth to calculate the true financial worth<br> of you and your friend. Get a FREE certificate
+              
+            </p>
+            <div  class="networth-hr"></div>
+             
+             <p>What does this mean?</p>
+             <ul class="ul-caption">
+               <li><i class="fas fa-check icon-space"></i></i>Begin planning for financial freedom</li>
+               <li> <i class="fas fa-check icon-space"></i>Begin plotting your future projection</li>
+               <li><i class="fas fa-check icon-space"></i>or just use it for fun</li>
+             </ul>
+             <button
+             type="button"
+             class="btn btn-primary get-started-btn"
+             data-toggle="modal"
+             data-target="#exampleModl"
+             data-whatever="@getbootstrap"
+           >
+             Get Started
+           </button>
+
+          </div>
+          <div class="col-sm-4 piggy-worth">
+            <img src="/img/Pig with coins.svg" alt="piggy with coins">
+          </div>
+        </div>
+      </div>
+        
+
+      <!-- modal class FOR SIGNUP -->
+       <div>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Let's get Started</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <form>
+              <div class="form-group">
+                  <label for="exampleInputName">Full Name</label>
+                  <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name">
+              </div>
+              <div class="form-group">
+                 <label for="exampleInputEmail1">Email address</label>
+                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                  <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">remember me</label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form> </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+      <!-- MODAL CLASS FOR LOGIN -->
+      <div>
+          <div
+            class="modal fade"
+            id="exampleMode"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModeLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModeLabel">Log In</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <form>
+                
+                <div class="form-group">
+                   <label for="exampleInputEmail1">Email address</label>
+                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                              <label for="exampleInputPassword1">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              <small id="emailHelp" class="form-text text-muted">Forget Password?</small>
+                            </div>
+                            <div class="form-group form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                          </div>
+                          </div> 
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+                    </section>
+    <!-- <footer>
+                      <p class="page-footer">All right reserved Demois team &copy;2019</p>
+                      </footer> -->
+
+    <!-- BOOTSTRAP JS CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
