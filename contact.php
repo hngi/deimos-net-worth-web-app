@@ -7,7 +7,8 @@
 		$to = 'ezechukwu.nonso@yahoo.com'; 
 		$subject = 'Message from Contact Form ';
 		
-		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+		$body = "From:".$name."\n E-Mail:".$email."\n Message:\n".$message;
+        //print_r($body); die;
  
 		// Check if name has been entered
 		if (empty($_POST['name'])) {
