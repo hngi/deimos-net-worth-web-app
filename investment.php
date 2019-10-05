@@ -14,7 +14,7 @@ $username   = $_SESSION['username'];
 }else{
     header('location:login.php');
 }
-
+require('location.php');
 $message = "";
 $err = "";
 
@@ -140,7 +140,7 @@ if (isset($_POST["send"])) {
 
                 <br>
 
-                <h2>We can grow your <br> your assets from <span class="tab"> NGN <?php echo number_format($_SESSION['net_worth'],2); ?> </span> </h2>
+                <h2>We can grow your <br> your assets from <span class="tab"> <?php $currency = array_search($country_name, $curr);if ($currency) {echo $currency;}else{echo $country_code; }?> <?php echo number_format($_SESSION['net_worth'],2); ?> </span> </h2>
 
                 <br>
 

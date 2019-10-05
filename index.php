@@ -4,8 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -68,9 +67,10 @@ session_start();
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
                         </li>
                     </form>
+                    <form action="contact.php">
                     <form action="login.php">
                         <li class="nav-item">
-                            <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
+                            <button class="m-3 pt-1 pl-3 pr-3 pb-1">Contact Us</button>
                         </li>
                     </form>
 
@@ -136,3 +136,4 @@ session_start();
 </body>
 
 </html>
+
