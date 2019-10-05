@@ -9,9 +9,7 @@
     </span>
 </li>
 <!-- class="dashboard-header-span" -->
-<li class="nav-item">
-    <span class="m-3 pt-1 pl-3 pr-3 pb-1" style="font-weight:bold; color:#fff !important; ">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
-</li>
+
 
 <li class="nav-item">
     <span class="m-3 pt-1 pl-3 pr-3 pb-1" style="font-weight:bold; ">
@@ -23,6 +21,10 @@
     <span class="m-3 pt-1 pl-3 pr-3 pb-1" style="font-weight:bold; ">
         <a href="faq.php" style="text-decoration:none!important; color:#fff !important;">FAQs&nbsp; |</a>
     </span>
+</li>
+
+<li class="nav-item">
+    <span class="m-3 pt-1 pl-3 pr-3 pb-1" style="font-weight:bold; color:#fff !important; ">Hello, <?php echo ucfirst($username);?> &nbsp;</span>  
 </li>
 
 <!-- <li class="nav-item">
