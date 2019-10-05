@@ -7,7 +7,8 @@
 		$to = 'ezechukwu.nonso@yahoo.com'; 
 		$subject = 'Message from Contact Form ';
 		
-		$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+		$body = "From:".$name."\n E-Mail:".$email."\n Message:\n".$message;
+        //print_r($body); die;
  
 		// Check if name has been entered
 		if (empty($_POST['name'])) {
@@ -71,7 +72,7 @@
                         </form>
                         <form action="login.html">
                             <li class="nav-item">
-                                <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Logout</button>
+                                <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Login</button>
                             </li>
                         </form>
                     </ul>
@@ -129,11 +130,10 @@
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <textarea class="form-control" name="message" id="contactMessage" required placeholder="Message" value="
+                                <textarea class="form-control" name="message" required placeholder="Enter Message" value="
                                     <?php if(isset($_POST['message'])){
                                         echo htmlspecialchars($_POST['message']);
-                                    }?>">
-                                </textarea>
+                                    }?>"></textarea>
                                 <?php 
                                 if(isset($errMessage)){
                                     echo "<p class='text-danger'>".$errMessage."</p>";
