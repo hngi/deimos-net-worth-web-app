@@ -44,15 +44,8 @@ if(isset($_SESSION['success'])){
                 
                 <?php else: ?>
                 <li class="nav-item">
-                   <span class="dashboard-header-span" style="font-weight:bold;"> &nbsp; Hello, <?php echo ucfirst($username);?> &nbsp;| </span>  
+                   <span class="dashboard-header-span" style="font-weight:bold;"> &nbsp; Hello, <?php echo ucfirst($username);?> &nbsp; </span>  
                 </li>
-
-                <li class="nav-item">
-                   <form action="contact.php">
-                        <button type="submit" name="contact"> &nbsp;Contact Us &nbsp;|</button>
-                   </form>
-                </li>
-
                 <li class="nav-item">
                    <form action="server.php">
                         <button type="submit" name="logout"> &gt; &gt; &nbsp;Logout</button>
