@@ -5,12 +5,14 @@ if(isset($_SESSION['error'])){
     $error = $_SESSION['error'];
 }
 
-if(isset($_SESSION['username'])){    
-$username   = $_SESSION['username'];
-}
-
 if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
+}
+
+if(isset($_SESSION['username'])){    
+$username   = $_SESSION['username'];
+}else{
+    header('location:login.php');
 }
 
 $message = "";
@@ -81,9 +83,9 @@ if (isset($_POST["send"])) {
                     
                     <li class="nav-item">
                         <form action="dashboard.php">
-                            <button type="submit" class="btn btn-default m-3 pt-1 pl-3 pr-3 pb-1">Return to Dashboard</button>
+                            <button type="submit">&nbsp;Return to Dashboard&nbsp;</button>
                         </form>
-                    </li>
+                    </li>&nbsp;&nbsp;
                    
 
                     <li class="nav-item">
