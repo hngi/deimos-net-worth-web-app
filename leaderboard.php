@@ -93,14 +93,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
 
     <section>
         <main class="container">
-        <?php if(isset($error)): ?>
-           
-           <?php include('error.php'); ?>
-           <?php unset($_SESSION['error']); ?>
-      
-       <?php else:?>
-
-       <?php endif; ?>
+        
             <div class="row" style="margin-top:20px;">
                 <div class="main_pad col-xs-12 col-sm-12 col-md-5 col-lg-7 offset-md-3 offset-lg-3">
                     <h1 class="main__caption mt-1 mb-3">Leaderboard </h1>
@@ -182,6 +175,9 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                 <td><?php echo $leader['created_at'];  ?></td>
                             </tr>
                             <?php  endforeach; ?>
+                            <?php elseif(isset($_SESSION['error']) && isset($_SESSION['data_default'])): ?>
+                                <?php include('error.php'); ?>
+                                <?php unset($_SESSION['error']); ?>
                             <?php  endif; ?> 
                             <?php unset($_SESSION['data_default']); ?>
                         </tbody>
