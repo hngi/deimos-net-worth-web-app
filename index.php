@@ -60,6 +60,12 @@ session_start();
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="logout">Logout</button>
                         </li>
                     </form>
+                    
+                    <form action="faq.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">Faq</button>
+                        </li>
+                    </form>
                 <?php else: ?>
                     <form action="login.php">
                         <li class="nav-item active">
@@ -75,6 +81,11 @@ session_start();
                     <form action="contact.php" method="GET">
                         <li>
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="contact">Contact Us</button>
+                        </li>
+                    </form>
+                    <form action="faq.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">Faq</button>
                         </li>
                     </form>
                 <?php endif; ?>
