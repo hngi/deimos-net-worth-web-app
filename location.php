@@ -1,10 +1,10 @@
 
 <?php
 $ip = 'check';
-$access_key = '2fcb2e145928b13e951d17f183cd12dd';
+$random = '2fcb2e145928b13e951d17f183cd12dd';
 
 // Initialize CURL:
-$ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$access_key.'');
+$ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$random.'');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 // Store the data:
