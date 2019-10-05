@@ -42,8 +42,8 @@ if(isset($_SESSION['success'])){
             <ul class="navbar-nav ml-auto navbar__menu">
                 
 
-
-                <li class="nav-item">
+            <?php if(!isset($_SESSION['username'])): ?>
+            <li class="nav-item">
                    <form action="contact.php">
                         <button type="submit" name="contact"> &nbsp;Contact Us &nbsp;|</button>
                    </form>
@@ -55,6 +55,7 @@ if(isset($_SESSION['success'])){
                     </form>
                 </li>
                
+                <?php else: ?>
 
                 <?php include('nav.php'); ?>
 
