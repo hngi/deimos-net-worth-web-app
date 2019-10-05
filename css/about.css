@@ -83,6 +83,8 @@ center{
     align-content: center;
     flex-direction: column;
     margin-top: 30px;
+    box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.15),
+    -30px 0px 40px  rgba(0, 0, 0, 0.157);
 
 }
 .headin{

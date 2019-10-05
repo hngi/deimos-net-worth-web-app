@@ -54,6 +54,12 @@ session_start();
                         </li>        
                     </form>
 
+                    <form action="about.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="contact">About Us</button>
+                        </li>
+                    </form>
+
                     <form action="server.php" method="GET">
                         <li>
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="logout">Logout</button>
