@@ -73,10 +73,21 @@ main .get-started {
 main .get-started:hover {
    background: #fff;
    color: #6d1ad8;
-   border: 1px solid #6D1AD8;   
+   border: 1px solid #6D1AD8;
 }
 
 .add-form-element {
    color: #545454;
    cursor: pointer;
+}
+
+
+/* Footer */
+footer{
+   background: #6D1AD8;
+   box-shadow: 0px 10px 10px #c4c4c4;
+   color: #fff;
+}
+.footer-copyright a{
+   color: #000;
 }
