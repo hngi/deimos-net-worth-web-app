@@ -122,15 +122,15 @@ $_SESSION['net_worth'] = $netVal; //assign to session
                         </div>
                         <div class="col-lg-6">
                             <form action="investment.php">
-                                <button type="submit" style="margin-bottom:40px;" class="btn btn-default btn-grad text-white font-weight-bold" ">Get FREE Investment Advice</button>
+                                <button type="submit" style="margin-bottom:40px;" class="btn btn-default btn-grad text-white font-weight-bold">Get FREE Investment Advice</button>
                             </form>
                         </div>
                      </div>
                 <div class="share-buttons ">
-                    <a href="# " class="fab fa-facebook "></a>
-                    <a href="# " class="fab fa-twitter "></a>
-                    <a href="# " class="fab fa-linkedin "></a>
-                    <a href="# " class="fab fa-pinterest "></a>
+                    <a href="# " class="fab fa-facebook" style="color:#6D1AD8;"></a>
+                    <a href="# " class="fab fa-twitter" style="color:#6D1AD8;"></a>
+                    <a href="# " class="fab fa-linkedin" style="color:#6D1AD8;"></a>
+                    <a href="# " class="fab fa-pinterest" style="color:#6D1AD8;"></a>
                 </div>
                 
 
