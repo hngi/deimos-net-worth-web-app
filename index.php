@@ -51,7 +51,7 @@ session_start();
                     
                     <form action="faq.php" method="GET">
                         <li>
-                            <button type="submit"class="m-3 pt-1 pl-3 pr-3 pb-1" name="faq">&nbsp;FAQs&nbsp;</button>
+                            <button type="submit"class="m-3 pt-1 pl-3 pr-3 pb-1" name="faq">FAQs</button>
                         </li>        
                     </form>
 
@@ -61,11 +61,7 @@ session_start();
                         </li>
                     </form>
                     
-                    <form action="faq.php" method="GET">
-                        <li>
-                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">Faq</button>
-                        </li>
-                    </form>
+                    
                 <?php else: ?>
                     <form action="login.php">
                         <li class="nav-item active">
@@ -85,7 +81,7 @@ session_start();
                     </form>
                     <form action="faq.php" method="GET">
                         <li>
-                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">Faq</button>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">FAQs</button>
                         </li>
                     </form>
                 <?php endif; ?>
