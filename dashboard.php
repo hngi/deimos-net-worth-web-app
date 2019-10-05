@@ -13,6 +13,7 @@ if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,10 +40,24 @@ if(isset($_SESSION['success'])){
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto navbar__menu">
-                <?php if(!isset($username)): ?>
                 
-                <?php else: ?>
+
+
+                <li class="nav-item">
+                   <form action="contact.php">
+                        <button type="submit" name="contact"> &nbsp;Contact Us &nbsp;|</button>
+                   </form>
+                </li>
+
+                <li class="nav-item">
+                    <form action="faq.php">
+                        <button   type="submit" name="faq">&nbsp;FAQs&nbsp;|</button>
+                    </form>
+                </li>
+               
+
                 <?php include('nav.php'); ?>
+
                 
                 <?php endif; ?>
             </ul>
@@ -64,7 +79,7 @@ if(isset($_SESSION['success'])){
                 </h4>
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="text">Want to add or remove an expense? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
+                        <span class="text">Want to add or remove an Asset or Liability? Enter the  value and press <span class="badge badge-secondary"> "ADD" </span> or
                          <span class="badge badge-secondary">"SUBTRACT"</span> </span>
                         <form style="margin-top:20px;">
                             <input type="number" class="form-control" id="addValue" placeholder="0 NGN">

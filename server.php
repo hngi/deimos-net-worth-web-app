@@ -9,7 +9,7 @@
 	/* $_SESSION['error'] = ""; */
 
 	// connect to database
-  $db = mysqli_connect('localhost', 'root', '12345678','registration');
+  $db = mysqli_connect('localhost', 'root', '','deimos');
   
     
 	// REGISTER USER

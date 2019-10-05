@@ -34,11 +34,25 @@ session_start();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto navbar__menu">
+                    
                 <?php if(isset($_SESSION['username'])): ?>
                     <form action="dashboard.php">
                         <li class="nav-item active">
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Dashboard</button>
                         </li>
+                    </form>
+                    
+                    <form action="contact.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="contact">Contact Us</button>
+                        </li>
+                    </form>
+
+                    
+                    <form action="faq.php" method="GET">
+                        <li>
+                            <button type="submit"class="m-3 pt-1 pl-3 pr-3 pb-1" name="faq">FAQs</button>
+                        </li>        
                     </form>
 
                     <form action="server.php" method="GET">
@@ -46,6 +60,8 @@ session_start();
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="logout">Logout</button>
                         </li>
                     </form>
+                    
+                    
                 <?php else: ?>
                     <form action="login.php">
                         <li class="nav-item active">
@@ -57,7 +73,19 @@ session_start();
                             <button class="m-3 pt-1 pl-3 pr-3 pb-1">Sign up</button>
                         </li>
                     </form>
+
+                    <form action="contact.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="contact">Contact Us</button>
+                        </li>
+                    </form>
+                    <form action="faq.php" method="GET">
+                        <li>
+                            <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="faq">FAQs</button>
+                        </li>
+                    </form>
                 <?php endif; ?>
+                    
 
 
                     

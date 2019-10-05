@@ -7,7 +7,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+    $db = mysqli_connect('localhost', 'root', '', 'deimos');
 
     
     // LOGIN USER
@@ -78,7 +78,7 @@ session_start();
                    <div class="page-divider d-flex align-items-center">
                         
                     </div>
-                    <form action="server.php" method="POST" id="signupW"
+                    <form action="server.php" method="POST" id="signupW">
                         <h4>SIGN UP</h4>
 
                         
@@ -116,7 +116,7 @@ session_start();
             </div>
             <div class="col-sm signin-wrapper pl-0 pr-0">
                 <nav class="navbar">
-                    <a class="navbar-brand" href="index.html"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
                     
                 </nav>
                 <section>
@@ -163,9 +163,9 @@ session_start();
                     </a>
                     <h2 class="greetings text-center">Welcome Back</h2>
                     <p class="text-center main-message">
-                    Do you Know ? 'Your net worth to the world is 
-                        usually determined by what remains after your bad habits have been subtracted 
-                        from your good ones." Proceed to know your financial Strengths NOW
+                        <div id="quoteDisplay">
+                         <!--quotes will display here-->
+                        </div>
                     </p>
                     <div class="text-center main-button">
                         <a href="" class="">
@@ -198,6 +198,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src ="js/javascript.js"></script>
 </body>
 
 </html>
