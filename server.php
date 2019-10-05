@@ -12,9 +12,9 @@
   $db = mysqli_connect('localhost', 'root', '12345678','registration');
   
     
-
 	// REGISTER USER
 	if ( isset($_POST['reg_user']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['confirm_password']) ) {
+
     $username         = mysqli_real_escape_string($db, $_POST['username']);
 		$email            = mysqli_real_escape_string($db, $_POST['email']);
 		$password         = mysqli_real_escape_string($db, $_POST['password']);
@@ -42,7 +42,6 @@
             $_SESSION['error'] = $errors;
             header('location: login.php');
         }elseif( (mysqli_num_rows($checkUsernameResult) == 0) && (mysqli_num_rows($checkResult) == 0)){
-            // var_dump('gff'); die();
               // register user if there are no errors in the form
               $password = md5($password);//encrypt the password before saving in the database
               $query = "INSERT INTO users (username, email, password) 
@@ -60,14 +59,13 @@
         header('location: login.php');
       }
     
-  }else{
-        array_push($errors, "Registration unsuccessful! All fields are required. Click the sign up link and try again");
-        $_SESSION['error'] = $errors; 
-        unset($_SESSION['success']); 
-        header('location: login.php');
-        // header('location: login.php');
-  }
-
+    }else{
+          array_push($errors, "Registration unsuccessful! All fields are required. Click the sign up link and try again");
+          $_SESSION['error'] = $errors; 
+          unset($_SESSION['success']); 
+          header('location: login.php');
+    }
+    mysqli_close($db);
   }
 
 
