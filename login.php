@@ -37,7 +37,8 @@ session_start();
                     array_push($errors, "Wrong username/password combination");
                     $_SESSION['error'] = $errors;
                 }
-		}
+        }
+        mysqli_close($db);
   }
 
 
@@ -83,10 +84,11 @@ session_start();
                         
 
                         <div class="form-group ">
-                            <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Enter email address">
+                            <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" 
+                            placeholder="Enter email address" required>
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="text" name="username" placeholder="Enter username">
+                            <input class="form-control" type="text" name="username" placeholder="Enter username" required>
                         </div>
                         
                         
@@ -96,13 +98,13 @@ session_start();
                             password must contain at least an Upper Case, a symbol e.g @,and a number
                         </label>
                             <input class="form-control" type="password" name="password" id="" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         </div>
                         <div class="form-group ">
-                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="Confirm password">
+                            <input class="form-control" type="password" name="confirm_password" id="" placeholder="Confirm password" required>
                         </div>
                         <div class="text-center">
-                            <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default">
+                            <input type="submit" value="SIGN UP" name="reg_user" class="btn btn-default" >
                         </div>
                     </form>
                     <div class="text-center hide-for-large" style="margin-top:20px; margin-bottom:30px;">
@@ -137,10 +139,10 @@ session_start();
                         
                         
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="text" name="username" placeholder="Enter username">
+                            <input class="form-control" style="padding:20px;" type="text" name="username" required placeholder="Enter username">
                         </div>
                         <div class="form-group general-input">
-                            <input class="form-control" style="padding:20px;" type="password" name="password" id="" placeholder="Enter password">
+                            <input class="form-control" style="padding:20px;" type="password" name="password" required id="" placeholder="Enter password">
                         </div>
                         <div class="text-center">
                             <input type="submit" style="color:#fff !important; margin-bottom: 10px;" value="SIGN IN" name="login_user" class="btn btn-default">
