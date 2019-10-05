@@ -111,27 +111,25 @@ $_SESSION['net_worth'] = $netVal; //assign to session
                         <img src="img/signature.svg" alt="signature" style="width: 5em; margin-top:-15px; margin-bottom: -5px;">
                     </div>
                     <p>Deimos Elders</p>
-                    <hr>
-
-
-                    <div class="row">
-                        <div class="col-lg-6">
+                    
+                
                             <form action="dashboard.php">
                                 <button type="submit" style="margin-bottom:40px;" class="btn btn-primary">Back to Dashboard</button>
                             </form>
-                        </div>
-                        <div class="col-lg-6">
+                        
+                        
                             <form action="investment.php">
                                 <button type="submit" style="margin-bottom:40px;" class="btn btn-default btn-grad text-white font-weight-bold">Get FREE Investment Advice</button>
                             </form>
-                        </div>
-                     </div>
+                
+            
                 <div class="share-buttons ">
                     <a href="# " class="fab fa-facebook" style="color:#6D1AD8;"></a>
                     <a href="# " class="fab fa-twitter" style="color:#6D1AD8;"></a>
                     <a href="# " class="fab fa-linkedin" style="color:#6D1AD8;"></a>
                     <a href="# " class="fab fa-pinterest" style="color:#6D1AD8;"></a>
                 </div>
+            
                 
 
             </div>
