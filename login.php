@@ -12,7 +12,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '', 'deimos');
+    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
 
     
     // LOGIN USER
