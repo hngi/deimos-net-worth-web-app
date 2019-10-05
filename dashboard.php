@@ -12,8 +12,6 @@ $username   = $_SESSION['username'];
 if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
