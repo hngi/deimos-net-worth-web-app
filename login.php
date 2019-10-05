@@ -7,7 +7,7 @@ session_start();
 
 	// connect to database
 
-    $db = mysqli_connect('localhost', 'root', '12345678', 'registration');
+    $db = mysqli_connect('localhost', 'root', '', 'registration');
 
     
     // LOGIN USER
@@ -37,7 +37,8 @@ session_start();
                     array_push($errors, "Wrong username/password combination");
                     $_SESSION['error'] = $errors;
                 }
-		}
+        }
+        mysqli_close($db);
   }
 
 
