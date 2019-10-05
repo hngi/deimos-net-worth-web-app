@@ -1,37 +1,9 @@
-<?php
+<?php 
 session_start();
-$data = [];
-// connect to database
-$db = mysqli_connect('localhost', 'root', '12345678','registration');
-$leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDER BY networth DESC ";
-// $leaderboard = "SELECT DISTINCT user_id,username,networth,created_at FROM networth GROUP BY user_id ORDER BY networth DESC ";
-    $result = mysqli_query($db, $leaderboard);
 
-    if($result->num_rows > 0){
-        while($row = $result->fetch_assoc()){
-            $db_data = [
-                // 'id' => $row['id'],
-                'username' => $row['username'],
-                'networth' => $row['networth'],
-                'created_at' => $row['created_at'],
-            ];
-           
-
-            array_push($data, $db_data);
-            $_SESSION['data_default'] = $data;
-            
-        }
-    }
-    mysqli_close($db);
-    
-
-    if(isset($_SESSION['username'])){    
-        $username   = $_SESSION['username'];
-     }
-     if(isset($_SESSION['error'])){
-        $error = $_SESSION['error'];
-    }
-
+if(isset($_SESSION['username'])){    
+    $username   = $_SESSION['username'];
+ }
 ?>
 
 <!DOCTYPE html>
@@ -112,56 +84,83 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                     <table class="table table-hover table-bordered">
                         <thead>
                             
-                            <th>Name</th>
+                            <th>Initial</th>
                             <th>Networth (₦)</th>
                             <th>Date</th>
                         </thead>
                         <tbody>
-                            <?php if(isset($_SESSION['data'])):
+                            <?php if(isset($_SESSION['data']) ):
                                 $data = $_SESSION['data'];
+                                
                              ?>
                             
-                            <?php foreach($data as $leader) : ?> 
-                             
-                            <tr>
-                               <?php 
-                                    $string = $leader['username'];
-                                    $expr = '/(?<=\s|^)[a-z]/i';
-                                    preg_match_all($expr, $string, $matches);
-                                    $result = implode('', $matches[0]);
-                                    $result = strtoupper($result);
-                                ?>
-                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
-                                <td><?php echo number_format($leader['networth']);  ?></td>
-                                <td><?php echo $leader['created_at'];  ?></td>
-                            </tr>
-                            <?php  endforeach; ?>
-                            <?php unset($_SESSION['data']); ?>
-                            <?php elseif(isset($_SESSION['data_default']) && !isset($_SESSION['data']) ):
+                                    <?php foreach($data as $leader) : ?> 
+                                    
+                                    <tr>
+                                    <?php 
+                                            $string = $leader['username'];
+                                            $expr = '/(?<=\s|^)[a-z]/i';
+                                            preg_match_all($expr, $string, $matches);
+                                            $result = implode('', $matches[0]);
+                                            $result = strtoupper($result);
+                                        ?>
+                                        <td>
+                                            <span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?>
+                                            </span>
+                                        </td>
+                                        <?php $netw = (int)$leader['networth'];?>
+
+                                        <?php if ($netw < 0):  ?>
+                                            <td><?php echo number_format($leader['networth']);  ?> (debtor)</td>
+                                        <?php else: ?> 
+                                            <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <?php endif; ?>
+                                        <td><?php echo date('M j', strtotime($leader['created_at']) );  ?></td>
+                                    </tr>
+                                    <?php  endforeach; ?>
+                                    <?php unset($_SESSION['data']); ?>
+
+                            <?php elseif(isset($_SESSION['data_default']) ):
                                 $data = $_SESSION['data_default'];
+                                
                              ?>
                             
-                            <?php foreach($data as $leader) : ?> 
-                             
-                            <tr>
-                               
-                                <?php 
-                                    $string = $leader['username'];
-                                    $expr = '/(?<=\s|^)[a-z]/i';
-                                    preg_match_all($expr, $string, $matches);
-                                    $result = implode('', $matches[0]);
-                                    $result = strtoupper($result);
-                                ?>
-                                <td><span class="badge badge-info" style="border-radius:50%;"><?php echo $result;  ?></span></td>
-                                <td><?php echo number_format($leader['networth']);  ?></td>
-                                <td><?php echo $leader['created_at'];  ?></td>
-                            </tr>
-                            <?php  endforeach; ?>
-                            <?php elseif(isset($_SESSION['error']) && isset($_SESSION['data_default'])): ?>
-                                <?php include('error.php'); ?>
-                                <?php unset($_SESSION['error']); ?>
+                                    <?php foreach($data as $leader) : ?>
+                                    <tr>
+                                        <?php 
+                                            $string = $leader['username'];
+                                            $expr = '/(?<=\s|^)[a-z]/i';
+                                            preg_match_all($expr, $string, $matches);
+                                            $result = implode('', $matches[0]);
+                                            $result = strtoupper($result);
+                                        ?>
+                                        <td><span class="badge badge-info" style="border-radius:50%;">
+                                        <?php echo $result;  ?></span>
+                                    </td>
+                                    <?php $netw = (int)$leader['networth'];?>
+                                        <?php if ($netw < 0):  ?>
+                                            <td><?php echo number_format($leader['networth']);  ?> (debtor)</td>
+                                        <?php else: ?> 
+                                            <td><?php echo number_format($leader['networth']);  ?></td>
+                                        <?php endif; ?>
+                                        <td><?php echo date('M j', strtotime($leader['created_at']) );  ?></td>
+                                    </tr>
+                                    <?php  endforeach; ?>
+                                    <?php unset($_SESSION['data_default']); ?>
+
+                            <?php elseif(isset($_SESSION['lb']) ): ?>
+                           
+                                <div class="alert alert-danger">
+                                <span style="font-size:13px; font-weight:bold;">  
+                                    
+                                    <span><?php echo "No record found for that date.Please try a different date"; ?> </span> 
+                                    <?php unset($_SESSION['lb']); ?>
+                                </span>
+                                </div>
+                                
                             <?php  endif; ?> 
-                            <?php unset($_SESSION['data_default']); ?>
+
+                            
                         </tbody>
                     </table>
                 </div>
