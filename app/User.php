@@ -95,7 +95,7 @@ class User extends Auth implements AuthInterface {
     public function netWorth(){
         if (isset($_POST['get_networth'])) {
             /**
-             * Get data from the variosu fields
+             * Get data from the various fields
              * @param $investmensts
              * @param $cash
              * @param $bank_account

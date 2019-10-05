@@ -1,0 +1,123 @@
+body {
+    font-family:  'Poppins', sans-serif;
+}
+
+header {
+   background: #6D1AD8;
+   box-shadow: 0px 10px 10px #c4c4c4;
+}
+
+#header__nav .header__nav__brand {
+   font-size: 15px;
+}
+
+#header__nav .navbar__menu button {
+   background: #6D1AD8;
+   color: #fff;
+   border-radius: 10px 0 10px 10px;
+   border: none;
+   font-size: 1em;
+   font-weight: bold;
+}
+
+#header__nav .navbar__menu button:hover {
+   background: #fff;
+   color: #6d1ad8;
+   border-radius: 10px 0 10px 10px;
+   border: none;
+   font-size: 1em;
+   font-weight: bold;
+}
+
+main {
+   margin: 30px auto 0 auto;
+}
+
+main .main__caption {
+   font-size: 1.2em;
+   font-weight: bold;
+   line-height: 1.5;
+   color: #545454;
+}
+
+.secondary {
+    margin-top:  3em;
+}
+
+.main-row {
+    margin-top: 2em;
+}
+
+.row {
+    margin-top: 1em;
+}
+
+main h1 {
+   font-size: 20px;
+   color: #545454;
+   font-weight: bolder;
+}
+
+main h3 {
+   font-size: 14px;
+}
+
+main form input {
+    width: 70%;
+}
+
+main .line-through {
+   width: 40%;
+   height: 10px;
+   border-top: 2px solid #6D1AD8;
+   margin: 4px auto;
+}
+
+main .get-started {
+   background: #6D1AD8;
+   color: #fff;
+   border-radius: 10px 0 10px 10px;
+   border: none;
+   font-size: 1em;
+   font-weight: bold;
+   padding: 5px 10px;
+   margin: 13px;
+   margin-left: 0px;
+}
+
+main .get-started:hover {
+   background: #fff;
+   color: #6d1ad8;
+   border: 1px solid rgb(230, 211, 255);   
+}
+
+main a:hover {
+    text-decoration: none;
+}
+
+.dashboard-header-span {
+   color: #fff;
+}
+
+#btn-css {
+   background-color: #6D1AD8 !important;
+   color: #fff !important;
+   border:2px solid #fff !important;
+   border-radius: 4px !important;
+   padding:5px;
+   margin-left: 10px !important;
+   
+}
+
+#badge-bg {
+   background-color: #6D1AD8;
+   color: #fff;
+   flex-direction: row;
+   
+}
+
+.add-form-element {
+   color: #545454;
+   cursor: pointer;
+}
+
