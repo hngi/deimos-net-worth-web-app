@@ -34,14 +34,6 @@ session_start();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto navbar__menu">
-<<<<<<< HEAD:index.html
-                    <form action="faq.html">
-                        <li class="nav-item">
-                            <button class="m-3 pt-1 pl-3 pr-3 pb-1">FAQs</button>
-                        </li>
-                    </form>
-                    <form action="login.html">
-=======
                     
                 <?php if(isset($_SESSION['username'])): ?>
                     <form action="dashboard.php">
@@ -56,6 +48,13 @@ session_start();
                         </li>
                     </form>
 
+                    
+                    <form action="faq.php" method="GET">
+                        <li>
+                            <button type="submit"class="m-3 pt-1 pl-3 pr-3 pb-1" name="faq">&nbsp;FAQs&nbsp;</button>
+                        </li>        
+                    </form>
+
                     <form action="server.php" method="GET">
                         <li>
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1" id="btn-css" name="logout">Logout</button>
@@ -63,7 +62,6 @@ session_start();
                     </form>
                 <?php else: ?>
                     <form action="login.php">
->>>>>>> 67da7684747c845bedaee17ffe1cb91523885388:index.php
                         <li class="nav-item active">
                             <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1">Log in</button>
                         </li>
@@ -102,11 +100,6 @@ session_start();
                         <p><i class="fas fa-check pr-3"></i>Begin plotting your future projections</p>
                         <p><i class="fas fa-check pr-3"></i>or just use it for fun</p>
                     </div>
-<<<<<<< HEAD:index.html
-                    <form action="login.html">
-                        <button class="get-started pl-4 pr-4 mt-2 mb-3 pt-2 pb-2">Get Started</button>
-                    </form>
-=======
 
                     <?php if(!isset($_SESSION['username'])): ?>
                         <form action="login.php">
@@ -120,7 +113,6 @@ session_start();
                         
                     <?php endif; ?>
                     
->>>>>>> 67da7684747c845bedaee17ffe1cb91523885388:index.php
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 text-center">
                     <img class="land-logo" src='./img/deimo-networth.png' width="500px">

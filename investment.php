@@ -92,6 +92,12 @@ if (isset($_POST["send"])) {
                             <button type="submit">&nbsp;Contact Us&nbsp;</button>
                         </form>
                     </li>&nbsp;&nbsp;
+
+                    <li class="nav-item">
+                        <form action="faq.php">
+                            <button type="submit" name="faq">&nbsp;FAQs&nbsp;</button>
+                        </form>
+                    </li>&nbsp;&nbsp;
                    
 
                     <li class="nav-item">

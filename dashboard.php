@@ -54,6 +54,13 @@ if(isset($_SESSION['success'])){
                 </li>
 
                 <li class="nav-item">
+                    <form action="faq.php">
+                        <button   type="submit" name="faq">&nbsp;FAQs&nbsp;|</button>
+                    </form>
+                </li>
+               
+
+                <li class="nav-item">
                    <form action="server.php">
                         <button type="submit" name="logout"> &gt; &gt; &nbsp;Logout</button>
                    </form>
