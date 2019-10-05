@@ -175,7 +175,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                             <?php elseif(isset($_SESSION['error']) && isset($_SESSION['data_default']) ): ?>
                             <!-- && isset($_SESSION['data_default']) -->
                                 <?php include('error.php'); ?>
-                                <?php unset($_SESSION['error']); ?>
+                                
                                 <?php unset($_SESSION['data_default']); ?>
                             <?php  endif; ?> 
 
