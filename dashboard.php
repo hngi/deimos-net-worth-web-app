@@ -12,7 +12,7 @@ $username   = $_SESSION['username'];
 if(isset($_SESSION['success'])){
     $success    = $_SESSION['success'];
 }
-require('location.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -73,10 +73,8 @@ require('location.php');
             <div class="alert alert-primary">
                 <p>Calculation Successful</p>
                 <h4>
-                   Your Net Worth :<?php  $currency = array_search($country_name, $curr);
-  if ($currency) {
-    echo $currency;
-  }else {echo $country_code; }?><span class="badge" id="badge-bg"><?php echo number_format($netWorth); ?> </span> 
+                    
+                    Your Net worth is : ₦ <span class="badge" id="badge-bg"><?php echo number_format($netWorth); ?> </span> 
                     <input type="hidden" id="netWorth" value="<?php echo $netWorth; ?>">
                 </h4>
                 <div class="row">
@@ -84,10 +82,7 @@ require('location.php');
                         <span class="text">Want to add or remove an Asset or Liability? Enter the  value and press <span class="badge badge-secondary"> "+" </span> or
                          <span class="badge badge-secondary">"-"</span> </span>
                         <form style="margin-top:20px;">
-                            <input type="number" class="form-control" id="addValue" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                            <input type="number" class="form-control" id="addValue" placeholder="0 NGN">
                         </form>
                         <button type="button" class="btn btn-primary btn-sm" 
                         style="margin:20px; border-radius:25px;" id="addMoney" disabled>+ <i class="fa fa-plus"></i></button>
@@ -134,31 +129,19 @@ require('location.php');
                         <div id="asset-form">
                             <div class="form-group">
                             <label for="Investments">Investments</label>
-                                <input type="number" class="form-control" id="Investments" name="asset[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Investments" name="asset[]" placeholder="0 NGN">
                             </div>
                             <div class="form-group">
                                 <label for="Cash">Cash</label>
-                                <input type="number" class="form-control" id="Cash" name="asset[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Cash" name="asset[]" placeholder="0 NGN">
                             </div>
                             <div class="form-group">
                                 <label for="Bank Account">Bank Account</label>
-                                <input type="number" class="form-control" id="Bank Account" name="asset[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Bank Account" name="asset[]" placeholder="0 NGN">
                             </div>  
                             <div class="form-group">
                                 <label for="Real Estate">Real Estate</label>
-                                <input type="number" class="form-control" id="Real Estate" name="asset[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Real Estate" name="asset[]" placeholder="0 NGN">
                             </div>
 
                             <!-- Button trigger modal -->
@@ -197,31 +180,19 @@ require('location.php');
                         <div id="liabilities-form">
                             <div class="form-group">
                                 <label for="Loans">Loans</label>
-                                <input type="number" class="form-control " id="Loans" name="liability[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control " id="Loans" name="liability[]" placeholder="0 NGN">
                             </div>
                             <div class="form-group">
                                 <label for="Mortgages">Mortgages</label>
-                                <input type="number" class="form-control" id="Mortgages" name="liability[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Mortgages" name="liability[]" placeholder="0 NGN">
                             </div>
                             <div class="form-group">
                                 <label for="Utility bills">Utility bills</label>
-                                <input type="number" class="form-control" id="Utility bills" name="liability[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Utility bills" name="liability[]" placeholder="0 NGN">
                             </div>
                             <div class="form-group">
                                 <label for="Other debts">Other debts</label>
-                                <input type="number" class="form-control" id="Other debts" name="liability[]" placeholder="<?php  $currency = array_search($country_name, $curr);
-                              if ($currency) {
-                                echo $currency;
-                              }else {echo $country_code; }?> 0">
+                                <input type="number" class="form-control" id="Other debts" name="liability[]" placeholder="0 NGN">
                             </div>
 
                             <div class="modal fade" id="modal-liability" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
