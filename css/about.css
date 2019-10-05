@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: default;
+    font-family: 'poppins' , sans-serif;
+}
+/* NAVBAR STYLING */
+
+.navbar {
+    background: #6D1AD8;
+}
+
+#header__nav .header__nav__brand {
+    font-size: 14px;
+}
+
+#header__nav .navbar__menu button {
+    background: #6D1AD8;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header__nav .navbar__menu button:hover {
+    background: #fff;
+    color: #6d1ad8;
+    border-radius: 10px 0 10px 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.main{
+    width: auto;
+    height:70vh;
+    display: flex;
+    background: #6D1AD8;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 30px;
+}
+.main1{
+    margin: auto;
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+h2{
+    font-size: 30px;;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: .3rem;
+}
+
+.project{
+    font-size: 25px;
+    text-align: center;
+    line-height:2.1rem;
+}
+
+center{
+    font-size: 30px;
+    margin-bottom: 19px;
+    color: #6D1AD8;
+}
+
+
+.recent{
+    width: 90%;
+    background: rgb(249, 249, 250);
+    display: flex;
+    align-items: stretch;
+    margin: 0 auto;
+    justify-content: center;
+    padding:30px;
+    line-height: 1.51rem;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+
+}
+.headin{
+    margin-bottom:30px;
+
+}
+
+li{
+    margin-bottom: 10px;
+    line-height: 1.2rem;
+}
+
+.sekond{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 75%;
+    flex-wrap:wrap;
+}
+.pic{
+   margin: 10px;
+   flex: 1;
+   flex-wrap:wrap;
+   align-content: center;
+}
+.down{  
+    background:  #6D1AD8;
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    line-height: 1.6rem;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    padding:30px;
+    flex-wrap: wrap;
+    color: #fff;
+
+}
+ .lagos , .abuja , .contacts {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    flex-basis: 30%;
+    padding: 20px;
+    flex: 1;
+}
+.about{
+    display: flex;
+    background: #6D1AD8;
+    margin-bottom: 30px;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.15),
+     -30px 0px 40px  rgba(0, 0, 0, 0.157);
+
+}
+.about-team{
+    flex: 1;
+    color: rgb(255, 255, 255);
+
+}
+.about-app{
+    flex: 1;
+    color: rgb(64, 6, 71);
+    background:  rgba(189, 157, 231, 0.986);
+}
