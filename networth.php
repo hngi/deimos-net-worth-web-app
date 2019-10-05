@@ -9,6 +9,10 @@ $errors   = [];
 /* $_SESSION['error'] = ""; */
 
 // connect to database
+<<<<<<< Updated upstream
+=======
+$db = mysqli_connect('localhost', 'root', '12345678','registration');
+>>>>>>> Stashed changes
 
 
 if (isset($_POST['get_networth']) ) {
