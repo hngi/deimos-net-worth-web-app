@@ -16,14 +16,13 @@ $networthValue = implode("",$parts);
 $netVal = (int)$networthValue; //convert to int
 $_SESSION['net_worth'] = $netVal; //assign to session
 
-require('location.php');
 
 // var_dump($netVal); die();
  if(isset($_SESSION['net_worth'])) {
     switch ($_SESSION['net_worth']) {
         case $_SESSION['net_worth'] < 100000:
             
-            $_SESSION['worthlevel'] = $country_name;
+            $_SESSION['worthlevel'] = "Typical Average Nigerian";
             break; 
             
         case ($_SESSION['net_worth'] > 100000 && $_SESSION['net_worth'] < 200000):
@@ -96,13 +95,13 @@ require('location.php');
                     <h4>This is to certify that you have been rated</h4> <br>
 
                     <p class="text">
-                        Typical Average <?php echo $_SESSION['worthlevel']?>
+                        <?php echo $_SESSION['worthlevel']?>
                     </p> <br>
                     <?php unset($_SESSION['worthlevel']); ?>
 
                     <h4>with a networth of</h4> <br>
 
-                    <p class="text"><?php $currency = array_search($country_name, $curr);if ($currency) {echo $currency;}else{echo $country_code; }?>
+                    <p class="text">NGN
                         <?php echo number_format($_SESSION['net_worth'],2); ?>
                     </p> <br>
 
@@ -120,7 +119,9 @@ require('location.php');
                         
                         
                     <form action="investment.php">
-                        <button type="submit" style="margin-bottom:40px;" class="btn btn-default btn-grad text-white font-weight-bold">Get FREE Investment Advice</button>
+                        <button type="submit" style="margin-bottom:40px;" 
+                        class="btn btn-default btn-grad text-white font-weight-bold">Get FREE Investment Advice
+                    </button>
                     </form>    
                     
                     <div class="share-buttons ">
