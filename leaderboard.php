@@ -1,41 +1,10 @@
-<?php
+<?php 
 session_start();
-$data = [];
-// connect to database
-$db = mysqli_connect('localhost', 'root', '12345678','registration');
-$leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDER BY networth DESC ";
-// $leaderboard = "SELECT DISTINCT user_id,username,networth,created_at FROM networth GROUP BY user_id ORDER BY networth DESC ";
-    $result = mysqli_query($db, $leaderboard);
 
-    if($result->num_rows > 0){
-        while($row = $result->fetch_assoc()){
-            $db_data = [
-                'username' => $row['username'],
-                'networth' => $row['networth'],
-                'created_at' => $row['created_at'],
-            ];
-            
-           
-
-            array_push($data, $db_data);
-            $_SESSION['data_default'] = $data;
-            
-        }
-    }
-    mysqli_close($db);
-    
-
-    if(isset($_SESSION['username'])){    
-        $username   = $_SESSION['username'];
-     }
-
-    if(isset($_SESSION['error_lb'])){    
-        $lberr   = $_SESSION['error_lb'];
-     }
-    
-
+if(isset($_SESSION['username'])){    
+    $username   = $_SESSION['username'];
+ }
 ?>
- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +89,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                             <th>Date</th>
                         </thead>
                         <tbody>
-                            <?php if(isset($_SESSION['data'])  && isset($_SESSION['data_default'])):
+                            <?php if(isset($_SESSION['data']) ):
                                 $data = $_SESSION['data'];
                                 
                              ?>
@@ -151,7 +120,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                     <?php  endforeach; ?>
                                     <?php unset($_SESSION['data']); ?>
 
-                            <?php elseif(isset($_SESSION['data_default']) && !isset($_SESSION['data']) ):
+                            <?php elseif(isset($_SESSION['data_default']) ):
                                 $data = $_SESSION['data_default'];
                                 
                              ?>
@@ -179,13 +148,13 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                     <?php  endforeach; ?>
                                     <?php unset($_SESSION['data_default']); ?>
 
-                            <?php elseif(isset($lberr)): ?>
+                            <?php elseif(isset($_SESSION['lb']) ): ?>
                            
                                 <div class="alert alert-danger">
                                 <span style="font-size:13px; font-weight:bold;">  
                                     
-                                    <span><?php echo $lberr; ?> </span> 
-                                    <?php unset($_SESSION['error_lb']); ?>
+                                    <span><?php echo "No record found"; ?> </span> 
+                                    <?php unset($_SESSION['lb']); ?>
                                 </span>
                                 </div>
                                 

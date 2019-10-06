@@ -5,7 +5,7 @@
         <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1"  name="contact">Dashboard</button>
     </li>
 </form>
-<form action="leaderboard.php" method="GET">
+<form action="handleleaderboard.php" method="GET">
     <li>
         <button type="submit" class="m-3 pt-1 pl-3 pr-3 pb-1"  name="contact">Leaderboard</button>
     </li>

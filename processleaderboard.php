@@ -4,7 +4,7 @@ $errors   = [];
 $data = [];
 $username = [];
 // connect to database
-$db = mysqli_connect('localhost', 'root', '12345678','registration');
+$db = mysqli_connect('localhost', 'root', '','registration');
 if(isset($_POST['leaderboard'])) {
     $startdate = $_POST['startdate'];
     $enddate = $_POST['enddate'];
@@ -30,8 +30,9 @@ if(isset($_POST['leaderboard'])) {
     }
     else {
         // array_push($errors, "");
-        $_SESSION['error_lb'] = "No records found";
-        // var_dump($_SESSION['error_lb']); die();
+        $_SESSION['lb'] = "No records found";
+        unset($_SESSION['data_default']); 
+        // var_dump($_SESSION['data_default']); die();
         header("Location: leaderboard.php");
     }
    
