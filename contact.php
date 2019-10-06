@@ -138,8 +138,7 @@
                                 <input type="email" class="form-control" id="email" name="email" required placeholder="Enter email" value="
                                 <?php if(isset($_POST['email'])){
                                          echo htmlspecialchars($_POST['email']);
-                                }
-                               ?>">
+                                }?>">
                                <?php 
                                     if(isset($errEmail)){
                                         echo "<p class='text-danger'>".$errEmail."</p>";
