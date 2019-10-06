@@ -14,6 +14,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                 'networth' => $row['networth'],
                 'created_at' => $row['created_at'],
             ];
+            
            
 
             array_push($data, $db_data);
@@ -27,9 +28,14 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
     if(isset($_SESSION['username'])){    
         $username   = $_SESSION['username'];
      }
+
+    if(isset($_SESSION['error_lb'])){    
+        $lberr   = $_SESSION['error_lb'];
+     }
     
 
 ?>
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,8 +120,9 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                             <th>Date</th>
                         </thead>
                         <tbody>
-                            <?php if(isset($_SESSION['data'])  && !isset($_SESSION['data_default'])):
+                            <?php if(isset($_SESSION['data'])  && isset($_SESSION['data_default'])):
                                 $data = $_SESSION['data'];
+                                
                              ?>
                             
                                     <?php foreach($data as $leader) : ?> 
@@ -146,6 +153,7 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
 
                             <?php elseif(isset($_SESSION['data_default']) && !isset($_SESSION['data']) ):
                                 $data = $_SESSION['data_default'];
+                                
                              ?>
                             
                                     <?php foreach($data as $leader) : ?>
@@ -171,16 +179,16 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
                                     <?php  endforeach; ?>
                                     <?php unset($_SESSION['data_default']); ?>
 
-                            <?php elseif(isset($_SESSION['error_lb'])): ?>
-                            
+                            <?php elseif(isset($lberr)): ?>
+                           
                                 <div class="alert alert-danger">
                                 <span style="font-size:13px; font-weight:bold;">  
                                     
-                                    <span><?php echo $_SESSION['error_lb']; ?> </span> 
+                                    <span><?php echo $lberr; ?> </span> 
                                     <?php unset($_SESSION['error_lb']); ?>
                                 </span>
                                 </div>
-                                <?php unset($_SESSION['data_default']); ?>
+                                
                             <?php  endif; ?> 
 
                             
