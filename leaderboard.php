@@ -173,13 +173,13 @@ $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDE
 
                             <?php elseif(isset($_SESSION['error_lb'])): ?>
                             
-                            <div class="alert alert-danger">
-                            <span style="font-size:13px; font-weight:bold;">  
-                                
-                                <span><?php echo $_SESSION['error_lb']; ?> </span> 
-                                <?php unset($_SESSION['error_lb']); ?>
-                            </span>
-                            </div>
+                                <div class="alert alert-danger">
+                                <span style="font-size:13px; font-weight:bold;">  
+                                    
+                                    <span><?php echo $_SESSION['error_lb']; ?> </span> 
+                                    <?php unset($_SESSION['error_lb']); ?>
+                                </span>
+                                </div>
                                 <?php unset($_SESSION['data_default']); ?>
                             <?php  endif; ?> 
 
