@@ -59,7 +59,7 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light container-fluid" id="header__nav">
-                <a class="navbar-brand" href="index.php"><img src="./img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
+                <a class="navbar-brand" href="index.php"><img src="img/networth logo.svg"><span class=" text-light header__nav__brand ml-3 mt-2 font-weight-bold">NetWorth</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
