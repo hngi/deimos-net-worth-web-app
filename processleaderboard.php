@@ -4,7 +4,7 @@ $errors   = [];
 $data = [];
 $username = [];
 // connect to database
-$db = mysqli_connect('localhost', 'root', '','registration');
+$db = mysqli_connect('localhost', 'root', '12345678','registration');
 if(isset($_POST['leaderboard'])) {
     $startdate = $_POST['startdate'];
     $enddate = $_POST['enddate'];
