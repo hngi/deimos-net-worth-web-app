@@ -2,7 +2,7 @@
 session_start();
 $data = [];
 // connect to database
-$db = mysqli_connect('localhost', 'root', '','registration');
+$db = mysqli_connect('localhost', 'root', '12345678','registration');
 $leaderboard = "SELECT DISTINCT username,networth,created_at FROM networth  ORDER BY networth DESC ";
 // $leaderboard = "SELECT DISTINCT user_id,username,networth,created_at FROM networth GROUP BY user_id ORDER BY networth DESC ";
     $result = mysqli_query($db, $leaderboard);
