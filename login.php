@@ -80,9 +80,6 @@ session_start();
                     </div>
                     <form action="server.php" method="POST" id="signupW">
                         <h4>SIGN UP</h4>
-
-                        
-
                         <div class="form-group ">
                             <input class="form-control" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" 
                             placeholder="Enter email address" required>
