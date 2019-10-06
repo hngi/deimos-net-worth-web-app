@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 	// variable declaration
@@ -44,6 +45,7 @@ session_start();
 
   
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,9 +65,7 @@ session_start();
 
 <body>
     <div class="container-fluid">
-       
         <input type="checkbox" name="" id="toggle_signup_1">
-        
         <div class="row my-auto">
             <input class="d-none" type="checkbox" name="" id="toggle_signin">
             <input class="d-none" type="checkbox" name="" id="toggle_signup">
@@ -116,7 +116,43 @@ session_start();
             </div>
             <div class="col-sm signin-wrapper pl-0 pr-0">
                 <nav class="navbar">
+
+                    <a class="navbar-brand" href="index.html"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
+
+                </nav>
+                <section>
+                    <p class="text-center guide">SIGN IN WITH...</p>
+                    <div class="sign-in-with-social d-flex justify-content-between">
+                        <a href="#" target="blank" class="btn align-items-center d-flex h-1450 sign-in-fb sign-in-common">
+                            <img src="./img/fb-blue.png" alt="sign in with facebook" class=""> <span>FACEBOOK</span>
+                        </a>
+                        <a href="#" target="blank" class="btn align-items-center d-flex h-45 sign-in-google sign-in-common">
+                            <img src="./img/google-icon.png" alt="sign in with gmail"> <span>GOOGLE</span>
+                        </a>
+                    </div>
+                    <div class="page-divider d-flex align-items-center">
+                        <hr>
+                        <span>OR</span>
+                        <hr>
+                    </div>
+                    <form action="https://hngi.github.io/deimos-net-worth-web-app/dashboard.html">
+                        <h4>SIGN IN WITH EMAIL</h4>
+                        <div class="form-group general-input">
+                            <input class="form-control" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="EMAIL ADDRESS">
+                        </div>
+                        <div class="form-group general-input">
+                            <input class="form-control" required="" type="password" name="" id="" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="SIGN IN" class="btn btn-default  signin-button">
+                        </div>
+                    </form>
+                    <div class="text-center forgotten-pass">
+                        <a href="#" class="forgotten-pass"><b>Forgot password</b></a>
+                    </div>
+
                     <a class="navbar-brand" href="index.php"><img src="./img/Purple logo Group.png" alt="Team Logo"></a>
+
                     
                 </nav>
                 <section>
@@ -149,6 +185,7 @@ session_start();
                         </div>
                     </form>
                     
+>>>>>>> 3c51fb45795557cfb21271df35aac742ba0ebca6:login.php
                     <div class="text-center hide-for-large">
                         <a href="#" class="returning-visitor">
                             <label class="box" for="toggle_signin">New to Deimos? <span>SIGN UP</span></label>
