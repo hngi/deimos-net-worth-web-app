@@ -153,7 +153,7 @@ if(isset($_SESSION['username'])){
                                 <div class="alert alert-danger">
                                 <span style="font-size:13px; font-weight:bold;">  
                                     
-                                    <span><?php echo "No record found"; ?> </span> 
+                                    <span><?php echo "No record found for that date.Please try a different date"; ?> </span> 
                                     <?php unset($_SESSION['lb']); ?>
                                 </span>
                                 </div>
