@@ -133,8 +133,8 @@
                                 <textarea class="form-control" name="message" required placeholder="Enter Message" value="
                                     <?php if(isset($_POST['message'])){
                                         echo htmlspecialchars($_POST['message']);
-                                    }?>">
-                                </textarea>
+                                    }?>"></textarea>
+                                
                                 <?php 
                                 if(isset($errMessage)){
                                     echo "<p class='text-danger'>".$errMessage."</p>";
